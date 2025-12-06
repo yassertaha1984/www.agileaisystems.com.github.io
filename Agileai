@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Under Maintenance</title>
+    <style>
+        body {
+            background: #f7f7f7;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .box {
+            background: #fff;
+            padding: 40px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>🚧 Under Maintenance</h1>
+        <p>Our website is currently being upgraded.<br>
+        Please check back soon.</p>
+    </div>
+</body>
+</html>
