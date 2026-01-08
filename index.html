@@ -46,8 +46,10 @@
 </head>
 <body>
 <script>
+console.log("SCRIPT LOADED FROM GITHUB");
+
 async function testBot() {
-  const res = await fetch(https://agileaisystems.app.n8n.cloud/webhook/agileai-bot, {
+  const res = await fetch("https://agileaisystems.app.n8n.cloud/webhook/agileai-bot", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -59,6 +61,7 @@ async function testBot() {
   const data = await res.json();
   console.log("Bot reply:", data.reply);
 }
+
 testBot();
 </script>
 
