@@ -45,6 +45,22 @@
     </style>
 </head>
 <body>
+<script>
+async function testBot() {
+  const res = await fetch(https://agileaisystems.app.n8n.cloud/webhook/agileai-bot, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chatInput: "hello from website",
+      sessionId: "site-test-1"
+    })
+  });
+
+  const data = await res.json();
+  console.log("Bot reply:", data.reply);
+}
+testBot();
+</script>
 
     <div class="container">
         <!-- ضع اللوجو بتاع شركتك هنا -->
