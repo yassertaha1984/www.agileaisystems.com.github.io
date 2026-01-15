@@ -1,87 +1,225 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Under Maintenance</title>
-    <style>
-        body {
-            background: #f0f2f5;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 80px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Under Maintenance</title>
+  <style>
+    body {
+      background: #f0f2f5;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+      margin: 0;
+    }
 
-        .container {
-            background: #fff;
-            max-width: 600px;
-            margin: auto;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 0 25px rgba(0,0,0,0.12);
-        }
+    .container {
+      background: #fff;
+      max-width: 600px;
+      margin: auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.12);
+    }
 
-        img.logo {
-            width: 300px;
-            margin-bottom: 20px;
-        }
+    img.logo {
+      width: 300px;
+      margin-bottom: 20px;
+      max-width: 100%;
+      height: auto;
+    }
 
-        h1 {
-            color: #333;
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
+    h1 {
+      color: #333;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
 
-        p {
-            font-size: 18px;
-            color: #666;
-            line-height: 1.6;
-        }
+    p {
+      font-size: 18px;
+      color: #666;
+      line-height: 1.6;
+    }
 
-        .footer {
-            margin-top: 25px;
-            font-size: 14px;
-            color: #999;
-        }
-    </style>
+    .footer {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #999;
+    }
+
+    /* Chat UI */
+    .chat-wrap {
+      background: #fff;
+      max-width: 600px;
+      margin: 18px auto 0;
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.08);
+      text-align: left;
+    }
+    .chat-title {
+      margin: 0 0 10px;
+      color: #333;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .chat-box {
+      height: 260px;
+      overflow: auto;
+      border: 1px solid #eee;
+      padding: 12px;
+      border-radius: 10px;
+      background: #fafafa;
+      font-size: 14px;
+    }
+    .chat-row { margin: 8px 0; }
+    .chat-row b { display: inline-block; min-width: 44px; }
+    .chat-controls {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .chat-input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 14px;
+      outline: none;
+    }
+    .chat-btn {
+      padding: 10px 16px;
+      border: 0;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #1a73e8;
+      color: #fff;
+      font-weight: 700;
+    }
+    .chat-status {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #666;
+      word-break: break-word;
+    }
+    .hint {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #888;
+      line-height: 1.4;
+    }
+  </style>
 </head>
+
 <body>
-<script>
-console.log("SCRIPT LOADED FROM GITHUB");
+  <div class="container">
+    <img src="logo.png" alt="Company Logo" class="logo" />
+    <h1>🚧 Website Under Maintenance</h1>
+    <p>
+      Our website is currently undergoing scheduled maintenance.<br />
+      We’ll be back very soon — thank you for your patience Info@agileaisystems.com.
+    </p>
+    <div class="footer">Agile AI Systems © 2025</div>
+  </div>
 
-async function testBot() {
-  const res = await fetch("https://agileaisystems.app.n8n.cloud/webhook/agileai-bot", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chatInput: "hello from website",
-      sessionId: "site-test-1"
-    })
-  });
+  <!-- Chat UI (n8n Test) -->
+  <div class="chat-wrap">
+    <div class="chat-title">Support Chat (Test)</div>
+    <div id="chatBox" class="chat-box"></div>
 
-  const data = await res.json();
-  console.log("Bot reply:", data.reply);
-}
-
-testBot();
-</script>
-
-    <div class="container">
-        <!-- ضع اللوجو بتاع شركتك هنا -->
-        <img src="logo.png" alt="Company Logo" class="logo">
-
-        <h1>🚧 Website Under Maintenance</h1>
-        <p>
-            Our website is currently undergoing scheduled maintenance.<br>
-            We’ll be back very soon — thank you for your patience Info@agileaisystems.com.
-        </p>
-
-        <div class="footer">
-            Agile AI Systems © 2025
-        </div>
+    <div class="chat-controls">
+      <input id="chatInput" class="chat-input" placeholder="اكتب سؤالك..." />
+      <button id="chatSend" class="chat-btn">Send</button>
     </div>
-    
-<!-- Tidio Chat Script -->
-<script src="//code.tidio.co/kydwe3ytfoqzpjspediiniq5lkwbt0bd.js" async></script>
-    
+
+    <div id="chatStatus" class="chat-status">Chat UI Loaded.</div>
+    <div class="hint">
+      لو مفيش رد: افتح DevTools → Console و Network وشوف الطلب راجع بكود كام (خصوصًا CORS / 401 / 404).
+    </div>
+  </div>
+
+  <script>
+    // IMPORTANT: تأكد إن ده Production URL (مش webhook-test) وأن الـ workflow في n8n Active
+    const N8N_URL = "https://agileaisystems.app.n8n.cloud/webhook/agileai-bot";
+
+    console.log("SCRIPT LOADED FROM GITHUB (CHAT UI)");
+
+    const chatBox = document.getElementById("chatBox");
+    const chatInput = document.getElementById("chatInput");
+    const chatSend = document.getElementById("chatSend");
+    const chatStatus = document.getElementById("chatStatus");
+
+    function addMsg(who, text) {
+      const row = document.createElement("div");
+      row.className = "chat-row";
+      row.innerHTML = `<b>${who}:</b> ${escapeHtml(text || "")}`;
+      chatBox.appendChild(row);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function escapeHtml(s) {
+      return String(s)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    async function sendMsg() {
+      const text = (chatInput.value || "").trim();
+      if (!text) return;
+
+      addMsg("You", text);
+      chatInput.value = "";
+      chatInput.focus();
+
+      chatStatus.textContent = "Sending...";
+      chatSend.disabled = true;
+
+      try {
+        const res = await fetch(N8N_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chatInput: text,
+            sessionId: "site-" + Date.now()
+          })
+        });
+
+        chatStatus.textContent = "HTTP " + res.status;
+
+        // نقرأ كنص أولًا ثم نحاول JSON (عشان ما ينهارش لو الرد مش JSON)
+        const raw = await res.text();
+        let data = null;
+        try { data = JSON.parse(raw); } catch (_) {}
+
+        const reply =
+          (data && (data.reply || data.output)) ? (data.reply || data.output)
+          : (raw && raw.trim().length ? raw.trim()
+          : "Empty response from server");
+
+        addMsg("Bot", reply);
+
+      } catch (e) {
+        console.error("Bot fetch error:", e);
+        chatStatus.textContent = "Error: " + e.message;
+        addMsg("Bot", "Request failed. Check Console/Network.");
+      } finally {
+        chatSend.disabled = false;
+      }
+    }
+
+    chatSend.addEventListener("click", sendMsg);
+    chatInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") sendMsg();
+    });
+
+    // رسالة افتتاحية
+    addMsg("Bot", "أهلًا! اكتب سؤالك وسأحاول مساعدتك.");
+  </script>
+
+  <!-- Tidio Chat Script (اختياري: سيبه مؤقتًا أو شيله بعد ما تتأكد من البوت) -->
+  <script src="//code.tidio.co/kydwe3ytfoqzpjspediiniq5lkwbt0bd.js" async></script>
 </body>
 </html>
