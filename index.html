@@ -139,7 +139,7 @@
   </div>
 
   <script>
-    // IMPORTANT: تأكد إن ده Production URL (مش webhook-test) وأن الـ workflow في n8n Active
+  
     const N8N_URL = "https://agileaisystems.app.n8n.cloud/webhook/agileai-bot";
 
     console.log("SCRIPT LOADED FROM GITHUB (CHAT UI)");
@@ -189,7 +189,7 @@
 
         chatStatus.textContent = "HTTP " + res.status;
 
-        // نقرأ كنص أولًا ثم نحاول JSON (عشان ما ينهارش لو الرد مش JSON)
+        
         const raw = await res.text();
         let data = null;
         try { data = JSON.parse(raw); } catch (_) {}
