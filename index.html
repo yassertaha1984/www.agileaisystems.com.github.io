@@ -221,5 +221,21 @@
 
   <!-- Tidio Chat Script (اختياري: سيبه مؤقتًا أو شيله بعد ما تتأكد من البوت) -->
   <script src="//code.tidio.co/kydwe3ytfoqzpjspediiniq5lkwbt0bd.js" async></script>
+
+<script>
+  window.SmartSupportConfig = {
+    apiUrl:   'https://support-smartsolns.com',
+    theme:    'blue',      // blue | green | dark | light
+    position: 'right',     // right | left
+    locale:   'ar',        // ar | en
+
+    // Optional — if user is already logged in to your system:
+    userToken: null,       // pass their JWT token here
+    userName:  null,       // e.g. '{{CurrentUser.Name}}'
+    userEmail: null,       // e.g. '{{CurrentUser.Email}}'
+  };
+</script>
+<script src="https://support-smartsolns.com/widget/chatbot-widget.js" defer></script>
+
 </body>
 </html>
