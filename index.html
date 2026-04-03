@@ -1,224 +1,905 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Under Maintenance</title>
-  <style>
-    body {
-      background: #f0f2f5;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 80px;
-      margin: 0;
-    }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Agile AI Systems — Kuwait & Gulf AI Solutions</title>
+<meta name="description" content="AI chatbots, RPA automation, web design, AI accounting and unified customer service for Kuwait and Gulf businesses."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;
+  --bg-soft:#f4f7ff;
+  --bg-mid:#eef2fb;
+  --navy:#0a1f44;
+  --navy2:#0d2a5e;
+  --blue:#1648d8;
+  --blue2:#0f3ab3;
+  --cyan:#0096b7;
+  --cyan2:#007a96;
+  --gold:#f0a500;
+  --gold2:#c98800;
+  --text:#0d1b2a;
+  --text2:#334155;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --border2:#c7d7f0;
+  --font:'Plus Jakarta Sans',sans-serif;
+  --shadow:0 2px 16px rgba(10,31,68,.08);
+  --shadow-lg:0 8px 40px rgba(10,31,68,.12);
+  --shadow-xl:0 20px 60px rgba(10,31,68,.15);
+  --r:14px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(22,72,216,.15)}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg-soft)}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:3px}
 
-    .container {
-      background: #fff;
-      max-width: 600px;
-      margin: auto;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.12);
-    }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 24px rgba(10,31,68,.1)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--blue),var(--cyan));border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:#fff;letter-spacing:-1px}
+.logo-text{font-weight:700;font-size:17px;color:var(--navy)}
+.logo-text span{color:var(--blue)}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:9px 20px!important;border-radius:8px!important;font-weight:600!important;box-shadow:0 4px 16px rgba(22,72,216,.25)!important;transition:background .2s,transform .2s!important}
+.nav-cta:hover{background:var(--blue2)!important;transform:translateY(-1px)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px}
 
-    img.logo {
-      width: 300px;
-      margin-bottom: 20px;
-      max-width: 100%;
-      height: auto;
-    }
+/* MOBILE MENU */
+.mobile-menu{display:none;position:fixed;inset:0;background:#fff;z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:26px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:22px;font-weight:700;color:var(--navy);text-decoration:none}
+.mobile-menu a:hover{color:var(--blue)}
+.mobile-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:var(--navy)}
 
-    h1 {
-      color: #333;
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
+/* LAYOUT */
+section{position:relative}
+.container{max-width:1180px;margin:0 auto;padding:0 6vw}
 
-    p {
-      font-size: 18px;
-      color: #666;
-      line-height: 1.6;
-    }
+/* HELPERS */
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.section-label::before{content:'';width:18px;height:2px;background:var(--blue);border-radius:1px}
+.section-title{font-size:clamp(26px,3.2vw,42px);font-weight:800;line-height:1.18;letter-spacing:-.3px;color:var(--navy);margin-bottom:14px}
+.section-sub{font-size:15.5px;color:var(--muted);max-width:560px;line-height:1.75}
 
-    .footer {
-      margin-top: 25px;
-      font-size: 14px;
-      color: #999;
-    }
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
 
-    /* Chat UI */
-    .chat-wrap {
-      background: #fff;
-      max-width: 600px;
-      margin: 18px auto 0;
-      padding: 18px;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.08);
-      text-align: left;
-    }
-    .chat-title {
-      margin: 0 0 10px;
-      color: #333;
-      font-size: 18px;
-      font-weight: 700;
-    }
-    .chat-box {
-      height: 260px;
-      overflow: auto;
-      border: 1px solid #eee;
-      padding: 12px;
-      border-radius: 10px;
-      background: #fafafa;
-      font-size: 14px;
-    }
-    .chat-row { margin: 8px 0; }
-    .chat-row b { display: inline-block; min-width: 44px; }
-    .chat-controls {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .chat-input {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      font-size: 14px;
-      outline: none;
-    }
-    .chat-btn {
-      padding: 10px 16px;
-      border: 0;
-      border-radius: 10px;
-      cursor: pointer;
-      background: #1a73e8;
-      color: #fff;
-      font-weight: 700;
-    }
-    .chat-status {
-      margin-top: 10px;
-      font-size: 13px;
-      color: #666;
-      word-break: break-word;
-    }
-    .hint {
-      margin-top: 8px;
-      font-size: 12px;
-      color: #888;
-      line-height: 1.4;
-    }
-  </style>
+/* BUTTONS */
+.btn-primary{background:var(--blue);color:#fff;padding:13px 28px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;box-shadow:0 6px 24px rgba(22,72,216,.3);transition:all .2s;border:none;cursor:pointer;font-family:var(--font)}
+.btn-primary:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(22,72,216,.35)}
+.btn-secondary{background:transparent;color:var(--navy);padding:13px 28px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--border2);transition:all .2s}
+.btn-secondary:hover{border-color:var(--blue);color:var(--blue);background:rgba(22,72,216,.04)}
+.btn-gold{background:var(--gold);color:#fff;padding:13px 28px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;box-shadow:0 6px 20px rgba(240,165,0,.3);transition:all .2s;border:none;cursor:pointer;font-family:var(--font)}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--blue);padding:13px 28px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .2s}
+.btn-white:hover{box-shadow:0 6px 24px rgba(255,255,255,.2);transform:translateY(-2px)}
+
+/* HERO */
+#hero{min-height:100vh;padding-top:68px;overflow:hidden;display:flex;align-items:center}
+#hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 700px 500px at 80% 20%,rgba(22,72,216,.06) 0%,transparent 70%),radial-gradient(ellipse 500px 400px at 10% 80%,rgba(0,150,183,.06) 0%,transparent 70%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:80px 6vw;max-width:1180px;margin:0 auto;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(22,72,216,.07);border:1px solid rgba(22,72,216,.18);border-radius:100px;padding:5px 16px;font-size:12px;font-weight:600;color:var(--blue);margin-bottom:20px;animation:fadeDown .6s ease both}
+.hero-badge-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero-title{font-size:clamp(34px,4vw,58px);font-weight:800;line-height:1.12;letter-spacing:-.5px;color:var(--navy);margin-bottom:18px;animation:fadeDown .6s .1s ease both}
+.hero-title .accent-blue{color:var(--blue)}
+.hero-title .accent-cyan{color:var(--cyan)}
+.hero-sub{font-size:16px;color:var(--muted);line-height:1.75;max-width:460px;margin-bottom:32px;animation:fadeDown .6s .2s ease both}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;animation:fadeDown .6s .3s ease both}
+
+.hero-visual{position:relative;display:flex;justify-content:center;animation:fadeUp .8s .2s ease both}
+.hero-card-wrap{position:relative;width:100%;max-width:420px}
+.h-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow-xl)}
+.h-card-main{animation:floatCard 5.5s ease-in-out infinite}
+@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hc-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.hc-title{font-weight:700;font-size:14px;color:var(--navy)}
+.hc-live{background:rgba(0,160,60,.1);color:#00943c;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;display:flex;align-items:center;gap:5px}
+.hc-live::before{content:'';width:5px;height:5px;background:#00943c;border-radius:50%;animation:pulse 1.5s infinite}
+.chat-msgs{display:flex;flex-direction:column;gap:9px}
+.c-msg{display:flex;align-items:flex-end;gap:7px}
+.c-msg.r{flex-direction:row-reverse}
+.c-av{width:26px;height:26px;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.c-av.ai{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff}
+.c-av.u{background:var(--bg-mid);color:var(--navy);border:1px solid var(--border)}
+.c-bubble{padding:8px 13px;border-radius:12px;font-size:12.5px;line-height:1.5;max-width:190px}
+.c-msg:not(.r) .c-bubble{background:var(--bg-soft);border:1px solid var(--border);border-bottom-left-radius:3px;color:var(--text)}
+.c-msg.r .c-bubble{background:var(--blue);color:#fff;border-bottom-right-radius:3px}
+.h-mini{position:absolute;width:175px;background:#fff;border:1px solid var(--border);border-radius:13px;padding:15px 17px;box-shadow:var(--shadow-lg)}
+.h-mini.tl{top:-22px;left:-28px;animation:floatCard2 5s 1s ease-in-out infinite}
+.h-mini.br{bottom:-18px;right:-22px;animation:floatCard2 5.5s .5s ease-in-out infinite}
+@keyframes floatCard2{0%,100%{transform:translateY(0) rotate(-.5deg)}50%{transform:translateY(-8px) rotate(.5deg)}}
+.mini-metric{display:flex;align-items:center;gap:10px}
+.mini-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.mini-icon.blue{background:rgba(22,72,216,.1)}
+.mini-icon.gold{background:rgba(240,165,0,.12)}
+.mini-val{font-weight:800;font-size:17px;color:var(--navy)}
+.mini-lbl{font-size:11px;color:var(--muted)}
+
+/* SERVICES */
+#services{padding:110px 0;background:var(--bg-soft);border-top:1px solid var(--border)}
+.svc-head{text-align:center;margin-bottom:60px}
+.svc-head .section-label{justify-content:center}
+.svc-head .section-sub{margin:0 auto}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:30px 26px;transition:all .3s;position:relative;overflow:hidden}
+.svc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.svc-card:hover{box-shadow:var(--shadow-xl);transform:translateY(-4px);border-color:var(--border2)}
+.svc-card:hover::after{transform:scaleX(1)}
+.svc-card.gold-top::after{background:linear-gradient(90deg,var(--gold),#ffca28)}
+.svc-card.wide{grid-column:span 2}
+.svc-icon{width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:18px}
+.svc-icon.blue-bg{background:rgba(22,72,216,.08);border:1px solid rgba(22,72,216,.12)}
+.svc-icon.gold-bg{background:rgba(240,165,0,.1);border:1px solid rgba(240,165,0,.18)}
+.svc-icon.cyan-bg{background:rgba(0,150,183,.08);border:1px solid rgba(0,150,183,.15)}
+.svc-num{position:absolute;top:18px;right:22px;font-size:40px;font-weight:800;color:rgba(10,31,68,.04);line-height:1}
+.svc-title{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:9px}
+.svc-desc{font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:18px}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px}
+.svc-tag{border-radius:20px;padding:4px 11px;font-size:11.5px;font-weight:600}
+.svc-card:not(.gold-top) .svc-tag{color:var(--blue);background:rgba(22,72,216,.07)}
+.svc-card.gold-top .svc-tag{color:var(--gold2);background:rgba(240,165,0,.1)}
+
+/* RPA */
+#rpa{padding:110px 0;background:var(--bg);border-top:1px solid var(--border)}
+.rpa-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.rpa-features{display:flex;flex-direction:column;gap:14px;margin-top:32px}
+.rpa-feat{display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:12px;border:1px solid transparent;transition:all .25s;cursor:default}
+.rpa-feat:hover{background:var(--bg-soft);border-color:var(--border)}
+.rpa-feat-icon{width:42px;height:42px;border-radius:11px;background:rgba(22,72,216,.08);border:1px solid rgba(22,72,216,.14);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.rpa-feat-title{font-weight:700;font-size:15px;color:var(--navy);margin-bottom:3px}
+.rpa-feat-desc{font-size:13.5px;color:var(--muted);line-height:1.6}
+.rpa-visual{background:#fff;border:1px solid var(--border);border-radius:20px;padding:26px;box-shadow:var(--shadow-xl);animation:floatCard 6s ease-in-out infinite}
+.rpa-vis-title{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.rpa-vis-title span{background:rgba(22,72,216,.08);color:var(--blue);font-size:11px;padding:2px 9px;border-radius:20px}
+.workflow{display:flex;flex-direction:column}
+.wf-step{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;transition:background .2s}
+.wf-step:hover{background:var(--bg-soft)}
+.wf-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.wf-info{flex:1}
+.wf-name{font-weight:600;font-size:13px;color:var(--navy)}
+.wf-status{font-size:11px;color:var(--muted)}
+.wf-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px}
+.wf-badge.done{background:rgba(0,160,60,.1);color:#00943c}
+.wf-badge.run{background:rgba(22,72,216,.1);color:var(--blue)}
+.wf-badge.wait{background:rgba(240,165,0,.1);color:var(--gold2)}
+.wf-arrow{text-align:center;color:var(--border2);font-size:13px;margin:1px 0 1px 22px}
+.wf-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+.wf-stat{text-align:center}
+.wf-stat-val{font-weight:800;font-size:19px;color:var(--navy)}
+.wf-stat-lbl{font-size:11px;color:var(--muted)}
+
+/* DASHBOARD */
+#dashboard{padding:110px 0;background:var(--bg-soft);border-top:1px solid var(--border)}
+.dash-head{text-align:center;margin-bottom:52px}
+.dash-head .section-label{justify-content:center}
+.dash-head .section-sub{margin:0 auto}
+.dashboard-mockup{background:#fff;border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow-xl);overflow:hidden}
+.db-topbar{background:var(--bg-soft);border-bottom:1px solid var(--border);padding:11px 18px;display:flex;align-items:center;gap:8px}
+.db-dot{width:10px;height:10px;border-radius:50%}
+.db-dot.r{background:#ff5f57}
+.db-dot.y{background:#ffbd2e}
+.db-dot.g{background:#28ca42}
+.db-bar-title{margin-left:8px;font-size:13px;font-weight:600;color:var(--muted)}
+.db-bar-right{margin-left:auto;display:flex;gap:7px}
+.db-bar-btn{background:var(--bg-mid);border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-size:11px;font-weight:600;color:var(--muted);cursor:pointer;font-family:var(--font)}
+.db-bar-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.db-body{padding:22px}
+.db-sec-title{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:3px}
+.db-sec-sub{font-size:13px;color:var(--muted);margin-bottom:18px}
+.db-metrics-top{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px}
+.db-metric{background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:13px 15px}
+.db-metric-header{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+.db-metric-icon{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.db-metric-icon.blue{background:rgba(22,72,216,.1)}
+.db-metric-icon.green{background:rgba(0,160,60,.1)}
+.db-metric-icon.cyan{background:rgba(0,150,183,.1)}
+.db-metric-icon.gold{background:rgba(240,165,0,.1)}
+.db-metric-icon.purple{background:rgba(147,51,234,.1)}
+.db-metric-lbl{font-size:9.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
+.db-metric-val{font-size:24px;font-weight:800;color:var(--navy);line-height:1}
+.db-metric-note{font-size:11px;color:var(--muted);margin-top:2px}
+.db-metrics-mid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.db-metric-mid{background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:13px 15px;display:flex;align-items:center;gap:12px}
+.db-metric-mid-lbl{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--muted)}
+.db-metric-mid-val{font-size:28px;font-weight:800;color:var(--navy);line-height:1.1}
+.db-tabs{display:flex;border-bottom:2px solid var(--border);margin-bottom:18px}
+.db-tab{padding:8px 16px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;font-family:var(--font)}
+.db-tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+.db-charts{display:grid;grid-template-columns:1.6fr 1fr;gap:14px}
+.db-chart-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:16px}
+.db-chart-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.chart-area{width:100%}
+
+/* PLATFORM */
+#platform{padding:110px 0;background:var(--bg);border-top:1px solid var(--border)}
+.plat-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.plat-features{display:flex;flex-direction:column;gap:13px;margin-top:32px}
+.plat-feat{display:flex;gap:13px;align-items:flex-start;padding:15px;border-radius:12px;border:1px solid transparent;transition:all .25s}
+.plat-feat:hover{background:var(--bg-soft);border-color:var(--border)}
+.plat-feat-icon{width:40px;height:40px;border-radius:10px;background:rgba(22,72,216,.08);border:1px solid rgba(22,72,216,.14);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.plat-feat-title{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:3px}
+.plat-feat-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.plat-mockup{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-xl)}
+.pm-bar{background:var(--bg-soft);padding:10px 14px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--border)}
+.pm-dot{width:9px;height:9px;border-radius:50%}
+.pm-title{margin-left:6px;font-size:12px;font-weight:600;color:var(--muted)}
+.pm-body{display:grid;grid-template-columns:195px 1fr;height:280px}
+.pm-sidebar{background:var(--bg-soft);border-right:1px solid var(--border);padding:9px;display:flex;flex-direction:column;gap:4px;overflow:hidden}
+.pm-sidebar-lbl{font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);padding:4px 8px;margin-top:5px}
+.pm-ch{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:7px;cursor:pointer;transition:background .2s}
+.pm-ch:hover,.pm-ch.active{background:rgba(22,72,216,.08)}
+.pm-ch.active{border-left:2px solid var(--blue)}
+.pm-ch-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.pm-ch-name{font-size:12px;color:var(--text2);flex:1}
+.pm-ch-badge{background:var(--blue);color:#fff;font-size:9px;font-weight:700;padding:1px 6px;border-radius:10px}
+.pm-chat{padding:13px;display:flex;flex-direction:column;gap:8px}
+.pm-msg{display:flex;align-items:flex-end;gap:7px;max-width:82%}
+.pm-msg.r{flex-direction:row-reverse;margin-left:auto}
+.pm-av{width:22px;height:22px;border-radius:50%;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pm-av.ai{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff}
+.pm-av.u{background:var(--bg-mid);border:1px solid var(--border);color:var(--navy)}
+.pm-bubble{font-size:11px;padding:6px 11px;border-radius:9px;line-height:1.5}
+.pm-msg:not(.r) .pm-bubble{background:var(--bg-soft);border:1px solid var(--border);color:var(--text)}
+.pm-msg.r .pm-bubble{background:var(--blue);color:#fff}
+
+/* BIG DATA - dark strip */
+#bigdata{padding:110px 0;background:var(--navy);border-top:1px solid var(--border);overflow:hidden;position:relative}
+#bigdata::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 400px at 90% 50%,rgba(0,150,183,.12) 0%,transparent 60%),radial-gradient(ellipse 400px 300px at 5% 30%,rgba(22,72,216,.15) 0%,transparent 60%);pointer-events:none}
+.bigdata-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.bigdata-cards{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.bd-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px 20px;transition:all .3s}
+.bd-card:hover{background:rgba(255,255,255,.1);border-color:rgba(0,150,183,.3)}
+.bd-card:nth-child(2){margin-top:22px}
+.bd-card:nth-child(4){margin-top:-22px}
+.bd-icon{font-size:24px;margin-bottom:11px}
+.bd-title{font-weight:700;font-size:15px;color:#fff;margin-bottom:6px}
+.bd-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65}
+.bigdata-text .section-title{color:#fff}
+.bigdata-text .section-label{color:var(--cyan)}
+.bigdata-text .section-label::before{background:var(--cyan)}
+.bigdata-text .section-sub{color:rgba(255,255,255,.55)}
+.bigdata-list{margin-top:30px;display:flex;flex-direction:column;gap:11px}
+.bigdata-list-item{display:flex;gap:11px;align-items:center;color:rgba(255,255,255,.65);font-size:14px}
+.bigdata-list-item span{color:var(--cyan);font-weight:700;font-size:16px}
+
+/* GULF */
+#gulf{padding:110px 0;background:var(--bg-soft);border-top:1px solid var(--border)}
+.gulf-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.gulf-flags{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.gf-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px;transition:all .3s}
+.gf-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);border-color:var(--border2)}
+.gf-card:nth-child(2){margin-top:22px}
+.gf-card:nth-child(4){margin-top:-22px}
+.gf-flag{font-size:24px;margin-bottom:9px}
+.gf-name{font-weight:700;font-size:15px;color:var(--navy);margin-bottom:5px}
+.gf-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* HOW */
+#how{padding:110px 0;background:var(--bg);border-top:1px solid var(--border)}
+.how-head{text-align:center;margin-bottom:60px}
+.how-head .section-label{justify-content:center}
+.how-head .section-sub{margin:0 auto}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.how-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:26px 20px;text-align:center;transition:all .3s}
+.how-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.how-num{width:48px;height:48px;border-radius:50%;background:rgba(22,72,216,.08);border:2px solid rgba(22,72,216,.16);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;color:var(--blue);margin:0 auto 17px;transition:all .3s}
+.how-card:hover .how-num{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 6px 20px rgba(22,72,216,.3)}
+.how-title{font-weight:700;font-size:15px;color:var(--navy);margin-bottom:9px}
+.how-desc{font-size:13.5px;color:var(--muted);line-height:1.65}
+
+/* CTA */
+#cta{padding:110px 0;background:var(--bg-soft);border-top:1px solid var(--border)}
+.cta-box{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);border-radius:24px;padding:68px 52px;text-align:center;position:relative;overflow:hidden;box-shadow:0 30px 80px rgba(10,31,68,.25)}
+.cta-box::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(0,150,183,.13) 0%,transparent 60%);pointer-events:none}
+.cta-title{font-size:clamp(26px,3.2vw,44px);font-weight:800;color:#fff;letter-spacing:-.3px;margin-bottom:13px}
+.cta-title span{color:var(--cyan)}
+.cta-sub{font-size:15.5px;color:rgba(255,255,255,.5);max-width:480px;margin:0 auto 34px;line-height:1.75}
+.cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* CONTACT */
+#contact{padding:110px 0;background:var(--bg);border-top:1px solid var(--border)}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-item{display:flex;gap:13px;align-items:flex-start;margin-bottom:20px}
+.ci-icon{width:42px;height:42px;border-radius:11px;background:rgba(22,72,216,.07);border:1px solid rgba(22,72,216,.14);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.ci-label{font-size:11.5px;color:var(--muted);margin-bottom:2px;font-weight:500}
+.ci-val{font-size:15px;font-weight:600;color:var(--navy)}
+.ci-val a{color:var(--blue);text-decoration:none}
+.ci-val a:hover{text-decoration:underline}
+.contact-form{background:#fff;border:1px solid var(--border);border-radius:18px;padding:32px;box-shadow:var(--shadow)}
+.cf-title{font-weight:800;font-size:18px;color:var(--navy);margin-bottom:22px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:13px}
+.form-group label{font-size:13px;font-weight:600;color:var(--text2)}
+.form-group input,.form-group select,.form-group textarea{background:var(--bg-soft);border:1.5px solid var(--border);border-radius:9px;padding:11px 13px;color:var(--text);font-family:var(--font);font-size:14px;outline:none;transition:border-color .2s,background .2s;width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);background:#fff}
+.form-group input::placeholder,.form-group textarea::placeholder{color:#b0bac9}
+.form-group select option{background:#fff}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-submit{width:100%;background:var(--blue);color:#fff;padding:13px;border-radius:10px;font-weight:700;font-size:15px;border:none;cursor:pointer;font-family:var(--font);transition:all .2s;box-shadow:0 6px 20px rgba(22,72,216,.25);display:flex;align-items:center;justify-content:center;gap:8px}
+.form-submit:hover{background:var(--blue2);box-shadow:0 10px 28px rgba(22,72,216,.35);transform:translateY(-1px)}
+
+/* FOOTER */
+footer{background:var(--navy);padding:58px 0 26px;position:relative;z-index:1}
+.footer-inner{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:44px;margin-bottom:48px}
+.footer-logo .logo-text{color:#fff}
+.footer-logo .logo-text span{color:var(--cyan)}
+.footer-desc{font-size:13.5px;color:rgba(255,255,255,.42);line-height:1.7;margin-top:12px;max-width:255px}
+.footer-socials{display:flex;gap:9px;margin-top:20px}
+.social-btn{width:33px;height:33px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:13px;text-decoration:none;transition:all .2s}
+.social-btn:hover{background:rgba(22,72,216,.3);border-color:var(--blue)}
+.footer-col-title{font-weight:700;font-size:13px;color:#fff;margin-bottom:15px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:9px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--cyan)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;align-items:center;justify-content:space-between}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.32)}
+.footer-copy span{color:var(--cyan)}
+.footer-tag{font-size:12px;color:rgba(255,255,255,.2)}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:26px;right:26px;z-index:998;width:52px;height:52px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s;text-decoration:none}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.55)}
+.wa-float svg{width:25px;height:25px;fill:#fff}
+
+/* ANIMATIONS */
+@keyframes fadeDown{from{opacity:0;transform:translateY(-13px)}to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .svc-card.wide{grid-column:span 2}
+  .how-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:30px}
+  .db-metrics-top{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-inner{grid-template-columns:1fr;gap:40px;text-align:center;padding:60px 6vw}
+  .hero-sub{max-width:100%}
+  .hero-buttons{justify-content:center}
+  .hero-visual{order:-1}
+  .h-card-main{max-width:330px;margin:0 auto}
+  .h-mini{display:none}
+  .rpa-inner,.plat-inner,.gulf-inner,.bigdata-inner,.contact-inner{grid-template-columns:1fr;gap:40px}
+  .svc-grid{grid-template-columns:1fr}
+  .svc-card.wide{grid-column:span 1}
+  .how-grid{grid-template-columns:1fr 1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:6px;text-align:center}
+  .cta-box{padding:42px 22px}
+  .form-row{grid-template-columns:1fr}
+  .db-metrics-top{grid-template-columns:repeat(2,1fr)}
+  .db-metrics-mid,.db-charts{grid-template-columns:1fr}
+  .pm-body{grid-template-columns:1fr;height:auto}
+  .pm-sidebar{display:none}
+  .gulf-flags,.bigdata-cards{max-width:400px;margin:0 auto}
+}
+</style>
 </head>
-
 <body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#rpa" onclick="closeMobileMenu()">Automation & RPA</a>
+  <a href="#dashboard" onclick="closeMobileMenu()">Dashboard</a>
+  <a href="#bigdata" onclick="closeMobileMenu()">Big Data</a>
+  <a href="#gulf" onclick="closeMobileMenu()">Gulf Region</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<nav id="mainNav">
+  <a href="#" class="logo">
+    <div class="logo-icon">AA</div>
+    <div class="logo-text">Agile<span>AI</span> Systems</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#rpa">Automation & RPA</a></li>
+    <li><a href="#dashboard">Platform</a></li>
+    <li><a href="#bigdata">Big Data</a></li>
+    <li><a href="#gulf">Gulf Region</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Get Started →</a></li>
+  </ul>
+  <div class="hamburger" onclick="openMobileMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><div class="hero-badge-dot"></div>Powering Gulf Businesses with AI</div>
+      <h1 class="hero-title">Build Smarter.<br/><span class="accent-blue">Automate Faster.</span><br/><span class="accent-cyan">Grow Bigger.</span></h1>
+      <p class="hero-sub">Agile AI Systems delivers intelligent automation, AI chatbots, RPA workflows, and unified customer engagement platforms built specifically for Kuwait and Gulf businesses.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Start Your AI Journey →</a>
+        <a href="#services" class="btn-secondary">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-wrap">
+        <div class="h-card h-card-main">
+          <div class="hc-header">
+            <span class="hc-title">🤖 AI Assistant — Live</span>
+            <span class="hc-live">ACTIVE</span>
+          </div>
+          <div class="chat-msgs">
+            <div class="c-msg"><div class="c-av ai">AI</div><div class="c-bubble">مرحباً! كيف أقدر أساعدك اليوم؟ 👋</div></div>
+            <div class="c-msg r"><div class="c-av u">U</div><div class="c-bubble">I need to check my invoice status</div></div>
+            <div class="c-msg"><div class="c-av ai">AI</div><div class="c-bubble">Invoice #INV-089 is pending approval. Shall I send a payment reminder?</div></div>
+            <div class="c-msg r"><div class="c-av u">U</div><div class="c-bubble">Yes please!</div></div>
+            <div class="c-msg"><div class="c-av ai">AI</div><div class="c-bubble">✅ Reminder sent via WhatsApp!</div></div>
+          </div>
+        </div>
+        <div class="h-mini tl"><div class="mini-metric"><div class="mini-icon blue">💬</div><div><div class="mini-val">2,847</div><div class="mini-lbl">Chats Today</div></div></div></div>
+        <div class="h-mini br"><div class="mini-metric"><div class="mini-icon gold">⚡</div><div><div class="mini-val">340%</div><div class="mini-lbl">Faster Response</div></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
   <div class="container">
-    <img src="logo.png" alt="Company Logo" class="logo" />
-    <h1>🚧 Website Under Maintenance</h1>
-    <p>
-      Our website is currently undergoing scheduled maintenance.<br />
-      We’ll be back very soon — thank you for your patience Info@agileaisystems.com.
-    </p>
-    <div class="footer">Agile AI Systems © 2025</div>
-  </div>
-
-  <!-- Chat UI (n8n Test) -->
-  <div class="chat-wrap">
-    <div class="chat-title">Software Support Chat </div>
-    <div id="chatBox" class="chat-box"></div>
-
-    <div class="chat-controls">
-      <input id="chatInput" class="chat-input" placeholder="اكتب سؤالك..." />
-      <button id="chatSend" class="chat-btn">Send</button>
+    <div class="svc-head reveal">
+      <div class="section-label">Our Services</div>
+      <h2 class="section-title">Everything Your Business Needs</h2>
+      <p class="section-sub">Five AI-driven services engineered from the ground up for Gulf businesses — connected, intelligent, and ready to scale.</p>
     </div>
-
-    <div id="chatStatus" class="chat-status">Chat UI Loaded.</div>
-    <div class="hint">
-     
+    <div class="svc-grid">
+      <div class="svc-card reveal" style="transition-delay:.05s">
+        <div class="svc-num">01</div>
+        <div class="svc-icon blue-bg">🎨</div>
+        <h3 class="svc-title">Web Design & Development</h3>
+        <p class="svc-desc">Stunning, conversion-optimized websites built for Gulf businesses. Bilingual Arabic/English by default, mobile-first always.</p>
+        <div class="svc-tags"><span class="svc-tag">Arabic RTL</span><span class="svc-tag">Mobile-First</span><span class="svc-tag">SEO Ready</span><span class="svc-tag">E-Commerce</span></div>
+      </div>
+      <div class="svc-card reveal" style="transition-delay:.1s">
+        <div class="svc-num">02</div>
+        <div class="svc-icon cyan-bg">🤖</div>
+        <h3 class="svc-title">AI Chatbots</h3>
+        <p class="svc-desc">Context-aware chatbots that understand Gulf Arabic dialects and automate thousands of conversations daily across all channels.</p>
+        <div class="svc-tags"><span class="svc-tag">Gulf Arabic</span><span class="svc-tag">WhatsApp</span><span class="svc-tag">Instagram</span><span class="svc-tag">Web Widget</span></div>
+      </div>
+      <div class="svc-card reveal" style="transition-delay:.15s">
+        <div class="svc-num">03</div>
+        <div class="svc-icon blue-bg">🔗</div>
+        <h3 class="svc-title">Unified Chat Platform</h3>
+        <p class="svc-desc">One dashboard for ALL customer conversations — WhatsApp, Instagram, web chat, and email — with AI-assisted replies and live analytics.</p>
+        <div class="svc-tags"><span class="svc-tag">All Channels</span><span class="svc-tag">Team Routing</span><span class="svc-tag">AI Replies</span><span class="svc-tag">Analytics</span></div>
+      </div>
+      <div class="svc-card gold-top reveal" style="transition-delay:.2s">
+        <div class="svc-num">04</div>
+        <div class="svc-icon gold-bg">🧾</div>
+        <h3 class="svc-title">AI Accounting</h3>
+        <p class="svc-desc">Smart accounting automation for Gulf SMEs — VAT, Zakat, WPS payroll, and Arabic financial reporting fully automated.</p>
+        <div class="svc-tags"><span class="svc-tag">Kuwait VAT</span><span class="svc-tag">Zakat</span><span class="svc-tag">WPS Payroll</span><span class="svc-tag">Auto Journal</span></div>
+      </div>
+      <div class="svc-card gold-top wide reveal" style="transition-delay:.25s">
+        <div class="svc-num">05</div>
+        <div class="svc-icon gold-bg">⚡</div>
+        <h3 class="svc-title">Automated Customer Service</h3>
+        <p class="svc-desc">End-to-end customer service automation resolving 80% of inquiries instantly — 24/7, bilingual, with smart escalation to human agents.</p>
+        <div class="svc-tags"><span class="svc-tag">24/7 Coverage</span><span class="svc-tag">Smart FAQ</span><span class="svc-tag">Order Tracking</span><span class="svc-tag">Complaints</span><span class="svc-tag">Appointments</span><span class="svc-tag">Human Handoff</span></div>
+      </div>
     </div>
   </div>
+</section>
 
-  <script>
-  
-    const N8N_URL = "https://agileaisystems.app.n8n.cloud/webhook/agileai-bot";
+<!-- RPA -->
+<section id="rpa">
+  <div class="container">
+    <div class="rpa-inner">
+      <div class="reveal">
+        <div class="section-label">RPA &amp; Process Automation</div>
+        <h2 class="section-title">Automate Any Process.<br/>Execute Any Transaction.</h2>
+        <p class="section-sub">Our Robotic Process Automation engine handles complex multi-step workflows — from invoice processing to vendor payments — exactly like a human, only faster and error-free.</p>
+        <div class="rpa-features">
+          <div class="rpa-feat">
+            <div class="rpa-feat-icon">🔄</div>
+            <div><div class="rpa-feat-title">End-to-End Workflow Automation</div><div class="rpa-feat-desc">Automate entire business processes across systems from trigger to completion without human intervention.</div></div>
+          </div>
+          <div class="rpa-feat">
+            <div class="rpa-feat-icon">💸</div>
+            <div><div class="rpa-feat-title">Automated Transactions &amp; Payments</div><div class="rpa-feat-desc">Execute payments, journal entries, and financial transactions automatically based on defined business rules.</div></div>
+          </div>
+          <div class="rpa-feat">
+            <div class="rpa-feat-icon">🧩</div>
+            <div><div class="rpa-feat-title">System Integrations</div><div class="rpa-feat-desc">Connect ERP, CRM, accounting software, and banking systems into one automated ecosystem.</div></div>
+          </div>
+          <div class="rpa-feat">
+            <div class="rpa-feat-icon">⚠️</div>
+            <div><div class="rpa-feat-title">Smart Exception Handling</div><div class="rpa-feat-desc">When workflows hit edge cases the system flags them for human review — nothing falls through the cracks.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.15s">
+        <div class="rpa-visual">
+          <div class="rpa-vis-title">⚙️ Active Workflows <span>Running</span></div>
+          <div class="workflow">
+            <div class="wf-step"><div class="wf-icon" style="background:rgba(0,160,60,.1)">📄</div><div class="wf-info"><div class="wf-name">Invoice Received (PDF)</div><div class="wf-status">Trigger: Email attachment detected</div></div><span class="wf-badge done">Done</span></div>
+            <div class="wf-arrow">↓</div>
+            <div class="wf-step"><div class="wf-icon" style="background:rgba(0,160,60,.1)">🔍</div><div class="wf-info"><div class="wf-name">AI Data Extraction</div><div class="wf-status">Vendor, amount, due date parsed</div></div><span class="wf-badge done">Done</span></div>
+            <div class="wf-arrow">↓</div>
+            <div class="wf-step"><div class="wf-icon" style="background:rgba(22,72,216,.1)">✅</div><div class="wf-info"><div class="wf-name">3-Way PO Matching</div><div class="wf-status">Matching against PO &amp; receipt</div></div><span class="wf-badge run">Running</span></div>
+            <div class="wf-arrow">↓</div>
+            <div class="wf-step"><div class="wf-icon" style="background:rgba(240,165,0,.1)">💳</div><div class="wf-info"><div class="wf-name">Payment Execution</div><div class="wf-status">Auto-schedule via KNET/bank</div></div><span class="wf-badge wait">Queued</span></div>
+            <div class="wf-arrow">↓</div>
+            <div class="wf-step"><div class="wf-icon" style="background:rgba(147,51,234,.08)">📊</div><div class="wf-info"><div class="wf-name">Journal Entry Posted</div><div class="wf-status">Auto-post to accounting system</div></div><span class="wf-badge wait">Queued</span></div>
+          </div>
+          <div class="wf-stats">
+            <div class="wf-stat"><div class="wf-stat-val" style="color:var(--blue)">147</div><div class="wf-stat-lbl">Active Workflows</div></div>
+            <div class="wf-stat"><div class="wf-stat-val" style="color:#00943c">99.2%</div><div class="wf-stat-lbl">Success Rate</div></div>
+            <div class="wf-stat"><div class="wf-stat-val" style="color:var(--gold)">4.2s</div><div class="wf-stat-lbl">Avg Cycle Time</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    console.log("SCRIPT LOADED FROM GITHUB (CHAT UI)");
+<!-- DASHBOARD -->
+<section id="dashboard">
+  <div class="container">
+    <div class="dash-head reveal">
+      <div class="section-label">Live Dashboard</div>
+      <h2 class="section-title">Real-Time Command Center</h2>
+      <p class="section-sub">Monitor every conversation, metric, and workflow from a single dashboard — your AI operations always current, always clear.</p>
+    </div>
+    <div class="dashboard-mockup reveal" style="transition-delay:.1s">
+      <div class="db-topbar">
+        <div class="db-dot r"></div><div class="db-dot y"></div><div class="db-dot g"></div>
+        <span class="db-bar-title">Agile AI Systems — Operations Dashboard</span>
+        <div class="db-bar-right">
+          <div class="db-bar-btn active">Overview</div>
+          <div class="db-bar-btn">By Source</div>
+          <div class="db-bar-btn">By User</div>
+          <div class="db-bar-btn">Top Questions</div>
+        </div>
+      </div>
+      <div class="db-body">
+        <div class="db-sec-title">Dashboard</div>
+        <div class="db-sec-sub">Real-time overview of your support operations</div>
+        <div class="db-metrics-top">
+          <div class="db-metric">
+            <div class="db-metric-header"><div class="db-metric-icon blue">👥</div><div class="db-metric-lbl">Total Users</div></div>
+            <div class="db-metric-val">11</div>
+          </div>
+          <div class="db-metric">
+            <div class="db-metric-header"><div class="db-metric-icon green">💬</div><div class="db-metric-lbl">Conversations</div></div>
+            <div class="db-metric-val">27</div>
+          </div>
+          <div class="db-metric">
+            <div class="db-metric-header"><div class="db-metric-icon cyan">📱</div><div class="db-metric-lbl">WhatsApp Chats</div></div>
+            <div class="db-metric-val">7</div>
+            <div class="db-metric-note">via WhatsApp Business</div>
+          </div>
+          <div class="db-metric">
+            <div class="db-metric-header"><div class="db-metric-icon gold">⭐</div><div class="db-metric-lbl">Avg Rating</div></div>
+            <div class="db-metric-val">—</div>
+            <div class="db-metric-note">0 total ratings</div>
+          </div>
+          <div class="db-metric">
+            <div class="db-metric-header"><div class="db-metric-icon purple">⚡</div><div class="db-metric-lbl">Tokens Today</div></div>
+            <div class="db-metric-val">0</div>
+            <div class="db-metric-note">Claude API usage</div>
+          </div>
+        </div>
+        <div class="db-metrics-mid">
+          <div class="db-metric-mid">
+            <div class="db-metric-icon gold" style="width:36px;height:36px;font-size:15px">⚠️</div>
+            <div><div class="db-metric-mid-lbl">Open Tickets</div><div class="db-metric-mid-val">0</div></div>
+          </div>
+          <div class="db-metric-mid">
+            <div class="db-metric-icon blue" style="width:36px;height:36px;font-size:15px">🕐</div>
+            <div><div class="db-metric-mid-lbl">In Progress</div><div class="db-metric-mid-val">0</div></div>
+          </div>
+          <div class="db-metric-mid">
+            <div class="db-metric-icon green" style="width:36px;height:36px;font-size:15px">✅</div>
+            <div><div class="db-metric-mid-lbl">Resolved</div><div class="db-metric-mid-val">0</div></div>
+          </div>
+        </div>
+        <div class="db-tabs">
+          <div class="db-tab active">Overview</div>
+          <div class="db-tab">By Source</div>
+          <div class="db-tab">By User</div>
+          <div class="db-tab">Top Questions</div>
+        </div>
+        <div class="db-charts">
+          <div class="db-chart-card">
+            <div class="db-chart-title">Messages — Last 30 Days</div>
+            <svg viewBox="0 0 360 140" class="chart-area" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1648d8" stop-opacity=".14"/><stop offset="100%" stop-color="#1648d8" stop-opacity="0"/></linearGradient></defs>
+              <line x1="30" y1="20" x2="350" y2="20" stroke="#e2e8f0" stroke-width="1"/>
+              <line x1="30" y1="50" x2="350" y2="50" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4"/>
+              <line x1="30" y1="80" x2="350" y2="80" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4"/>
+              <line x1="30" y1="110" x2="350" y2="110" stroke="#e2e8f0" stroke-width="1"/>
+              <text x="22" y="23" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">28</text>
+              <text x="22" y="53" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">21</text>
+              <text x="22" y="83" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">14</text>
+              <text x="22" y="113" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">7</text>
+              <path d="M30,82 C60,82 90,78 120,76 C150,74 165,88 195,42 C225,12 255,32 285,58 C315,80 335,76 350,80 L350,118 L30,118 Z" fill="url(#ag)"/>
+              <path d="M30,82 C60,82 90,78 120,76 C150,74 165,88 195,42 C225,12 255,32 285,58 C315,80 335,76 350,80" fill="none" stroke="#1648d8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="195" cy="42" r="4" fill="#1648d8"/>
+              <text x="30" y="134" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif">Mar 29</text>
+              <text x="130" y="134" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif">Mar 30</text>
+              <text x="230" y="134" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif">Mar 31</text>
+              <text x="330" y="134" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif">Apr 1</text>
+            </svg>
+          </div>
+          <div class="db-chart-card">
+            <div class="db-chart-title">Rating Trend</div>
+            <svg viewBox="0 0 170 140" class="chart-area" xmlns="http://www.w3.org/2000/svg">
+              <line x1="28" y1="20" x2="165" y2="20" stroke="#e2e8f0" stroke-width="1"/>
+              <line x1="28" y1="50" x2="165" y2="50" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+              <line x1="28" y1="80" x2="165" y2="80" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+              <line x1="28" y1="110" x2="165" y2="110" stroke="#e2e8f0" stroke-width="1"/>
+              <text x="20" y="23" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">5</text>
+              <text x="20" y="53" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">3</text>
+              <text x="20" y="83" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">2</text>
+              <text x="20" y="113" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">0</text>
+              <rect x="38" y="97" width="22" height="13" rx="4" fill="#f0a500" opacity=".75"/>
+              <rect x="76" y="24" width="22" height="86" rx="4" fill="#f0a500"/>
+              <rect x="114" y="47" width="22" height="63" rx="4" fill="#f0a500" opacity=".88"/>
+              <text x="49" y="128" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif">Mar 29</text>
+              <text x="87" y="128" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif">Mar 31</text>
+              <text x="125" y="128" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif">Apr 1</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    const chatBox = document.getElementById("chatBox");
-    const chatInput = document.getElementById("chatInput");
-    const chatSend = document.getElementById("chatSend");
-    const chatStatus = document.getElementById("chatStatus");
+<!-- PLATFORM -->
+<section id="platform">
+  <div class="container">
+    <div class="plat-inner">
+      <div class="reveal">
+        <div class="section-label">Unified Platform</div>
+        <h2 class="section-title">One Inbox.<br/>Every Conversation.</h2>
+        <p class="section-sub">Stop juggling apps. Manage WhatsApp, Instagram, website chat, and email from one AI-powered workspace with full team collaboration.</p>
+        <div class="plat-features">
+          <div class="plat-feat"><div class="plat-feat-icon">💬</div><div><div class="plat-feat-title">All Channels, One View</div><div class="plat-feat-desc">Every channel unified — your team sees all messages in one place, never misses a conversation.</div></div></div>
+          <div class="plat-feat"><div class="plat-feat-icon">🤖</div><div><div class="plat-feat-title">AI-Assisted Replies</div><div class="plat-feat-desc">AI suggests context-aware responses in Arabic or English, cutting response time by 80%.</div></div></div>
+          <div class="plat-feat"><div class="plat-feat-icon">📊</div><div><div class="plat-feat-title">Live Analytics</div><div class="plat-feat-desc">Track response times, resolution rates, and satisfaction live — in your language.</div></div></div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.15s">
+        <div class="plat-mockup">
+          <div class="pm-bar">
+            <div class="pm-dot" style="background:#ff5f57"></div>
+            <div class="pm-dot" style="background:#ffbd2e"></div>
+            <div class="pm-dot" style="background:#28ca42"></div>
+            <span class="pm-title">Agile AI — Unified Inbox</span>
+          </div>
+          <div class="pm-body">
+            <div class="pm-sidebar">
+              <div class="pm-sidebar-lbl">Channels</div>
+              <div class="pm-ch active"><div class="pm-ch-dot" style="background:#25d366"></div><span class="pm-ch-name">WhatsApp</span><span class="pm-ch-badge">12</span></div>
+              <div class="pm-ch"><div class="pm-ch-dot" style="background:#e1306c"></div><span class="pm-ch-name">Instagram</span><span class="pm-ch-badge">5</span></div>
+              <div class="pm-ch"><div class="pm-ch-dot" style="background:var(--blue)"></div><span class="pm-ch-name">Web Chat</span><span class="pm-ch-badge">3</span></div>
+              <div class="pm-ch"><div class="pm-ch-dot" style="background:#4285f4"></div><span class="pm-ch-name">Email</span></div>
+              <div class="pm-sidebar-lbl" style="margin-top:6px">Team</div>
+              <div class="pm-ch"><div class="pm-ch-dot" style="background:#28ca42"></div><span class="pm-ch-name">Ahmed K.</span></div>
+              <div class="pm-ch"><div class="pm-ch-dot" style="background:#28ca42"></div><span class="pm-ch-name">Sara M.</span></div>
+            </div>
+            <div class="pm-chat">
+              <div class="pm-msg"><div class="pm-av u">C</div><div class="pm-bubble">كم سعر الاشتراك الشهري؟</div></div>
+              <div class="pm-msg r"><div class="pm-av ai">AI</div><div class="pm-bubble">الاشتراك يبدأ من 49 دينار. هل تريد تفاصيل؟</div></div>
+              <div class="pm-msg"><div class="pm-av u">C</div><div class="pm-bubble">Tell me about the Pro plan</div></div>
+              <div class="pm-msg r"><div class="pm-av ai">AI</div><div class="pm-bubble">Pro: unlimited chats + full analytics. Book a demo? 🚀</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    function addMsg(who, text) {
-      const row = document.createElement("div");
-      row.className = "chat-row";
-      row.innerHTML = `<b>${who}:</b> ${escapeHtml(text || "")}`;
-      chatBox.appendChild(row);
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }
+<!-- BIG DATA -->
+<section id="bigdata">
+  <div class="container">
+    <div class="bigdata-inner">
+      <div class="bigdata-text reveal">
+        <div class="section-label">Big Data &amp; Deep Analysis</div>
+        <h2 class="section-title">Turn Data Into<br/>Competitive Advantage.</h2>
+        <p class="section-sub">Our AI doesn't just automate — it learns. Every interaction, transaction, and workflow feeds a deep analytics engine that surfaces insights you'd never find manually.</p>
+        <div class="bigdata-list">
+          <div class="bigdata-list-item"><span>✦</span>Predictive demand forecasting for Gulf markets</div>
+          <div class="bigdata-list-item"><span>✦</span>Customer behavior pattern analysis in Arabic/English</div>
+          <div class="bigdata-list-item"><span>✦</span>Anomaly detection for financial transactions</div>
+          <div class="bigdata-list-item"><span>✦</span>Cross-channel sentiment tracking at scale</div>
+          <div class="bigdata-list-item"><span>✦</span>Real-time KPI dashboards with drill-down reports</div>
+        </div>
+      </div>
+      <div class="bigdata-cards reveal" style="transition-delay:.15s">
+        <div class="bd-card"><div class="bd-icon">🧠</div><div class="bd-title">Deep Learning Models</div><div class="bd-desc">Custom neural networks trained on your industry data for precision predictions.</div></div>
+        <div class="bd-card"><div class="bd-icon">📡</div><div class="bd-title">Real-Time Streams</div><div class="bd-desc">Process millions of events per second — decisions made in milliseconds.</div></div>
+        <div class="bd-card"><div class="bd-icon">🔮</div><div class="bd-title">Predictive Analytics</div><div class="bd-desc">Forecast sales, churn, and demand before they happen — act proactively.</div></div>
+        <div class="bd-card"><div class="bd-icon">📊</div><div class="bd-title">Executive Reports</div><div class="bd-desc">Boardroom-ready reports in Arabic &amp; English with one click, always current.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    function escapeHtml(s) {
-      return String(s)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
+<!-- GULF -->
+<section id="gulf">
+  <div class="container">
+    <div class="gulf-inner">
+      <div class="reveal">
+        <div class="section-label">Gulf-First Approach</div>
+        <h2 class="section-title">Built for Kuwait.<br/>Scaled for the Gulf.</h2>
+        <p class="section-sub">We don't localize generic tools — we build from scratch for Gulf business realities: local compliance, Arabic dialects, regional payments, and cultural nuance.</p>
+        <div style="margin-top:30px;display:flex;flex-direction:column;gap:11px">
+          <div style="display:flex;gap:10px;align-items:center"><span style="color:var(--gold);font-weight:700;font-size:16px">✦</span><span style="font-size:14px;color:var(--muted)">Kuwait, Saudi Arabia, UAE, Qatar, Bahrain &amp; Oman</span></div>
+          <div style="display:flex;gap:10px;align-items:center"><span style="color:var(--gold);font-weight:700;font-size:16px">✦</span><span style="font-size:14px;color:var(--muted)">Full bilingual Arabic/English — Gulf dialects supported</span></div>
+          <div style="display:flex;gap:10px;align-items:center"><span style="color:var(--gold);font-weight:700;font-size:16px">✦</span><span style="font-size:14px;color:var(--muted)">KNET, Benefit, STCPay &amp; regional payment integrations</span></div>
+          <div style="display:flex;gap:10px;align-items:center"><span style="color:var(--gold);font-weight:700;font-size:16px">✦</span><span style="font-size:14px;color:var(--muted)">VAT, Zakat, and WPS compliance fully embedded</span></div>
+        </div>
+      </div>
+      <div class="gulf-flags reveal" style="transition-delay:.15s">
+        <div class="gf-card"><div class="gf-flag">🇰🇼</div><div class="gf-name">Kuwait</div><div class="gf-desc">Our home base. Deep understanding of Kuwaiti market dynamics and business culture.</div></div>
+        <div class="gf-card"><div class="gf-flag">🇸🇦</div><div class="gf-name">Saudi Arabia</div><div class="gf-desc">Vision 2030 aligned. ZATCA-compliant e-invoicing ready.</div></div>
+        <div class="gf-card"><div class="gf-flag">🇦🇪</div><div class="gf-name">UAE</div><div class="gf-desc">UAE VAT compliant. Enterprise AI for Dubai, Abu Dhabi, and beyond.</div></div>
+        <div class="gf-card"><div class="gf-flag">🇶🇦</div><div class="gf-name">Qatar &amp; GCC</div><div class="gf-desc">Full GCC coverage. Scalable solutions that grow with your expansion.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    async function sendMsg() {
-      const text = (chatInput.value || "").trim();
-      if (!text) return;
+<!-- HOW -->
+<section id="how">
+  <div class="container">
+    <div class="how-head reveal">
+      <div class="section-label">Process</div>
+      <h2 class="section-title">Up and Running in Days</h2>
+      <p class="section-sub">A lean, proven onboarding process designed to get your AI systems live fast — no enterprise complexity, no long delays.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card reveal" style="transition-delay:.05s"><div class="how-num">01</div><h3 class="how-title">Discovery Call</h3><p class="how-desc">We map your business needs and identify where AI and RPA create the fastest, highest impact.</p></div>
+      <div class="how-card reveal" style="transition-delay:.1s"><div class="how-num">02</div><h3 class="how-title">Custom Build</h3><p class="how-desc">Our team designs and trains AI models on your data, brand voice, and Gulf market requirements.</p></div>
+      <div class="how-card reveal" style="transition-delay:.15s"><div class="how-num">03</div><h3 class="how-title">Integration</h3><p class="how-desc">We connect your website, WhatsApp, ERP, accounting, and all other systems seamlessly.</p></div>
+      <div class="how-card reveal" style="transition-delay:.2s"><div class="how-num">04</div><h3 class="how-title">Launch &amp; Grow</h3><p class="how-desc">Go live with full monitoring. We continuously improve your AI's performance over time.</p></div>
+    </div>
+  </div>
+</section>
 
-      addMsg("You", text);
-      chatInput.value = "";
-      chatInput.focus();
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-box reveal">
+      <h2 class="cta-title">Ready to Transform Your<br/><span>Business with AI?</span></h2>
+      <p class="cta-sub">Join Gulf businesses already using Agile AI Systems to automate workflows, engage customers, and make smarter decisions with data.</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn-white">Book a Free Demo →</a>
+        <a href="https://wa.me/96500000000" target="_blank" class="btn-gold">💬 Chat on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-      chatStatus.textContent = "Sending...";
-      chatSend.disabled = true;
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="reveal">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Let's Build Something<br/>Intelligent Together.</h2>
+        <p class="section-sub" style="margin-bottom:38px">Whether you're ready to start or just exploring — our team is here to show you what AI can do for your business.</p>
+        <div class="contact-item"><div class="ci-icon">📍</div><div><div class="ci-label">Location</div><div class="ci-val">Kuwait City, Kuwait · Serving the GCC</div></div></div>
+        <div class="contact-item"><div class="ci-icon">✉️</div><div><div class="ci-label">Email</div><div class="ci-val"><a href="mailto:info@agileaisystems.com">info@agileaisystems.com</a></div></div></div>
+        <div class="contact-item"><div class="ci-icon">💬</div><div><div class="ci-label">WhatsApp</div><div class="ci-val"><a href="https://wa.me/96500000000" target="_blank">+965 0000 0000</a></div></div></div>
+        <div class="contact-item"><div class="ci-icon">🌐</div><div><div class="ci-label">Website</div><div class="ci-val"><a href="https://www.agileaisystems.com">www.agileaisystems.com</a></div></div></div>
+      </div>
+      <div class="contact-form reveal" style="transition-delay:.15s">
+        <div class="cf-title">Send Us a Message ✉️</div>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Ahmed"/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Al-Rashidi"/></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="ahmed@company.com"/></div>
+        <div class="form-group"><label>WhatsApp Number</label><input type="tel" placeholder="+965 XXXX XXXX"/></div>
+        <div class="form-group"><label>Service Interested In</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>Web Design &amp; Development</option>
+            <option>AI Chatbots</option>
+            <option>Unified Chat Platform</option>
+            <option>AI Accounting</option>
+            <option>Automated Customer Service</option>
+            <option>RPA &amp; Workflow Automation</option>
+            <option>Big Data &amp; Analytics</option>
+            <option>Full AI Transformation Package</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Tell Us About Your Business</label><textarea placeholder="Brief description of your business and what you're looking to achieve..."></textarea></div>
+        <button class="form-submit" onclick="handleFormSubmit(this)"><span>Send Message</span><span>→</span></button>
+      </div>
+    </div>
+  </div>
+</section>
 
-      try {
-        const res = await fetch(N8N_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            chatInput: text,
-            sessionId: "site-" + Date.now()
-          })
-        });
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <a href="#" class="logo footer-logo"><div class="logo-icon">AA</div><div class="logo-text">Agile<span>AI</span> Systems</div></a>
+        <p class="footer-desc">Kuwait's leading AI systems company — transforming Gulf businesses with intelligent automation, chatbots, RPA, and deep analytics.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" title="LinkedIn">in</a>
+          <a href="#" class="social-btn" title="X">𝕏</a>
+          <a href="#" class="social-btn" title="Instagram">📸</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services">Web Design</a></li>
+          <li><a href="#services">AI Chatbots</a></li>
+          <li><a href="#dashboard">Unified Platform</a></li>
+          <li><a href="#services">AI Accounting</a></li>
+          <li><a href="#rpa">RPA Automation</a></li>
+          <li><a href="#bigdata">Big Data Analytics</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#gulf">About Us</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:info@agileaisystems.com">info@agileaisystems.com</a></li>
+          <li><a href="https://www.agileaisystems.com"></a></li>
+          <li><a href="#">Kuwait City, Kuwait</a></li>
+          <li><a href="#">Serving All GCC</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 <span>Agile AI Systems</span>. All rights reserved. · Kuwait 🇰🇼</div>
+      <div class="footer-tag">Powered by AI · Built for Gulf</div>
+    </div>
+  </div>
+</footer>
 
-        chatStatus.textContent = "HTTP " + res.status;
 
-        
-        const raw = await res.text();
-        let data = null;
-        try { data = JSON.parse(raw); } catch (_) {}
 
-        const reply =
-          (data && (data.reply || data.output)) ? (data.reply || data.output)
-          : (raw && raw.trim().length ? raw.trim()
-          : "Empty response from server");
-
-        addMsg("Bot", reply);
-
-      } catch (e) {
-        console.error("Bot fetch error:", e);
-        chatStatus.textContent = "Error: " + e.message;
-        addMsg("Bot", "Request failed. Check Console/Network.");
-      } finally {
-        chatSend.disabled = false;
-      }
-    }
-
-    chatSend.addEventListener("click", sendMsg);
-    chatInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") sendMsg();
-    });
-
-    // رسالة افتتاحية
-    addMsg("Bot", "أهلًا عميلنا العزيز بنرحب بيك فى شركة  ! اكتب سؤالك وسأحاول مساعدتك.");
-  </script>
-
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',scrollY>50)});
+function openMobileMenu(){document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden'}
+function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow=''}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id==='#')return;const t=document.querySelector(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
+function handleFormSubmit(btn){btn.innerHTML='<span>Sending...</span>';btn.disabled=true;btn.style.opacity='.7';setTimeout(()=>{btn.innerHTML='<span>✅ Message Sent! We\'ll contact you soon.</span>';btn.style.background='#16a34a';btn.style.boxShadow='0 6px 20px rgba(22,163,74,.3)';btn.style.opacity='1';btn.disabled=false},1800)}
+document.querySelectorAll('.db-tab').forEach(t=>{t.addEventListener('click',()=>{document.querySelectorAll('.db-tab').forEach(x=>x.classList.remove('active'));t.classList.add('active')})});
+document.querySelectorAll('.db-bar-btn').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.db-bar-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active')})});
+// Your existing chatbot embed goes below this line:
+</script>
 
 <script>
   window.SmartSupportConfig = {
@@ -237,3 +918,4 @@
 
 </body>
 </html>
+
