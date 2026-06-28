@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Started — Agile AI Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#059669;--accent-light:#10b981;--indigo:#4338ca;--indigo-light:#6366f1;
+  --text:#f8fafc;--text-muted:#94a3b8;--text-dim:#64748b;
+  --surface:#0b1220;--surface-elevated:#111827;--surface-card:rgba(30,41,59,0.5);
+  --border:rgba(148,163,184,0.1);--border-strong:rgba(148,163,184,0.2);
+  --gradient-hero:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#064e3b 100%);
+  --gradient-card:linear-gradient(145deg,rgba(30,41,59,0.6) 0%,rgba(15,23,42,0.8) 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--gradient-hero);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.5rem}
+.wrap{width:100%;max-width:460px}
+.brand{display:flex;align-items:center;gap:.7rem;font-weight:800;font-size:1.2rem;justify-content:center;margin-bottom:1.5rem}
+.logo-icon{width:34px;height:34px;background:linear-gradient(135deg,var(--accent),var(--indigo));border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.card{background:var(--gradient-card);border:1px solid var(--border-strong);border-radius:20px;padding:2rem;backdrop-filter:blur(20px)}
+.steps{display:flex;gap:6px;margin-bottom:1.5rem}
+.step-dot{flex:1;height:4px;border-radius:99px;background:var(--border-strong);transition:all .3s}
+.step-dot.active{background:linear-gradient(135deg,var(--accent),var(--indigo))}
+h1{font-size:1.5rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-0.5px}
+.sub{color:var(--text-muted);font-size:.9rem;margin-bottom:1.5rem}
+label{display:block;font-size:.8rem;font-weight:600;color:var(--text-muted);margin-bottom:.4rem}
+input,select{width:100%;padding:.8rem 1rem;font-size:.95rem;background:var(--surface);border:1px solid var(--border-strong);border-radius:10px;color:var(--text);outline:none;font-family:inherit;margin-bottom:1rem;transition:border .2s}
+input:focus,select:focus{border-color:var(--accent)}
+.btn{width:100%;padding:.95rem;font-size:.95rem;font-weight:700;border:none;border-radius:11px;cursor:pointer;font-family:inherit;background:linear-gradient(135deg,var(--accent),var(--indigo));color:#fff;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(5,150,105,0.3)}
+.btn:disabled{opacity:.6;cursor:wait;transform:none}
+.btn-ghost{background:transparent;border:1px solid var(--border-strong);color:var(--text-muted);margin-top:.6rem}
+.pkg{display:flex;justify-content:space-between;align-items:center;padding:1rem;background:var(--surface);border:1px solid var(--border-strong);border-radius:12px;margin-bottom:1rem;cursor:pointer;transition:border .2s}
+.pkg:hover,.pkg.sel{border-color:var(--accent)}
+.pkg-name{font-weight:700}.pkg-desc{font-size:.8rem;color:var(--text-dim)}
+.pkg-price{font-weight:800;color:var(--accent-light)}.pkg-price span{font-size:.75rem;color:var(--text-dim);font-weight:400}
+.otp-channels{display:flex;gap:.6rem;margin-bottom:1rem}
+.otp-ch{flex:1;padding:.7rem;text-align:center;border:1px solid var(--border-strong);border-radius:10px;cursor:pointer;font-size:.85rem;font-weight:600;color:var(--text-muted);transition:all .2s}
+.otp-ch.sel{border-color:var(--accent);color:var(--text);background:rgba(5,150,105,0.08)}
+.otp-input{text-align:center;font-size:1.6rem;letter-spacing:10px;font-weight:700}
+.msg{font-size:.82rem;padding:.7rem .9rem;border-radius:9px;margin-bottom:1rem;display:none}
+.msg.err{display:block;background:rgba(220,38,38,0.12);color:#fca5a5;border:1px solid rgba(220,38,38,0.25)}
+.msg.ok{display:block;background:rgba(5,150,105,0.12);color:#6ee7b7;border:1px solid rgba(5,150,105,0.25)}
+.back{display:inline-block;margin-top:1rem;color:var(--text-dim);font-size:.82rem;text-decoration:none}
+.back:hover{color:var(--text-muted)}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:s .6s linear infinite;vertical-align:middle;margin-right:6px}
+@keyframes s{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><div class="logo-icon">AA</div> AgileAI Systems</div>
+  <div class="card">
+    <div class="steps">
+      <div class="step-dot active" id="d1"></div>
+      <div class="step-dot" id="d2"></div>
+      <div class="step-dot" id="d3"></div>
+    </div>
+    <div class="msg" id="msg"></div>
+
+    <!-- STEP 1: package + details -->
+    <div id="step1">
+      <h1>Start your free setup</h1>
+      <p class="sub">Choose a plan and tell us about your business.</p>
+      <div id="pkgList"></div>
+      <label>Business name</label>
+      <input id="business" placeholder="e.g. Knergy Clinic" autocomplete="organization">
+      <label>Work email</label>
+      <input id="email" type="email" placeholder="you@company.com" autocomplete="email">
+      <label>Phone (for WhatsApp option)</label>
+      <input id="phone" placeholder="+965…" autocomplete="tel">
+      <button class="btn" id="toOtp">Continue →</button>
+    </div>
+
+    <!-- STEP 2: OTP -->
+    <div id="step2" style="display:none">
+      <h1>Verify it's you</h1>
+      <p class="sub">Where should we send your 6-digit code?</p>
+      <div class="otp-channels">
+        <div class="otp-ch sel" data-ch="email" id="chEmail">📧 Email</div>
+        <div class="otp-ch" data-ch="whatsapp" id="chWa">💬 WhatsApp</div>
+      </div>
+      <button class="btn" id="sendOtp">Send code</button>
+      <div id="otpEntry" style="display:none;margin-top:1.2rem">
+        <label>Enter the 6-digit code</label>
+        <input id="otp" class="otp-input" maxlength="6" inputmode="numeric" placeholder="••••••">
+        <button class="btn" id="verifyOtp">Verify & continue →</button>
+      </div>
+      <a class="back" id="back1">← Back</a>
+    </div>
+
+    <!-- STEP 3: payment -->
+    <div id="step3" style="display:none">
+      <h1>Almost there</h1>
+      <p class="sub">You'll be taken to secure checkout to start your <b id="planName"></b> plan.</p>
+      <button class="btn" id="toPay">Continue to payment →</button>
+      <a class="back" id="back2">← Back</a>
+    </div>
+  </div>
+  <a class="back" href="index.html" style="display:block;text-align:center">← Back to website</a>
+</div>
+
+<script>
+// Point this at your backend. Same-origin once the site is on Hetzner.
+// For now (site on GitHub Pages), set to the app domain:
+const API = (location.hostname.includes('agileaisystems.com') && location.protocol==='https:')
+  ? 'https://support-smartsolns.com/api/signup'
+  : '/api/signup';
+
+let state = { package:'business', otp_channel:'email', signup_id:null };
+const $ = id => document.getElementById(id);
+const showMsg = (t,k) => { const m=$('msg'); m.textContent=t; m.className='msg '+(k||'err'); };
+const clearMsg = () => { $('msg').className='msg'; };
+
+// load packages
+fetch(API+'/packages').then(r=>r.json()).then(d=>{
+  const params = new URLSearchParams(location.search);
+  const pre = params.get('plan');
+  if (pre) state.package = pre;
+  const list = $('pkgList');
+  (d.packages||[]).forEach(p=>{
+    const el = document.createElement('div');
+    el.className='pkg'+(p.key===state.package?' sel':'');
+    el.dataset.key=p.key;
+    el.innerHTML='<div><div class="pkg-name">'+p.name+'</div><div class="pkg-desc">'+(p.desc||'')+'</div></div>'+
+      '<div class="pkg-price">'+p.price_kwd+' <span>KWD/mo</span></div>';
+    el.onclick=()=>{ state.package=p.key; document.querySelectorAll('.pkg').forEach(x=>x.classList.remove('sel')); el.classList.add('sel'); };
+    list.appendChild(el);
+  });
+}).catch(()=>{ $('pkgList').innerHTML='<p class="sub">Could not load packages. Check back shortly.</p>'; });
+
+function goStep(n){
+  [1,2,3].forEach(i=>{ $('step'+i).style.display = i===n?'block':'none'; $('d'+i).classList.toggle('active', i<=n); });
+  clearMsg();
+}
+
+// channel toggle
+$('chEmail').onclick=()=>{ state.otp_channel='email'; $('chEmail').classList.add('sel'); $('chWa').classList.remove('sel'); };
+$('chWa').onclick=()=>{ state.otp_channel='whatsapp'; $('chWa').classList.add('sel'); $('chEmail').classList.remove('sel'); };
+
+// step 1 → 2
+$('toOtp').onclick=()=>{
+  const business=$('business').value.trim(), email=$('email').value.trim();
+  if(!business) return showMsg('Please enter your business name');
+  if(!email || !email.includes('@')) return showMsg('Please enter a valid email');
+  state.business=business; state.email=email; state.phone=$('phone').value.trim();
+  goStep(2);
+};
+$('back1').onclick=()=>goStep(1);
+$('back2').onclick=()=>goStep(2);
+
+// send OTP
+$('sendOtp').onclick=async()=>{
+  if(state.otp_channel==='whatsapp' && !state.phone) return showMsg('Enter your phone number for WhatsApp');
+  const btn=$('sendOtp'); btn.disabled=true; btn.innerHTML='<span class="spin"></span>Sending…';
+  try{
+    const r=await fetch(API+'/start',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({business_name:state.business,email:state.email,phone:state.phone,package:state.package,otp_channel:state.otp_channel})});
+    const d=await r.json();
+    if(d.error) throw new Error(d.error);
+    state.signup_id=d.signup_id;
+    $('otpEntry').style.display='block';
+    showMsg('Code sent via '+d.channel+'. '+(d.dev_hint?('(dev code: '+d.dev_hint+')'):''),'ok');
+  }catch(e){ showMsg(e.message); }
+  btn.disabled=false; btn.textContent='Resend code';
+};
+
+// verify OTP
+$('verifyOtp').onclick=async()=>{
+  const code=$('otp').value.trim();
+  if(code.length!==6) return showMsg('Enter the 6-digit code');
+  const btn=$('verifyOtp'); btn.disabled=true; btn.innerHTML='<span class="spin"></span>Verifying…';
+  try{
+    const r=await fetch(API+'/verify-otp',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({signup_id:state.signup_id,code})});
+    const d=await r.json();
+    if(d.error) throw new Error(d.error);
+    $('planName').textContent=state.package;
+    goStep(3);
+  }catch(e){ showMsg(e.message); }
+  btn.disabled=false; btn.textContent='Verify & continue →';
+};
+
+// to payment
+$('toPay').onclick=async()=>{
+  const btn=$('toPay'); btn.disabled=true; btn.innerHTML='<span class="spin"></span>Redirecting…';
+  try{
+    const r=await fetch(API+'/checkout',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({signup_id:state.signup_id})});
+    const d=await r.json();
+    if(d.error) throw new Error(d.error);
+    if(d.stub){ showMsg('Payment is in test/stub mode (Stripe keys not added yet). Flow verified ✓','ok'); btn.disabled=false; btn.textContent='Continue to payment →'; return; }
+    window.location.href=d.url;
+  }catch(e){ showMsg(e.message); btn.disabled=false; btn.textContent='Continue to payment →'; }
+};
+</script>
+</body>
+</html>
