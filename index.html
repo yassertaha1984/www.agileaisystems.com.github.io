@@ -1,660 +1,623 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agile AI Systems — Kuwait & Gulf AI Solutions</title>
-<meta name="description" content="AI chatbots, RPA automation, web design, AI accounting and unified customer service for Kuwait and Gulf businesses."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAL7ElEQVR4nO2aa2xUZ3rHf8+ZM54Zz9jj+xUDg20uNgQCFEJhk3iTkCVht7vZlKwSCaltGoLCRmoqVWrUL/1Q7YfyLWFVqSu00bZS6G5zUapV2iQlDrBJVlsvhDs24ADOgO/juZ6Zc87TD8eYq8HZECZV/ZesmTnnfZ/3ef7n/77v8z7HAij/j2EU24FiY5aAYjtQbMwSUGwHio1ZAortQLExS8AdsyQCiPcpcvPr30B8NQKuDkoVUO9TFfGZN173On2jyBD+4FT4SlcjEMEXiEBpJVIzHylYuKlBpG4hOnYeSY+iItjDZ1HXQQBEUC1+Fv7lFTD59ATFrGgmMG81JQvW4V/7NEa4Es2MI4sfBtdBnQKy6EFs8eEs2UTJwgfxNy9Dw/VTwUuR1fAlCRBQxSgpJbDwQXzRBuzBPlwxcKwMbmoYGhbjDPWiVhqpnENhLE7YTVNXZmJJKctbKnj0iS3UNzQTKAkUXQUzJ0A8yfsqmgks6kLavwXRJnwdGxHTj9v/W2h/AHVt9Ph7yMIHIFRBeOB3bLp/Nc+uLGO+fQY7M876WJSmxjqefuZpamtrEZGiKcGcUSsRRBWzaSm+unac879H7DzqOqiVwg2WwYJ1yMUTMD6ALHsMAuXk9/0CIx8nWvMAJ48dI5u4RH/vMF9cGmRocJCxsTEaGxsZGhrCMIyiqGEGi6DXxF9ej69jI5Q34Y6cwQUoKfWaJIdg+AxUx5CW5RQG+/Gf+YgfPHQfe/ftZ2hwkGi0gqd+9BTlZWXs3LmTJ554gr6+Po4cOUI4HCaZTH69kU6DW0+Bq2RvxNZgn+rGOd+D2nkkm4CLJ+DCIXAdWLYZqZ6LffQ9FqV6eO6px5nX2s5D3/42Pp+PH/94B+VlZRw8eBDTNOnv72fz5s00NDSwdetWmpubizIVbjsFDMBX3442LwcVNDMKTgEtrUSq5qGBMJIZh1PdaHYcHewlXl5OWWUNb731BidOnARgz549dHZ28v777wPQ09NDT08PW7ZsoaysjGAw+HXGOS2mnwLirfj+OSvAyUP9QrRyDiBoPoNYKRgfgNQQGqrAMEtwV/8I9r6Kc/E4ANu3bycYDPLKK69g2zYlJSXk83kMwxPepk2bqK6uxjRNXnvtNRzHuTtRX4Xpp4AqAsi8ldDUgZ4/CEfeRY++i5zqhpHPwQyiHY9C6wYKdZ24n/4rmpvAmJTyoUOHiEaj+P1+urq62L17N+3t7biui+u6hMNhVq1axe7du3nxxReJxWLA3c0NplHA5NwPRvC1rkfnrkbV9eY+oKgn/ZFziFPAOP0RbbH5nD/6Ccmcjdwky6uoqGDbtm188MEHHD58GMuyAGhvbycWi9Ha2sqFCxd45513MAwD13W/9uCvRHrD1Un5L30MHfkcbAvKG1Cf3/uezyC2BbkETtMyyu1x/ulv/4I33v1vfrlnD4YhRKNRtm/fzoEDB+ju7p4y/cILL1BZWcnOnTvJ5XIYhsGuXbs4cOAAr7/++pQ67hZuvghOyp9AGLlnMzpwBDJjYGdRM4QEy9CGxZBPQ/0iEl+c4pdvvMmZC5cAxXWVQqFAc3Mza9eu5aN9+zBEcF2XCwMDtLe3Ew6HsSwL13XZtWsXtm1j2/Zd3wVuooBJ+YerMSqa0fqFUBPzJB0II7kkrusgiThqJfEN9lIRDjB09uhk98njr7rU1dWRSqXJZDNTdkWEQEkJuVxuSmnTe3cdGTdre7nN1fduZ/eWBEx29tW14Yutw+3b5zUQAV8J5DNgGBiGj0KkifUNNtuf38bf/8NP6Dt1asqgXuXE5TCuHuhyO0GQyTvudfev7jPddjXTdtPhxikw2VsTcTRYBquf8uSfHkWDEchnoa4dRvqh83uMHX6V4dExAqYBVTHkW3+OnPwI58R7iAhGYye67HGvDIAgPj98+FM0VI4sexz27kLu24oOnYbTB8AwwbWRuna494felBDADGD0/DvOwGEQA9TF8Plhw7OIYaL7f4Zb8HwzOjai+/4ZdfK3peRGAibbSzAKffvR0kqobQMzAOEaJHkCTY/hnvkEXyLOyf4eXvrr/biui+/hv0LDNbD0UaT/U8hNoPd8FwwfnHgfNfxgpdH0CNQsgMYOb7C6djSXmhzfe6ZaWgU1Mej+qZdploTQ0XPXPve5q5A5y73wYmvh1IcQqkCbOmdcdJk2E1TTD23rkbO/hb5uNJ9F/KWQG0fSw5BLQsNiNBjFPfgGvpoYWtOKvP13aNcOpG0D7pFfe8FfOISe+cRzvXo+Ul6P2hYUct5ghRy4tvdkL/+5NuLYUNcGZgjO/Q9uNjH19AWg8zvQ8ytvR+rchJz6EJzCFbszwI2J0OXFYzwOo+egYyO65hmk8zvo/dsgtg7d+DcwbxVa24rMXYEBaNsGL9jGJV4xpG2DZ1yda5/Guq1I7D4oZK9cF/G2V3WvfALgesEUMl5gl9uiSPV8TyHBciitQqvmYVS0XGt3Bpj+LGD4IHERHepDok2oncew8+hIP3JgN8SPwbkeXNtCIjXQugEZ7EVb7oXUCBJrQ+YsBysNLSuR1CigUFqJOjb4zCunSTGQOfcgTh78IZi45N03A5CIg2NDeT1GPo07cdHLUJf/CZoeQcsbPBMTl2DF95BT3ag/xJXl8Q8hQAQtZKGsDqN6NRo/juTTaPyYp5DkECx8EP34595K3tiBxI+he1/FVa/m58tN4Iar4bN3YOWfQtsfe/lFcggm4pBLw4XPPEfjR72Fdd5q8AeR4bPelBnshSUbvQXUH0R//xYk4ohheor4zc/Rgc88lxs7vCnr2sj5g17mOgMCbpMKl2EseQQtq/OYzibQymak/3foyh/Cr17CHT1/rRExuLYKfOcggNzhNHmaKeA5r4UcMhFH4ycQ049mE0i0EeLHMIZO4xYsjKq5yOKH0dP70cFeFKW+tpba+nouxi9i+k1CoVIsyyKTSdPS0sLoyAihUIjR0TGqqipJplJEIhFOnz7N/Pkx8pZFIFCClc+TTqdRVymPRslbFn6/SSqVIlpRgeM4hEs924bhI5lKMjw0hIiB6sxImn4NEMF1CjiZBMaSh7wiZ3YcDUUh2oRGamDN0xgH38JZ8X0MswS95CVCtqOkkxOAYoiQzaQBKBQKJMYTuK5LLpejUMiTz+cp5PPkrTyokstmcF3vXYJlWYSCQbLZLIYIicQ4pmkiIli5HKrKhG3j8/lwHAudUsbM1XfrLOFyLbBlBRqpQcvqIZ9Ba+ZjnNyLu7AL+fRfoHIO4i/FHTiELH0MbV2P+5//CIkLM3akWLh1SUy9lNYd+RyjJIwk4jByFjnzCaqKnPkNuuL73ouQB55D1jyDZMZwsykwA0QiEZ79y+d48sknrwxoGFOlr6sPPtd/v/5QNN0h6auW0W5TFldQcDJjOOd6MCJVSOt6pKIZVm/xEqOmTvD5Yf/PMCa+wOk7wP2j/8FPXvozli5dSuuCGJFIBNM02bFjB88//7xnWRVVxe/3T/2eGnXy3jWeTLOo3qztl8EMyuIKIjhj55HjSYy5q3ABOfg2lIQx9r6KdjyMnOyGBfehjfeSvvg2qUyWsbFxXn755SkHBwYG6O3tRVUJBAKsWbOG0dFRjh49etMiyt3AzA9Pk6c7o6wW37w/gkAEDVfCeBwNRREUPfsp0nIvdnocTvzXVNdQKERXVxf79+8nmUyyYMECVq1axccff8zAwMBdLYBcj5m9GIHJfV1wk0PokV/ja1iEVMyBYBmkhrzMcVEXOnAY/+KHUCtJTbafJ3/wXQ4dOU59fT2hUIhHHnmEZDLJm2++SaFQ+PoimyG+/NthkckeilFagRGpQWrbwDC8054/iIydR5uXE8wMsrxaaW2I8m97XqeqqhIRYXh4GMuyiib7a8LhDrweFxGMcA3iD6DBcoxAGLVSqBnEyRcI5oexkyM4jl30gK/HVyDgsoVbl5+uH+DylvVNIeKrE3C1qVttx9+QgK/HHSTg/yZm/0us2A4UG7MEFNuBYmOWgGI7UGzMElBsB4qNWQKK7UCxMUtAsR0oNmYJKLYDxcYsAcV2oNiYJaDYDhQb/wuupyy6FysPlwAAAABJRU5ErkJggg=="/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#ffffff;
-  --bg-soft:#f4f7ff;
-  --bg-mid:#eef2fb;
-  --navy:#0a1f44;
-  --navy2:#0d2a5e;
-  --blue:#1648d8;
-  --blue2:#0f3ab3;
-  --cyan:#0096b7;
-  --cyan2:#007a96;
-  --gold:#f0a500;
-  --gold2:#c98800;
-  --text:#0d1b2a;
-  --text2:#334155;
-  --muted:#64748b;
-  --border:#e2e8f0;
-  --border2:#c7d7f0;
-  --font:'Plus Jakarta Sans',sans-serif;
-  --shadow:0 2px 16px rgba(10,31,68,.08);
-  --shadow-lg:0 8px 40px rgba(10,31,68,.12);
-  --shadow-xl:0 20px 60px rgba(10,31,68,.15);
-  --r:14px;
+:root {
+  --primary: #0f172a;
+  --primary-light: #1e293b;
+  --accent: #059669;
+  --accent-light: #10b981;
+  --accent-glow: rgba(5,150,105,0.15);
+  --indigo: #4338ca;
+  --indigo-light: #6366f1;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --surface: #0b1220;
+  --surface-elevated: #111827;
+  --surface-card: rgba(30,41,59,0.5);
+  --border: rgba(148,163,184,0.1);
+  --border-strong: rgba(148,163,184,0.2);
+  --gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #064e3b 100%);
+  --gradient-card: linear-gradient(145deg, rgba(30,41,59,0.6) 0%, rgba(15,23,42,0.8) 100%);
+  --shadow-glow: 0 0 40px rgba(5,150,105,0.1);
 }
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-::selection{background:rgba(22,72,216,.15)}
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:var(--bg-soft)}
-::-webkit-scrollbar-thumb{background:var(--blue);border-radius:3px}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
-nav.scrolled{box-shadow:0 4px 24px rgba(10,31,68,.1)}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
-.logo-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--blue),var(--cyan));border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:#fff;letter-spacing:-1px}
-.logo-text{font-weight:700;font-size:17px;color:var(--navy)}
-.logo-text span{color:var(--blue)}
-.nav-links{display:flex;align-items:center;gap:26px;list-style:none}
-.nav-links a{color:var(--text2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--blue)}
-.nav-cta{background:var(--blue)!important;color:#fff!important;padding:9px 20px!important;border-radius:8px!important;font-weight:600!important;box-shadow:0 4px 16px rgba(22,72,216,.25)!important;transition:background .2s,transform .2s!important}
-.nav-cta:hover{background:var(--blue2)!important;transform:translateY(-1px)!important}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px}
-
-/* MOBILE MENU */
-.mobile-menu{display:none;position:fixed;inset:0;background:#fff;z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:26px}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-size:22px;font-weight:700;color:var(--navy);text-decoration:none}
-.mobile-menu a:hover{color:var(--blue)}
-.mobile-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:var(--navy)}
-
-/* LAYOUT */
-section{position:relative}
-.container{max-width:1180px;margin:0 auto;padding:0 6vw}
-
-/* HELPERS */
-.section-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
-.section-label::before{content:'';width:18px;height:2px;background:var(--blue);border-radius:1px}
-.section-title{font-size:clamp(26px,3.2vw,42px);font-weight:800;line-height:1.18;letter-spacing:-.3px;color:var(--navy);margin-bottom:14px}
-.section-sub{font-size:15.5px;color:var(--muted);max-width:560px;line-height:1.75}
-
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:none}
-
-/* BUTTONS */
-.btn-primary{background:var(--blue);color:#fff;padding:13px 28px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;box-shadow:0 6px 24px rgba(22,72,216,.3);transition:all .2s;border:none;cursor:pointer;font-family:var(--font)}
-.btn-primary:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(22,72,216,.35)}
-.btn-secondary{background:transparent;color:var(--navy);padding:13px 28px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--border2);transition:all .2s}
-.btn-secondary:hover{border-color:var(--blue);color:var(--blue);background:rgba(22,72,216,.04)}
-.btn-gold{background:var(--gold);color:#fff;padding:13px 28px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;box-shadow:0 6px 20px rgba(240,165,0,.3);transition:all .2s;border:none;cursor:pointer;font-family:var(--font)}
-.btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
-.btn-white{background:#fff;color:var(--blue);padding:13px 28px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .2s}
-.btn-white:hover{box-shadow:0 6px 24px rgba(255,255,255,.2);transform:translateY(-2px)}
-
-/* HERO */
-#hero{min-height:100vh;padding-top:68px;overflow:hidden;display:flex;align-items:center}
-#hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 700px 500px at 80% 20%,rgba(22,72,216,.06) 0%,transparent 70%),radial-gradient(ellipse 500px 400px at 10% 80%,rgba(0,150,183,.06) 0%,transparent 70%);pointer-events:none}
-.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:80px 6vw;max-width:1180px;margin:0 auto;width:100%}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(22,72,216,.07);border:1px solid rgba(22,72,216,.18);border-radius:100px;padding:5px 16px;font-size:12px;font-weight:600;color:var(--blue);margin-bottom:20px;animation:fadeDown .6s ease both}
-.hero-badge-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
-.hero-title{font-size:clamp(34px,4vw,58px);font-weight:800;line-height:1.12;letter-spacing:-.5px;color:var(--navy);margin-bottom:18px;animation:fadeDown .6s .1s ease both}
-.hero-title .accent-blue{color:var(--blue)}
-.hero-title .accent-cyan{color:var(--cyan)}
-.hero-sub{font-size:16px;color:var(--muted);line-height:1.75;max-width:460px;margin-bottom:32px;animation:fadeDown .6s .2s ease both}
-.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;animation:fadeDown .6s .3s ease both}
-
-.hero-visual{position:relative;display:flex;justify-content:center;animation:fadeUp .8s .2s ease both}
-.hero-card-wrap{position:relative;width:100%;max-width:420px}
-.h-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow-xl)}
-.h-card-main{animation:floatCard 5.5s ease-in-out infinite}
-@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.hc-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.hc-title{font-weight:700;font-size:14px;color:var(--navy)}
-.hc-live{background:rgba(0,160,60,.1);color:#00943c;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;display:flex;align-items:center;gap:5px}
-.hc-live::before{content:'';width:5px;height:5px;background:#00943c;border-radius:50%;animation:pulse 1.5s infinite}
-.chat-msgs{display:flex;flex-direction:column;gap:9px}
-.c-msg{display:flex;align-items:flex-end;gap:7px}
-.c-msg.r{flex-direction:row-reverse}
-.c-av{width:26px;height:26px;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.c-av.ai{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff}
-.c-av.u{background:var(--bg-mid);color:var(--navy);border:1px solid var(--border)}
-.c-bubble{padding:8px 13px;border-radius:12px;font-size:12.5px;line-height:1.5;max-width:190px}
-.c-msg:not(.r) .c-bubble{background:var(--bg-soft);border:1px solid var(--border);border-bottom-left-radius:3px;color:var(--text)}
-.c-msg.r .c-bubble{background:var(--blue);color:#fff;border-bottom-right-radius:3px}
-.h-mini{position:absolute;width:175px;background:#fff;border:1px solid var(--border);border-radius:13px;padding:15px 17px;box-shadow:var(--shadow-lg)}
-.h-mini.tl{top:-22px;left:-28px;animation:floatCard2 5s 1s ease-in-out infinite}
-.h-mini.br{bottom:-18px;right:-22px;animation:floatCard2 5.5s .5s ease-in-out infinite}
-@keyframes floatCard2{0%,100%{transform:translateY(0) rotate(-.5deg)}50%{transform:translateY(-8px) rotate(.5deg)}}
-.mini-metric{display:flex;align-items:center;gap:10px}
-.mini-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
-.mini-icon.blue{background:rgba(22,72,216,.1)}
-.mini-icon.gold{background:rgba(240,165,0,.12)}
-.mini-val{font-weight:800;font-size:17px;color:var(--navy)}
-.mini-lbl{font-size:11px;color:var(--muted)}
-
-/* SERVICES */
-#services{padding:110px 0;background:var(--bg-soft);border-top:1px solid var(--border)}
-.svc-head{text-align:center;margin-bottom:60px}
-.svc-head .section-label{justify-content:center}
-.svc-head .section-sub{margin:0 auto}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.svc-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:30px 26px;transition:all .3s;position:relative;overflow:hidden}
-.svc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.svc-card:hover{box-shadow:var(--shadow-xl);transform:translateY(-4px);border-color:var(--border2)}
-.svc-card:hover::after{transform:scaleX(1)}
-.svc-card.gold-top::after{background:linear-gradient(90deg,var(--gold),#ffca28)}
-.svc-card.wide{grid-column:span 2}
-.svc-icon{width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:18px}
-.svc-icon.blue-bg{background:rgba(22,72,216,.08);border:1px solid rgba(22,72,216,.12)}
-.svc-icon.gold-bg{background:rgba(240,165,0,.1);border:1px solid rgba(240,165,0,.18)}
-.svc-icon.cyan-bg{background:rgba(0,150,183,.08);border:1px solid rgba(0,150,183,.15)}
-.svc-num{position:absolute;top:18px;right:22px;font-size:40px;font-weight:800;color:rgba(10,31,68,.04);line-height:1}
-.svc-title{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:9px}
-.svc-desc{font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:18px}
-.svc-tags{display:flex;flex-wrap:wrap;gap:6px}
-.svc-tag{border-radius:20px;padding:4px 11px;font-size:11.5px;font-weight:600}
-.svc-card:not(.gold-top) .svc-tag{color:var(--blue);background:rgba(22,72,216,.07)}
-.svc-card.gold-top .svc-tag{color:var(--gold2);background:rgba(240,165,0,.1)}
-
-/* RPA */
-#rpa{padding:110px 0;background:var(--bg);border-top:1px solid var(--border)}
-.rpa-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.rpa-features{display:flex;flex-direction:column;gap:14px;margin-top:32px}
-.rpa-feat{display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:12px;border:1px solid transparent;transition:all .25s;cursor:default}
-.rpa-feat:hover{background:var(--bg-soft);border-color:var(--border)}
-.rpa-feat-icon{width:42px;height:42px;border-radius:11px;background:rgba(22,72,216,.08);border:1px solid rgba(22,72,216,.14);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
-.rpa-feat-title{font-weight:700;font-size:15px;color:var(--navy);margin-bottom:3px}
-.rpa-feat-desc{font-size:13.5px;color:var(--muted);line-height:1.6}
-.rpa-visual{background:#fff;border:1px solid var(--border);border-radius:20px;padding:26px;box-shadow:var(--shadow-xl);animation:floatCard 6s ease-in-out infinite}
-.rpa-vis-title{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:18px;display:flex;align-items:center;gap:8px}
-.rpa-vis-title span{background:rgba(22,72,216,.08);color:var(--blue);font-size:11px;padding:2px 9px;border-radius:20px}
-.workflow{display:flex;flex-direction:column}
-.wf-step{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;transition:background .2s}
-.wf-step:hover{background:var(--bg-soft)}
-.wf-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
-.wf-info{flex:1}
-.wf-name{font-weight:600;font-size:13px;color:var(--navy)}
-.wf-status{font-size:11px;color:var(--muted)}
-.wf-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px}
-.wf-badge.done{background:rgba(0,160,60,.1);color:#00943c}
-.wf-badge.run{background:rgba(22,72,216,.1);color:var(--blue)}
-.wf-badge.wait{background:rgba(240,165,0,.1);color:var(--gold2)}
-.wf-arrow{text-align:center;color:var(--border2);font-size:13px;margin:1px 0 1px 22px}
-.wf-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
-.wf-stat{text-align:center}
-.wf-stat-val{font-weight:800;font-size:19px;color:var(--navy)}
-.wf-stat-lbl{font-size:11px;color:var(--muted)}
-
-/* DASHBOARD */
-#dashboard{padding:110px 0;background:var(--bg-soft);border-top:1px solid var(--border)}
-.dash-head{text-align:center;margin-bottom:52px}
-.dash-head .section-label{justify-content:center}
-.dash-head .section-sub{margin:0 auto}
-.dashboard-mockup{background:#fff;border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow-xl);overflow:hidden}
-.db-topbar{background:var(--bg-soft);border-bottom:1px solid var(--border);padding:11px 18px;display:flex;align-items:center;gap:8px}
-.db-dot{width:10px;height:10px;border-radius:50%}
-.db-dot.r{background:#ff5f57}
-.db-dot.y{background:#ffbd2e}
-.db-dot.g{background:#28ca42}
-.db-bar-title{margin-left:8px;font-size:13px;font-weight:600;color:var(--muted)}
-.db-bar-right{margin-left:auto;display:flex;gap:7px}
-.db-bar-btn{background:var(--bg-mid);border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-size:11px;font-weight:600;color:var(--muted);cursor:pointer;font-family:var(--font)}
-.db-bar-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
-.db-body{padding:22px}
-.db-sec-title{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:3px}
-.db-sec-sub{font-size:13px;color:var(--muted);margin-bottom:18px}
-.db-metrics-top{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
-.db-metric{background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:13px 15px}
-.db-metric-header{display:flex;align-items:center;gap:7px;margin-bottom:7px}
-.db-metric-icon{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
-.db-metric-icon.blue{background:rgba(22,72,216,.1)}
-.db-metric-icon.green{background:rgba(0,160,60,.1)}
-.db-metric-icon.cyan{background:rgba(0,150,183,.1)}
-.db-metric-icon.gold{background:rgba(240,165,0,.1)}
-.db-metric-icon.purple{background:rgba(147,51,234,.1)}
-.db-metric-lbl{font-size:9.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
-.db-metric-val{font-size:24px;font-weight:800;color:var(--navy);line-height:1}
-.db-metric-note{font-size:11px;color:var(--muted);margin-top:2px}
-.db-metrics-mid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
-.db-metric-mid{background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:13px 15px;display:flex;align-items:center;gap:12px}
-.db-metric-mid-lbl{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--muted)}
-.db-metric-mid-val{font-size:28px;font-weight:800;color:var(--navy);line-height:1.1}
-.db-tabs{display:flex;border-bottom:2px solid var(--border);margin-bottom:18px}
-.db-tab{padding:8px 16px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;font-family:var(--font)}
-.db-tab.active{color:var(--blue);border-bottom-color:var(--blue)}
-.db-charts{display:grid;grid-template-columns:1.6fr 1fr;gap:14px}
-.db-chart-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:16px}
-.db-chart-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px}
-.chart-area{width:100%}
-
-/* PLATFORM */
-#platform{padding:110px 0;background:var(--bg);border-top:1px solid var(--border)}
-.plat-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.plat-features{display:flex;flex-direction:column;gap:13px;margin-top:32px}
-.plat-feat{display:flex;gap:13px;align-items:flex-start;padding:15px;border-radius:12px;border:1px solid transparent;transition:all .25s}
-.plat-feat:hover{background:var(--bg-soft);border-color:var(--border)}
-.plat-feat-icon{width:40px;height:40px;border-radius:10px;background:rgba(22,72,216,.08);border:1px solid rgba(22,72,216,.14);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.plat-feat-title{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:3px}
-.plat-feat-desc{font-size:13px;color:var(--muted);line-height:1.6}
-.plat-mockup{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-xl)}
-.pm-bar{background:var(--bg-soft);padding:10px 14px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--border)}
-.pm-dot{width:9px;height:9px;border-radius:50%}
-.pm-title{margin-left:6px;font-size:12px;font-weight:600;color:var(--muted)}
-.pm-body{display:grid;grid-template-columns:195px 1fr;height:280px}
-.pm-sidebar{background:var(--bg-soft);border-right:1px solid var(--border);padding:9px;display:flex;flex-direction:column;gap:4px;overflow:hidden}
-.pm-sidebar-lbl{font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);padding:4px 8px;margin-top:5px}
-.pm-ch{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:7px;cursor:pointer;transition:background .2s}
-.pm-ch:hover,.pm-ch.active{background:rgba(22,72,216,.08)}
-.pm-ch.active{border-left:2px solid var(--blue)}
-.pm-ch-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.pm-ch-name{font-size:12px;color:var(--text2);flex:1}
-.pm-ch-badge{background:var(--blue);color:#fff;font-size:9px;font-weight:700;padding:1px 6px;border-radius:10px}
-.pm-chat{padding:13px;display:flex;flex-direction:column;gap:8px}
-.pm-msg{display:flex;align-items:flex-end;gap:7px;max-width:82%}
-.pm-msg.r{flex-direction:row-reverse;margin-left:auto}
-.pm-av{width:22px;height:22px;border-radius:50%;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.pm-av.ai{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff}
-.pm-av.u{background:var(--bg-mid);border:1px solid var(--border);color:var(--navy)}
-.pm-bubble{font-size:11px;padding:6px 11px;border-radius:9px;line-height:1.5}
-.pm-msg:not(.r) .pm-bubble{background:var(--bg-soft);border:1px solid var(--border);color:var(--text)}
-.pm-msg.r .pm-bubble{background:var(--blue);color:#fff}
-
-/* BIG DATA - dark strip */
-#bigdata{padding:110px 0;background:var(--navy);border-top:1px solid var(--border);overflow:hidden;position:relative}
-#bigdata::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 400px at 90% 50%,rgba(0,150,183,.12) 0%,transparent 60%),radial-gradient(ellipse 400px 300px at 5% 30%,rgba(22,72,216,.15) 0%,transparent 60%);pointer-events:none}
-.bigdata-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.bigdata-cards{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-.bd-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px 20px;transition:all .3s}
-.bd-card:hover{background:rgba(255,255,255,.1);border-color:rgba(0,150,183,.3)}
-.bd-card:nth-child(2){margin-top:22px}
-.bd-card:nth-child(4){margin-top:-22px}
-.bd-icon{font-size:24px;margin-bottom:11px}
-.bd-title{font-weight:700;font-size:15px;color:#fff;margin-bottom:6px}
-.bd-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65}
-.bigdata-text .section-title{color:#fff}
-.bigdata-text .section-label{color:var(--cyan)}
-.bigdata-text .section-label::before{background:var(--cyan)}
-.bigdata-text .section-sub{color:rgba(255,255,255,.55)}
-.bigdata-list{margin-top:30px;display:flex;flex-direction:column;gap:11px}
-.bigdata-list-item{display:flex;gap:11px;align-items:center;color:rgba(255,255,255,.65);font-size:14px}
-.bigdata-list-item span{color:var(--cyan);font-weight:700;font-size:16px}
-
-/* GULF */
-#gulf{padding:110px 0;background:var(--bg-soft);border-top:1px solid var(--border)}
-.gulf-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.gulf-flags{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-.gf-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px;transition:all .3s}
-.gf-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);border-color:var(--border2)}
-.gf-card:nth-child(2){margin-top:22px}
-.gf-card:nth-child(4){margin-top:-22px}
-.gf-flag{font-size:24px;margin-bottom:9px}
-.gf-name{font-weight:700;font-size:15px;color:var(--navy);margin-bottom:5px}
-.gf-desc{font-size:13px;color:var(--muted);line-height:1.6}
-
-/* HOW */
-#how{padding:110px 0;background:var(--bg);border-top:1px solid var(--border)}
-.how-head{text-align:center;margin-bottom:60px}
-.how-head .section-label{justify-content:center}
-.how-head .section-sub{margin:0 auto}
-.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.how-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:26px 20px;text-align:center;transition:all .3s}
-.how-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
-.how-num{width:48px;height:48px;border-radius:50%;background:rgba(22,72,216,.08);border:2px solid rgba(22,72,216,.16);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;color:var(--blue);margin:0 auto 17px;transition:all .3s}
-.how-card:hover .how-num{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 6px 20px rgba(22,72,216,.3)}
-.how-title{font-weight:700;font-size:15px;color:var(--navy);margin-bottom:9px}
-.how-desc{font-size:13.5px;color:var(--muted);line-height:1.65}
-
-/* CTA */
-#cta{padding:110px 0;background:var(--bg-soft);border-top:1px solid var(--border)}
-.cta-box{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);border-radius:24px;padding:68px 52px;text-align:center;position:relative;overflow:hidden;box-shadow:0 30px 80px rgba(10,31,68,.25)}
-.cta-box::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(0,150,183,.13) 0%,transparent 60%);pointer-events:none}
-.cta-title{font-size:clamp(26px,3.2vw,44px);font-weight:800;color:#fff;letter-spacing:-.3px;margin-bottom:13px}
-.cta-title span{color:var(--cyan)}
-.cta-sub{font-size:15.5px;color:rgba(255,255,255,.5);max-width:480px;margin:0 auto 34px;line-height:1.75}
-.cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-
-/* CONTACT */
-#contact{padding:110px 0;background:var(--bg);border-top:1px solid var(--border)}
-.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.contact-item{display:flex;gap:13px;align-items:flex-start;margin-bottom:20px}
-.ci-icon{width:42px;height:42px;border-radius:11px;background:rgba(22,72,216,.07);border:1px solid rgba(22,72,216,.14);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
-.ci-label{font-size:11.5px;color:var(--muted);margin-bottom:2px;font-weight:500}
-.ci-val{font-size:15px;font-weight:600;color:var(--navy)}
-.ci-val a{color:var(--blue);text-decoration:none}
-.ci-val a:hover{text-decoration:underline}
-.contact-form{background:#fff;border:1px solid var(--border);border-radius:18px;padding:32px;box-shadow:var(--shadow)}
-.cf-title{font-weight:800;font-size:18px;color:var(--navy);margin-bottom:22px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:13px}
-.form-group label{font-size:13px;font-weight:600;color:var(--text2)}
-.form-group input,.form-group select,.form-group textarea{background:var(--bg-soft);border:1.5px solid var(--border);border-radius:9px;padding:11px 13px;color:var(--text);font-family:var(--font);font-size:14px;outline:none;transition:border-color .2s,background .2s;width:100%}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);background:#fff}
-.form-group input::placeholder,.form-group textarea::placeholder{color:#b0bac9}
-.form-group select option{background:#fff}
-.form-group textarea{resize:vertical;min-height:100px}
-.form-submit{width:100%;background:var(--blue);color:#fff;padding:13px;border-radius:10px;font-weight:700;font-size:15px;border:none;cursor:pointer;font-family:var(--font);transition:all .2s;box-shadow:0 6px 20px rgba(22,72,216,.25);display:flex;align-items:center;justify-content:center;gap:8px}
-.form-submit:hover{background:var(--blue2);box-shadow:0 10px 28px rgba(22,72,216,.35);transform:translateY(-1px)}
-
-/* FOOTER */
-footer{background:var(--navy);padding:58px 0 26px;position:relative;z-index:1}
-.footer-inner{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:44px;margin-bottom:48px}
-.footer-logo .logo-text{color:#fff}
-.footer-logo .logo-text span{color:var(--cyan)}
-.footer-desc{font-size:13.5px;color:rgba(255,255,255,.42);line-height:1.7;margin-top:12px;max-width:255px}
-.footer-socials{display:flex;gap:9px;margin-top:20px}
-.social-btn{width:33px;height:33px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:13px;text-decoration:none;transition:all .2s}
-.social-btn:hover{background:rgba(22,72,216,.3);border-color:var(--blue)}
-.footer-col-title{font-weight:700;font-size:13px;color:#fff;margin-bottom:15px}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:9px}
-.footer-links a{font-size:13px;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:var(--cyan)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;align-items:center;justify-content:space-between}
-.footer-copy{font-size:13px;color:rgba(255,255,255,.32)}
-.footer-copy span{color:var(--cyan)}
-.footer-tag{font-size:12px;color:rgba(255,255,255,.2)}
-
-
-
-/* ANIMATIONS */
-@keyframes fadeDown{from{opacity:0;transform:translateY(-13px)}to{opacity:1;transform:none}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .svc-grid{grid-template-columns:repeat(2,1fr)}
-  .svc-card.wide{grid-column:span 2}
-  .how-grid{grid-template-columns:repeat(2,1fr)}
-  .footer-inner{grid-template-columns:1fr 1fr;gap:30px}
-  .db-metrics-top{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:768px){
-  .nav-links{display:none}
-  .hamburger{display:flex}
-  .hero-inner{grid-template-columns:1fr;gap:40px;text-align:center;padding:60px 6vw}
-  .hero-sub{max-width:100%}
+body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--text);line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 0;transition:all .3s ease}
+.nav.scrolled{background:rgba(11,18,32,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.75rem;font-weight:800;font-size:1.25rem;letter-spacing:-0.5px}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--accent),var(--indigo));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:linear-gradient(135deg,var(--accent),var(--indigo));color:#fff;padding:.6rem 1.5rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:.85rem;transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(5,150,105,0.3)}
+.mobile-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;background:var(--gradient-hero);overflow:hidden}
+.hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,var(--surface),transparent);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(148,163,184,0.08) 1px,transparent 0);background-size:40px 40px;pointer-events:none}
+.hero-orb{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(5,150,105,0.15) 0%,transparent 70%);top:10%;right:-10%;animation:float 8s ease-in-out infinite}
+.hero-orb-2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(67,56,202,0.12) 0%,transparent 70%);bottom:10%;left:-5%;animation:float 10s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+.hero-inner{max-width:1280px;margin:0 auto;padding:8rem 2rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(5,150,105,0.1);border:1px solid rgba(5,150,105,0.2);padding:.4rem 1rem;border-radius:100px;font-size:.8rem;color:var(--accent-light);margin-bottom:1.5rem;font-weight:500}
+.hero-badge span{width:6px;height:6px;background:var(--accent-light);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:3.8rem;font-weight:800;line-height:1.1;letter-spacing:-2px;margin-bottom:1.5rem}
+.hero h1 .gradient{background:linear-gradient(135deg,var(--text),var(--accent-light),var(--indigo-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:1.15rem;color:var(--text-muted);max-width:540px;margin-bottom:2rem;line-height:1.7}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--indigo));color:#fff;padding:1rem 2rem;border-radius:12px;text-decoration:none;font-weight:600;font-size:.95rem;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(5,150,105,0.25)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(5,150,105,0.35)}
+.btn-secondary{background:transparent;color:var(--text);padding:1rem 2rem;border-radius:12px;text-decoration:none;font-weight:600;font-size:.95rem;border:1px solid var(--border-strong);transition:all .3s}
+.btn-secondary:hover{border-color:var(--accent);background:rgba(5,150,105,0.05)}
+.chat-demo{background:var(--surface-elevated);border:1px solid var(--border);border-radius:20px;padding:1.5rem;box-shadow:0 25px 50px rgba(0,0,0,0.4);position:relative}
+.chat-demo::before{content:"";position:absolute;top:-1px;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,var(--accent-light),transparent)}
+.chat-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.chat-avatar{width:36px;height:36px;background:linear-gradient(135deg,var(--accent),var(--indigo));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.chat-header-text h4{font-size:.85rem;font-weight:600}
+.chat-header-text span{font-size:.75rem;color:var(--text-dim)}
+.chat-bubble{max-width:85%;padding:.85rem 1.1rem;border-radius:14px;margin-bottom:.75rem;font-size:.9rem;animation:slideIn .4s ease-out}
+.chat-bubble.ai{background:rgba(5,150,105,0.08);border:1px solid rgba(5,150,105,0.15);align-self:flex-start}
+.chat-bubble.user{background:var(--primary-light);border:1px solid var(--border);margin-left:auto;text-align:right}
+.chat-bubble .emoji{margin-right:.3rem}
+@keyframes slideIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.chat-input{display:flex;gap:.5rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
+.chat-input input{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.6rem 1rem;color:var(--text);font-size:.85rem;outline:none}
+.chat-input input::placeholder{color:var(--text-dim)}
+.chat-input button{background:var(--accent);border:none;color:#fff;padding:.6rem 1.2rem;border-radius:10px;cursor:pointer;font-weight:500;font-size:.85rem}
+.stats-bar{background:var(--surface-elevated);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 0}
+.stats-inner{max-width:1280px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.stat-number{font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,var(--text),var(--accent-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:.85rem;color:var(--text-dim);margin-top:.25rem;text-transform:uppercase;letter-spacing:1px}
+.section{padding:6rem 0}
+.section-inner{max-width:1280px;margin:0 auto;padding:0 2rem}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-tag{display:inline-block;background:rgba(5,150,105,0.1);border:1px solid rgba(5,150,105,0.2);padding:.35rem 1rem;border-radius:100px;font-size:.75rem;color:var(--accent-light);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+.section-title{font-size:2.5rem;font-weight:800;letter-spacing:-1px;margin-bottom:1rem}
+.section-subtitle{color:var(--text-muted);font-size:1.1rem;max-width:600px;margin:0 auto;line-height:1.7}
+.problem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+.problem-card{background:var(--gradient-card);border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;transition:all .3s}
+.problem-card:hover{border-color:var(--border-strong);transform:translateY(-5px);box-shadow:var(--shadow-glow)}
+.problem-icon{font-size:2.5rem;margin-bottom:1rem;opacity:.8}
+.problem-card h4{font-size:1rem;font-weight:600;margin-bottom:.5rem}
+.problem-card p{font-size:.85rem;color:var(--text-dim)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.service-card{background:var(--gradient-card);border:1px solid var(--border);border-radius:20px;padding:2.5rem;position:relative;overflow:hidden;transition:all .3s}
+.service-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--indigo));opacity:0;transition:opacity .3s}
+.service-card:hover::before{opacity:1}
+.service-card:hover{border-color:var(--border-strong);transform:translateY(-5px);box-shadow:var(--shadow-glow)}
+.service-num{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--accent-light);margin-bottom:1rem;font-weight:500}
+.service-icon{font-size:2.5rem;margin-bottom:1.5rem;display:block}
+.service-card h3{font-size:1.15rem;font-weight:700;margin-bottom:.75rem}
+.service-card p{color:var(--text-dim);font-size:.9rem;line-height:1.7;margin-bottom:1.5rem}
+.service-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.service-tag{font-size:.75rem;padding:.3rem .7rem;background:rgba(148,163,184,0.08);border:1px solid var(--border);border-radius:6px;color:var(--text-muted)}
+.rpa-section{background:linear-gradient(180deg,var(--surface) 0%,rgba(15,23,42,0.5) 50%,var(--surface) 100%)}
+.rpa-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.rpa-features{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.rpa-feature{display:flex;gap:1rem;align-items:flex-start}
+.rpa-feature-icon{width:44px;height:44px;background:rgba(5,150,105,0.1);border:1px solid rgba(5,150,105,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.rpa-feature h4{font-size:.95rem;font-weight:600;margin-bottom:.3rem}
+.rpa-feature p{font-size:.85rem;color:var(--text-dim)}
+.workflow-card{background:var(--surface-elevated);border:1px solid var(--border);border-radius:20px;padding:2rem}
+.workflow-step{display:flex;align-items:center;gap:1rem;padding:1rem;background:rgba(30,41,59,0.4);border-radius:12px;margin-bottom:.75rem;border:1px solid var(--border);transition:all .3s}
+.workflow-step:hover{border-color:rgba(5,150,105,0.3)}
+.workflow-step-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.workflow-step.done .workflow-step-icon{background:rgba(5,150,105,0.15);color:var(--accent-light)}
+.workflow-step.running .workflow-step-icon{background:rgba(99,102,241,0.15);color:var(--indigo-light);animation:pulse 2s infinite}
+.workflow-step.queued .workflow-step-icon{background:rgba(148,163,184,0.1);color:var(--text-dim)}
+.workflow-step-info h5{font-size:.85rem;font-weight:600}
+.workflow-step-info p{font-size:.75rem;color:var(--text-dim)}
+.workflow-step-status{margin-left:auto;font-size:.75rem;padding:.25rem .6rem;border-radius:6px;font-weight:500}
+.workflow-step.done .workflow-step-status{background:rgba(5,150,105,0.1);color:var(--accent-light)}
+.workflow-step.running .workflow-step-status{background:rgba(99,102,241,0.1);color:var(--indigo-light)}
+.workflow-step.queued .workflow-step-status{background:rgba(148,163,184,0.08);color:var(--text-dim)}
+.workflow-arrow{text-align:center;color:var(--text-dim);font-size:1.2rem;margin:-.25rem 0}
+.workflow-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.workflow-stat{text-align:center}
+.workflow-stat-num{font-size:1.5rem;font-weight:700;color:var(--accent-light)}
+.workflow-stat-label{font-size:.75rem;color:var(--text-dim);margin-top:.25rem}
+.platform-section{background:var(--surface-elevated)}
+.dashboard-showcase{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:2rem;box-shadow:0 25px 50px rgba(0,0,0,0.3)}
+.dashboard-tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.dashboard-tab{padding:.5rem 1rem;border-radius:8px;font-size:.85rem;font-weight:500;cursor:pointer;transition:all .2s;background:transparent;border:none;color:var(--text-muted)}
+.dashboard-tab.active{background:rgba(5,150,105,0.1);color:var(--accent-light)}
+.dashboard-tab:hover{color:var(--text)}
+.dashboard-grid{display:grid;grid-template-columns:2fr 1fr;gap:1.5rem}
+.dashboard-main{background:var(--surface-elevated);border:1px solid var(--border);border-radius:16px;padding:1.5rem}
+.dashboard-chart{height:200px;background:linear-gradient(180deg,rgba(5,150,105,0.05) 0%,transparent 100%);border-radius:12px;display:flex;align-items:flex-end;padding:1rem;gap:.5rem}
+.chart-bar{flex:1;background:linear-gradient(to top,var(--accent),var(--indigo));border-radius:4px 4px 0 0;opacity:.7;transition:opacity .3s}
+.chart-bar:hover{opacity:1}
+.dashboard-side{display:flex;flex-direction:column;gap:1rem}
+.dashboard-metric{background:var(--surface-elevated);border:1px solid var(--border);border-radius:16px;padding:1.5rem;text-align:center}
+.dashboard-metric-num{font-size:2rem;font-weight:800;color:var(--accent-light)}
+.dashboard-metric-label{font-size:.8rem;color:var(--text-dim);margin-top:.25rem}
+.inbox-demo{background:var(--surface-elevated);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:280px 1fr;min-height:500px}
+.inbox-sidebar{padding:1.5rem;border-right:1px solid var(--border)}
+.inbox-sidebar h4{font-size:.85rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+.inbox-channel{display:flex;align-items:center;gap:.75rem;padding:.75rem;border-radius:10px;margin-bottom:.25rem;cursor:pointer;transition:all .2s}
+.inbox-channel:hover{background:rgba(5,150,105,0.05)}
+.inbox-channel.active{background:rgba(5,150,105,0.1);border:1px solid rgba(5,150,105,0.2)}
+.inbox-channel-icon{font-size:1.2rem}
+.inbox-channel-info h5{font-size:.85rem;font-weight:500}
+.inbox-channel-info span{font-size:.75rem;color:var(--text-dim)}
+.inbox-main{padding:1.5rem;display:flex;flex-direction:column}
+.inbox-messages{flex:1;overflow-y:auto}
+.inbox-msg{display:flex;gap:1rem;margin-bottom:1.5rem;animation:slideIn .3s ease-out}
+.inbox-msg-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.inbox-msg.ai .inbox-msg-avatar{background:linear-gradient(135deg,var(--accent),var(--indigo))}
+.inbox-msg.customer .inbox-msg-avatar{background:var(--primary-light)}
+.inbox-msg-content{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1rem;max-width:80%}
+.inbox-msg.ai .inbox-msg-content{border-color:rgba(5,150,105,0.2)}
+.inbox-msg h5{font-size:.8rem;font-weight:600;margin-bottom:.3rem}
+.inbox-msg p{font-size:.85rem;color:var(--text-muted);line-height:1.6}
+.inbox-msg .msg-lang{font-size:.7rem;color:var(--text-dim);margin-top:.5rem;font-style:italic}
+.doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.doc-card{background:var(--gradient-card);border:1px solid var(--border);border-radius:20px;padding:2.5rem;transition:all .3s}
+.doc-card:hover{border-color:var(--border-strong);transform:translateY(-5px);box-shadow:var(--shadow-glow)}
+.doc-card-icon{width:56px;height:56px;background:rgba(5,150,105,0.1);border:1px solid rgba(5,150,105,0.2);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.5rem}
+.doc-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.75rem}
+.doc-card p{color:var(--text-dim);font-size:.9rem;line-height:1.7;margin-bottom:1.5rem}
+.doc-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.gulf-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;margin-top:3rem}
+.gulf-card{background:var(--gradient-card);border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;transition:all .3s}
+.gulf-card:hover{border-color:var(--accent);transform:translateY(-5px)}
+.gulf-flag{font-size:3rem;margin-bottom:1rem}
+.gulf-card h4{font-size:1rem;font-weight:600;margin-bottom:.5rem}
+.gulf-card p{font-size:.8rem;color:var(--text-dim)}
+.gulf-features{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
+.gulf-feature{display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text-muted)}
+.gulf-feature::before{content:"✦";color:var(--accent-light)}
+.data-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+.data-card{background:var(--gradient-card);border:1px solid var(--border);border-radius:20px;padding:2.5rem;text-align:center;transition:all .3s}
+.data-card:hover{border-color:var(--border-strong);transform:translateY(-5px);box-shadow:var(--shadow-glow)}
+.data-icon{font-size:2.5rem;margin-bottom:1.5rem;display:block}
+.data-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.75rem}
+.data-card p{color:var(--text-dim);font-size:.85rem;line-height:1.7}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;align-items:start}
+.pricing-card{background:var(--gradient-card);border:1px solid var(--border);border-radius:20px;padding:2rem;position:relative;transition:all .3s}
+.pricing-card:hover{border-color:var(--border-strong);transform:translateY(-5px)}
+.pricing-card.popular{border-color:var(--accent);box-shadow:0 0 30px rgba(5,150,105,0.1)}
+.pricing-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--accent),var(--indigo));color:#fff;padding:.35rem 1rem;border-radius:100px;font-size:.75rem;font-weight:600}
+.pricing-name{font-size:1.1rem;font-weight:700;margin-bottom:.25rem}
+.pricing-desc{font-size:.85rem;color:var(--text-dim);margin-bottom:1.5rem}
+.pricing-price{font-size:2.5rem;font-weight:800;margin-bottom:.25rem}
+.pricing-price span{font-size:.9rem;color:var(--text-dim);font-weight:400}
+.pricing-period{font-size:.85rem;color:var(--text-dim);margin-bottom:1.5rem}
+.pricing-features{list-style:none;margin-bottom:2rem}
+.pricing-features li{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem;font-size:.85rem;color:var(--text-muted)}
+.pricing-features li::before{content:"✓";color:var(--accent-light);font-weight:700}
+.pricing-btn{display:block;width:100%;padding:.85rem;border-radius:10px;text-align:center;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .3s;border:none;cursor:pointer}
+.pricing-btn.primary{background:linear-gradient(135deg,var(--accent),var(--indigo));color:#fff}
+.pricing-btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(5,150,105,0.3)}
+.pricing-btn.secondary{background:transparent;color:var(--text);border:1px solid var(--border-strong)}
+.pricing-btn.secondary:hover{border-color:var(--accent)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative}
+.process-grid::before{content:"";position:absolute;top:40px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--accent),var(--indigo));opacity:.3}
+.process-step{text-align:center;position:relative;z-index:2}
+.process-num{width:60px;height:60px;background:var(--surface-elevated);border:2px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:700;color:var(--accent-light);margin:0 auto 1.5rem;position:relative}
+.process-step h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+.process-step p{font-size:.85rem;color:var(--text-dim);line-height:1.7}
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border:1px solid var(--border);border-radius:16px;margin-bottom:1rem;overflow:hidden;transition:all .3s}
+.faq-item:hover{border-color:var(--border-strong)}
+.faq-question{padding:1.5rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;background:var(--gradient-card)}
+.faq-question h4{font-size:1rem;font-weight:600}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:rgba(5,150,105,0.1);display:flex;align-items:center;justify-content:center;color:var(--accent-light);font-size:1.2rem;transition:transform .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
+.faq-item.open .faq-answer{max-height:300px;padding:0 1.5rem 1.5rem}
+.faq-answer p{color:var(--text-dim);font-size:.9rem;line-height:1.7}
+.cta-section{background:linear-gradient(135deg,var(--primary-light),#1e1b4b);position:relative;overflow:hidden}
+.cta-section::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(5,150,105,0.1) 0%,transparent 70%)}
+.cta-inner{max-width:800px;margin:0 auto;padding:6rem 2rem;text-align:center;position:relative;z-index:2}
+.cta-inner h2{font-size:2.8rem;font-weight:800;margin-bottom:1rem;letter-spacing:-1px}
+.cta-inner p{font-size:1.1rem;color:var(--text-muted);margin-bottom:2rem}
+.cta-badges{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+.cta-badge{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--text-dim)}
+.cta-badge::before{content:"✓";color:var(--accent-light);font-weight:700}
+.footer{border-top:1px solid var(--border);padding:4rem 0 2rem;background:var(--surface)}
+.footer-inner{max-width:1280px;margin:0 auto;padding:0 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand .logo{margin-bottom:1rem}
+.footer-brand p{color:var(--text-dim);font-size:.9rem;line-height:1.7;max-width:300px}
+.footer-col h4{font-size:.85rem;color:var(--text);text-transform:uppercase;letter-spacing:1px;margin-bottom:1.5rem}
+.footer-col a{display:block;color:var(--text-dim);text-decoration:none;font-size:.9rem;margin-bottom:.75rem;transition:color .2s}
+.footer-col a:hover{color:var(--accent-light)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid var(--border);font-size:.85rem;color:var(--text-dim)}
+.reveal{opacity:0;transform:translateY(30px);transition:all .6s ease-out}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media (max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero p{margin:0 auto 2rem}
   .hero-buttons{justify-content:center}
-  .hero-visual{order:-1}
-  .h-card-main{max-width:330px;margin:0 auto}
-  .h-mini{display:none}
-  .rpa-inner,.plat-inner,.gulf-inner,.bigdata-inner,.contact-inner{grid-template-columns:1fr;gap:40px}
-  .svc-grid{grid-template-columns:1fr}
-  .svc-card.wide{grid-column:span 1}
-  .how-grid{grid-template-columns:1fr 1fr}
-  .footer-inner{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;gap:6px;text-align:center}
-  .cta-box{padding:42px 22px}
-  .form-row{grid-template-columns:1fr}
-  .db-metrics-top{grid-template-columns:repeat(2,1fr)}
-  .db-metrics-mid,.db-charts{grid-template-columns:1fr}
-  .pm-body{grid-template-columns:1fr;height:auto}
-  .pm-sidebar{display:none}
-  .gulf-flags,.bigdata-cards{max-width:400px;margin:0 auto}
+  .chat-demo{max-width:500px;margin:0 auto}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .doc-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:repeat(2,1fr)}
+  .gulf-grid{grid-template-columns:repeat(3,1fr)}
+  .data-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid::before{display:none}
+  .rpa-grid{grid-template-columns:1fr}
+  .dashboard-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:768px){
+  .nav-links{display:none}
+  .mobile-toggle{display:block}
+  .hero h1{font-size:2.5rem}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .problem-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:1fr}
+  .doc-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .gulf-grid{grid-template-columns:repeat(2,1fr)}
+  .data-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+  .rpa-features{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
+  .inbox-demo{grid-template-columns:1fr}
+  .inbox-sidebar{display:none}
 }
 </style>
 <base target="_blank">
 </head>
-<body>
-
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
-  <a href="#services" onclick="closeMobileMenu()">Services</a>
-  <a href="#rpa" onclick="closeMobileMenu()">Automation & RPA</a>
-  <a href="#archiving" onclick="closeMobileMenu()">Doc Archiving</a>
-  <a href="#dashboard" onclick="closeMobileMenu()">Dashboard</a>
-  <a href="#bigdata" onclick="closeMobileMenu()">Big Data</a>
-  <a href="#gulf" onclick="closeMobileMenu()">Gulf Region</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
-</div>
-
-<nav id="mainNav">
-  <a href="#" class="logo">
-    <div class="logo-icon"><img src="logo.png" alt="Agile AI Systems" style="width:38px;height:38px;border-radius:10px;object-fit:cover;display:block;"></div>
-    <div class="logo-text">Agile<span>AI</span> Systems</div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#rpa">Automation & RPA</a></li>
-    <li><a href="#archiving">Doc Archiving</a></li>
-    <li><a href="#dashboard">Platform</a></li>
-    <li><a href="#bigdata">Big Data</a></li>
-    <li><a href="#gulf">Gulf Region</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#contact" class="nav-cta">Get Started →</a></li>
-  </ul>
-  <div class="hamburger" onclick="openMobileMenu()"><span></span><span></span><span></span></div>
+<body><nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="logo">
+      <div class="logo-icon"><img src="logo.png" alt="Agile AI Systems" style="width:36px;height:36px;border-radius:10px;object-fit:cover;display:block;"></div>
+      AgileAI Systems
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#rpa">Automation</a>
+      <a href="#platform">Platform</a>
+      <a href="#docs">Documents</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact" class="nav-cta">Get Started →</a>
+    </div>
+    <button class="mobile-toggle">☰</button>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-orb-2"></div>
   <div class="hero-inner">
-    <div>
-      <div class="hero-badge"><div class="hero-badge-dot"></div>Powering Gulf Businesses with AI</div>
-      <h1 class="hero-title">Build Smarter.<br/><span class="accent-blue">Automate Faster.</span><br/><span class="accent-cyan">Grow Bigger.</span></h1>
-      <p class="hero-sub">Agile AI Systems delivers intelligent automation, AI chatbots, RPA workflows, and unified customer engagement platforms built specifically for Kuwait and Gulf businesses.</p>
+    <div class="hero-content">
+      <div class="hero-badge"><span></span>Powering Gulf Businesses with AI</div>
+      <h1>Build Smarter.<br><span class="gradient">Automate Faster.</span><br>Grow Bigger.</h1>
+      <p>Agile AI Systems delivers intelligent automation, AI chatbots, RPA workflows, and unified customer engagement platforms built specifically for Kuwait and Gulf businesses.</p>
       <div class="hero-buttons">
-        <a href="#contact" class="btn-primary">Start Your AI Journey →</a>
+        <a href="#contact" class="btn-primary">Start Free Trial</a>
         <a href="#services" class="btn-secondary">Explore Services</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-card-wrap">
-        <div class="h-card h-card-main">
-          <div class="hc-header">
-            <span class="hc-title">🤖 AI Assistant — Live</span>
-            <span class="hc-live">ACTIVE</span>
-          </div>
-          <div class="chat-msgs">
-            <div class="c-msg"><div class="c-av ai">AI</div><div class="c-bubble">مرحباً! كيف أقدر أساعدك اليوم؟ 👋</div></div>
-            <div class="c-msg r"><div class="c-av u">U</div><div class="c-bubble">I need to check my invoice status</div></div>
-            <div class="c-msg"><div class="c-av ai">AI</div><div class="c-bubble">Invoice #INV-089 is pending approval. Shall I send a payment reminder?</div></div>
-            <div class="c-msg r"><div class="c-av u">U</div><div class="c-bubble">Yes please!</div></div>
-            <div class="c-msg"><div class="c-av ai">AI</div><div class="c-bubble">✅ Reminder sent! Anything else I can help with?</div></div>
-          </div>
+    <div class="chat-demo">
+      <div class="chat-header">
+        <div class="chat-avatar">🤖</div>
+        <div class="chat-header-text">
+          <h4>Agile AI Assistant</h4>
+          <span>Online — Arabic & English</span>
         </div>
-        <div class="h-mini tl"><div class="mini-metric"><div class="mini-icon blue">💬</div><div><div class="mini-val">2,847</div><div class="mini-lbl">Chats Today</div></div></div></div>
-        <div class="h-mini br"><div class="mini-metric"><div class="mini-icon gold">⚡</div><div><div class="mini-val">340%</div><div class="mini-lbl">Faster Response</div></div></div></div>
+      </div>
+      <div class="chat-bubble ai"><span class="emoji">👋</span> مرحباً! كيف أقدر أساعدك اليوم؟</div>
+      <div class="chat-bubble user">I need to check my invoice status</div>
+      <div class="chat-bubble ai">Invoice <strong>#INV-089</strong> is pending approval. Shall I send a payment reminder?</div>
+      <div class="chat-bubble user">Yes please!</div>
+      <div class="chat-bubble ai"><span class="emoji">✅</span> Reminder sent! Anything else I can help with?</div>
+      <div class="chat-input">
+        <input type="text" placeholder="Type your message..." readonly>
+        <button>Send</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <div class="svc-head reveal">
-      <div class="section-label">Our Services</div>
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-number">2,847</div>
+      <div class="stat-label">Chats Today</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">340%</div>
+      <div class="stat-label">Faster Response</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">99.2%</div>
+      <div class="stat-label">Uptime SLA</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Gulf Countries</div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">The Challenge</div>
+      <h2 class="section-title">Gulf Businesses Face Unique AI Gaps</h2>
+      <p class="section-subtitle">Generic AI tools don't understand Gulf Arabic dialects, local compliance, or regional business culture. We built from scratch for the Gulf.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="problem-icon">🌐</div>
+        <h4>Language Barrier</h4>
+        <p>Global AI fails at Gulf Arabic dialects, losing customers who prefer native communication.</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-icon">⚖️</div>
+        <h4>Compliance Complexity</h4>
+        <p>VAT, Zakat, WPS, and local regulations require Gulf-specific automation logic.</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-icon">🔗</div>
+        <h4>Fragmented Systems</h4>
+        <p>ERP, CRM, accounting, and messaging apps don't talk to each other without custom integration.</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-icon">⏰</div>
+        <h4>Slow Response Times</h4>
+        <p>Customers expect instant answers 24/7, but most Gulf SMEs can't afford round-the-clock teams.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services" style="background:var(--surface-elevated)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Our Services</div>
       <h2 class="section-title">Everything Your Business Needs</h2>
-      <p class="section-sub">Five AI-driven services engineered from the ground up for Gulf businesses — connected, intelligent, and ready to scale.</p>
+      <p class="section-subtitle">Five AI-driven services engineered from the ground up for Gulf businesses — connected, intelligent, and ready to scale.</p>
     </div>
-    <div class="svc-grid">
-      <div class="svc-card reveal" style="transition-delay:.05s">
-        <div class="svc-num">01</div>
-        <div class="svc-icon blue-bg">🎨</div>
-        <h3 class="svc-title">Web Design & Development</h3>
-        <p class="svc-desc">Stunning, conversion-optimized websites built for Gulf businesses. Bilingual Arabic/English by default, mobile-first always.</p>
-        <div class="svc-tags"><span class="svc-tag">Arabic RTL</span><span class="svc-tag">Mobile-First</span><span class="svc-tag">SEO Ready</span><span class="svc-tag">E-Commerce</span></div>
-      </div>
-      <div class="svc-card reveal" style="transition-delay:.1s">
-        <div class="svc-num">02</div>
-        <div class="svc-icon cyan-bg">🤖</div>
-        <h3 class="svc-title">AI Chatbots</h3>
-        <p class="svc-desc">Context-aware chatbots that understand Gulf Arabic dialects and automate thousands of conversations daily across all channels.</p>
-        <div class="svc-tags"><span class="svc-tag">Gulf Arabic</span><span class="svc-tag">WhatsApp</span><span class="svc-tag">Instagram</span><span class="svc-tag">Web Widget</span></div>
-      </div>
-      <div class="svc-card reveal" style="transition-delay:.15s">
-        <div class="svc-num">03</div>
-        <div class="svc-icon blue-bg">🔗</div>
-        <h3 class="svc-title">Unified Chat Platform</h3>
-        <p class="svc-desc">One dashboard for ALL customer conversations — WhatsApp, Instagram, web chat, and email — with AI-assisted replies and live analytics.</p>
-        <div class="svc-tags"><span class="svc-tag">All Channels</span><span class="svc-tag">Team Routing</span><span class="svc-tag">AI Replies</span><span class="svc-tag">Analytics</span></div>
-      </div>
-      <div class="svc-card gold-top reveal" style="transition-delay:.2s">
-        <div class="svc-num">04</div>
-        <div class="svc-icon gold-bg">🧾</div>
-        <h3 class="svc-title">AI Accounting</h3>
-        <p class="svc-desc">Smart accounting automation for Gulf SMEs — VAT, Zakat, WPS payroll, and Arabic financial reporting fully automated.</p>
-        <div class="svc-tags"><span class="svc-tag">Kuwait VAT</span><span class="svc-tag">Zakat</span><span class="svc-tag">WPS Payroll</span><span class="svc-tag">Auto Journal</span></div>
-      </div>
-      <div class="svc-card gold-top wide reveal" style="transition-delay:.25s">
-        <div class="svc-num">05</div>
-        <div class="svc-icon gold-bg">⚡</div>
-        <h3 class="svc-title">Automated Customer Service</h3>
-        <p class="svc-desc">End-to-end customer service automation resolving 80% of inquiries instantly — 24/7, bilingual, with smart escalation to human agents.</p>
-        <div class="svc-tags"><span class="svc-tag">24/7 Coverage</span><span class="svc-tag">Smart FAQ</span><span class="svc-tag">Order Tracking</span><span class="svc-tag">Complaints</span><span class="svc-tag">Appointments</span><span class="svc-tag">Human Handoff</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RPA -->
-<section id="rpa">
-  <div class="container">
-    <div class="rpa-inner">
-      <div class="reveal">
-        <div class="section-label">RPA &amp; Process Automation</div>
-        <h2 class="section-title">Automate Any Process.<br/>Execute Any Transaction.</h2>
-        <p class="section-sub">Our Robotic Process Automation engine handles complex multi-step workflows — from invoice processing to vendor payments — exactly like a human, only faster and error-free.</p>
-        <div class="rpa-features">
-          <div class="rpa-feat">
-            <div class="rpa-feat-icon">🔄</div>
-            <div><div class="rpa-feat-title">End-to-End Workflow Automation</div><div class="rpa-feat-desc">Automate entire business processes across systems from trigger to completion without human intervention.</div></div>
-          </div>
-          <div class="rpa-feat">
-            <div class="rpa-feat-icon">💸</div>
-            <div><div class="rpa-feat-title">Automated Transactions &amp; Payments</div><div class="rpa-feat-desc">Execute payments, journal entries, and financial transactions automatically based on defined business rules.</div></div>
-          </div>
-          <div class="rpa-feat">
-            <div class="rpa-feat-icon">🧩</div>
-            <div><div class="rpa-feat-title">System Integrations</div><div class="rpa-feat-desc">Connect ERP, CRM, accounting software, and banking systems into one automated ecosystem.</div></div>
-          </div>
-          <div class="rpa-feat">
-            <div class="rpa-feat-icon">⚠️</div>
-            <div><div class="rpa-feat-title">Smart Exception Handling</div><div class="rpa-feat-desc">When workflows hit edge cases the system flags them for human review — nothing falls through the cracks.</div></div>
-          </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <span class="service-icon">🎨</span>
+        <h3>Web Design & Development</h3>
+        <p>Stunning, conversion-optimized websites built for Gulf businesses. Bilingual Arabic/English by default, mobile-first always.</p>
+        <div class="service-tags">
+          <span class="service-tag">Arabic RTL</span>
+          <span class="service-tag">Mobile-First</span>
+          <span class="service-tag">SEO Ready</span>
+          <span class="service-tag">E-Commerce</span>
         </div>
       </div>
-      <div class="reveal" style="transition-delay:.15s">
-        <div class="rpa-visual">
-          <div class="rpa-vis-title">⚙️ Active Workflows <span>Running</span></div>
-          <div class="workflow">
-            <div class="wf-step"><div class="wf-icon" style="background:rgba(0,160,60,.1)">📄</div><div class="wf-info"><div class="wf-name">Invoice Received (PDF)</div><div class="wf-status">Trigger: Email attachment detected</div></div><span class="wf-badge done">Done</span></div>
-            <div class="wf-arrow">↓</div>
-            <div class="wf-step"><div class="wf-icon" style="background:rgba(0,160,60,.1)">🔍</div><div class="wf-info"><div class="wf-name">AI Data Extraction</div><div class="wf-status">Vendor, amount, due date parsed</div></div><span class="wf-badge done">Done</span></div>
-            <div class="wf-arrow">↓</div>
-            <div class="wf-step"><div class="wf-icon" style="background:rgba(22,72,216,.1)">✅</div><div class="wf-info"><div class="wf-name">3-Way PO Matching</div><div class="wf-status">Matching against PO &amp; receipt</div></div><span class="wf-badge run">Running</span></div>
-            <div class="wf-arrow">↓</div>
-            <div class="wf-step"><div class="wf-icon" style="background:rgba(240,165,0,.1)">💳</div><div class="wf-info"><div class="wf-name">Payment Execution</div><div class="wf-status">Auto-schedule via KNET/bank</div></div><span class="wf-badge wait">Queued</span></div>
-            <div class="wf-arrow">↓</div>
-            <div class="wf-step"><div class="wf-icon" style="background:rgba(147,51,234,.08)">📊</div><div class="wf-info"><div class="wf-name">Journal Entry Posted</div><div class="wf-status">Auto-post to accounting system</div></div><span class="wf-badge wait">Queued</span></div>
-          </div>
-          <div class="wf-stats">
-            <div class="wf-stat"><div class="wf-stat-val" style="color:var(--blue)">147</div><div class="wf-stat-lbl">Active Workflows</div></div>
-            <div class="wf-stat"><div class="wf-stat-val" style="color:#00943c">99.2%</div><div class="wf-stat-lbl">Success Rate</div></div>
-            <div class="wf-stat"><div class="wf-stat-val" style="color:var(--gold)">4.2s</div><div class="wf-stat-lbl">Avg Cycle Time</div></div>
-          </div>
+      <div class="service-card reveal">
+        <div class="service-num">02</div>
+        <span class="service-icon">🤖</span>
+        <h3>AI Chatbots</h3>
+        <p>Context-aware chatbots that understand Gulf Arabic dialects and automate thousands of conversations daily across all channels.</p>
+        <div class="service-tags">
+          <span class="service-tag">Gulf Arabic</span>
+          <span class="service-tag">WhatsApp</span>
+          <span class="service-tag">Instagram</span>
+          <span class="service-tag">Web Widget</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">03</div>
+        <span class="service-icon">🔗</span>
+        <h3>Unified Chat Platform</h3>
+        <p>One dashboard for ALL customer conversations — WhatsApp, Instagram, web chat, and email — with AI-assisted replies and live analytics.</p>
+        <div class="service-tags">
+          <span class="service-tag">All Channels</span>
+          <span class="service-tag">Team Routing</span>
+          <span class="service-tag">AI Replies</span>
+          <span class="service-tag">Analytics</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
+        <span class="service-icon">🧾</span>
+        <h3>AI Accounting</h3>
+        <p>Smart accounting automation for Gulf SMEs — VAT, Zakat, WPS payroll, and Arabic financial reporting fully automated.</p>
+        <div class="service-tags">
+          <span class="service-tag">Kuwait VAT</span>
+          <span class="service-tag">Zakat</span>
+          <span class="service-tag">WPS Payroll</span>
+          <span class="service-tag">Auto Journal</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">05</div>
+        <span class="service-icon">⚡</span>
+        <h3>Automated Customer Service</h3>
+        <p>End-to-end customer service automation resolving 80% of inquiries instantly — 24/7, bilingual, with smart escalation to human agents.</p>
+        <div class="service-tags">
+          <span class="service-tag">24/7 Coverage</span>
+          <span class="service-tag">Smart FAQ</span>
+          <span class="service-tag">Order Tracking</span>
+          <span class="service-tag">Human Handoff</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">06</div>
+        <span class="service-icon">📊</span>
+        <h3>Big Data & Analytics</h3>
+        <p>Turn every interaction into insight. Predictive analytics, demand forecasting, and real-time KPI dashboards for Gulf markets.</p>
+        <div class="service-tags">
+          <span class="service-tag">Predictive AI</span>
+          <span class="service-tag">Real-Time</span>
+          <span class="service-tag">Sentiment</span>
+          <span class="service-tag">Reports</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DASHBOARD -->
-<section id="dashboard">
-  <div class="container">
-    <div class="dash-head reveal">
-      <div class="section-label">Live Dashboard</div>
+<section class="section rpa-section" id="rpa">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">RPA & Process Automation</div>
+      <h2 class="section-title">Automate Any Process.<br>Execute Any Transaction.</h2>
+      <p class="section-subtitle">Our Robotic Process Automation engine handles complex multi-step workflows — from invoice processing to vendor payments — exactly like a human, only faster and error-free.</p>
+    </div>
+    <div class="rpa-grid">
+      <div class="rpa-features reveal">
+        <div class="rpa-feature">
+          <div class="rpa-feature-icon">🔄</div>
+          <div>
+            <h4>End-to-End Workflow Automation</h4>
+            <p>Automate entire business processes across systems from trigger to completion without human intervention.</p>
+          </div>
+        </div>
+        <div class="rpa-feature">
+          <div class="rpa-feature-icon">💸</div>
+          <div>
+            <h4>Automated Transactions & Payments</h4>
+            <p>Execute payments, journal entries, and financial transactions automatically based on defined business rules.</p>
+          </div>
+        </div>
+        <div class="rpa-feature">
+          <div class="rpa-feature-icon">🧩</div>
+          <div>
+            <h4>System Integrations</h4>
+            <p>Connect ERP, CRM, accounting software, and banking systems into one automated ecosystem.</p>
+          </div>
+        </div>
+        <div class="rpa-feature">
+          <div class="rpa-feature-icon">⚠️</div>
+          <div>
+            <h4>Smart Exception Handling</h4>
+            <p>When workflows hit edge cases the system flags them for human review — nothing falls through the cracks.</p>
+          </div>
+        </div>
+      </div>
+      <div class="workflow-card reveal">
+        <h4 style="margin-bottom:1.5rem;font-size:1.1rem">⚙️ Active Workflow: Invoice Processing</h4>
+        <div class="workflow-step done">
+          <div class="workflow-step-icon">📄</div>
+          <div class="workflow-step-info">
+            <h5>Invoice Received (PDF)</h5>
+            <p>Trigger: Email attachment detected</p>
+          </div>
+          <span class="workflow-step-status">Done</span>
+        </div>
+        <div class="workflow-arrow">↓</div>
+        <div class="workflow-step done">
+          <div class="workflow-step-icon">🔍</div>
+          <div class="workflow-step-info">
+            <h5>AI Data Extraction</h5>
+            <p>Vendor, amount, due date parsed</p>
+          </div>
+          <span class="workflow-step-status">Done</span>
+        </div>
+        <div class="workflow-arrow">↓</div>
+        <div class="workflow-step running">
+          <div class="workflow-step-icon">✅</div>
+          <div class="workflow-step-info">
+            <h5>3-Way PO Matching</h5>
+            <p>Matching against PO & receipt</p>
+          </div>
+          <span class="workflow-step-status">Running</span>
+        </div>
+        <div class="workflow-arrow">↓</div>
+        <div class="workflow-step queued">
+          <div class="workflow-step-icon">💳</div>
+          <div class="workflow-step-info">
+            <h5>Payment Execution</h5>
+            <p>Auto-schedule via KNET/bank</p>
+          </div>
+          <span class="workflow-step-status">Queued</span>
+        </div>
+        <div class="workflow-arrow">↓</div>
+        <div class="workflow-step queued">
+          <div class="workflow-step-icon">📊</div>
+          <div class="workflow-step-info">
+            <h5>Journal Entry Posted</h5>
+            <p>Auto-post to accounting system</p>
+          </div>
+          <span class="workflow-step-status">Queued</span>
+        </div>
+        <div class="workflow-stats">
+          <div class="workflow-stat">
+            <div class="workflow-stat-num">147</div>
+            <div class="workflow-stat-label">Active Workflows</div>
+          </div>
+          <div class="workflow-stat">
+            <div class="workflow-stat-num">99.2%</div>
+            <div class="workflow-stat-label">Success Rate</div>
+          </div>
+          <div class="workflow-stat">
+            <div class="workflow-stat-num">4.2s</div>
+            <div class="workflow-stat-label">Avg Cycle Time</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section platform-section" id="platform">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Live Dashboard</div>
       <h2 class="section-title">Real-Time Command Center</h2>
-      <p class="section-sub">Monitor every conversation, metric, and workflow from a single dashboard — your AI operations always current, always clear.</p>
+      <p class="section-subtitle">Monitor every conversation, metric, and workflow from a single dashboard — your AI operations always current, always clear.</p>
     </div>
-    <div class="dashboard-mockup reveal" style="transition-delay:.1s">
-      <div class="db-topbar">
-        <div class="db-dot r"></div><div class="db-dot y"></div><div class="db-dot g"></div>
-        <span class="db-bar-title">Agile AI Systems — Operations Dashboard</span>
-        <div class="db-bar-right">
-          <div class="db-bar-btn active">Overview</div>
-          <div class="db-bar-btn">By Source</div>
-          <div class="db-bar-btn">By User</div>
-          <div class="db-bar-btn">Top Questions</div>
-        </div>
+    <div class="dashboard-showcase reveal">
+      <div class="dashboard-tabs">
+        <button class="dashboard-tab active">Overview</button>
+        <button class="dashboard-tab">By Source</button>
+        <button class="dashboard-tab">By User</button>
+        <button class="dashboard-tab">Top Questions</button>
       </div>
-      <div class="db-body">
-        <div class="db-sec-title">Dashboard</div>
-        <div class="db-sec-sub">Real-time overview of your support operations</div>
-        <div class="db-metrics-top">
-          <div class="db-metric">
-            <div class="db-metric-header"><div class="db-metric-icon blue">👥</div><div class="db-metric-lbl">Total Users</div></div>
-            <div class="db-metric-val">11</div>
+      <div class="dashboard-grid">
+        <div class="dashboard-main">
+          <h4 style="margin-bottom:1rem;font-size:.9rem;color:var(--text-dim)">Messages — Last 30 Days</h4>
+          <div class="dashboard-chart">
+            <div class="chart-bar" style="height:40%"></div>
+            <div class="chart-bar" style="height:65%"></div>
+            <div class="chart-bar" style="height:45%"></div>
+            <div class="chart-bar" style="height:80%"></div>
+            <div class="chart-bar" style="height:55%"></div>
+            <div class="chart-bar" style="height:90%"></div>
+            <div class="chart-bar" style="height:70%"></div>
+            <div class="chart-bar" style="height:85%"></div>
+            <div class="chart-bar" style="height:60%"></div>
+            <div class="chart-bar" style="height:75%"></div>
+            <div class="chart-bar" style="height:50%"></div>
+            <div class="chart-bar" style="height:95%"></div>
           </div>
-          <div class="db-metric">
-            <div class="db-metric-header"><div class="db-metric-icon green">💬</div><div class="db-metric-lbl">Conversations</div></div>
-            <div class="db-metric-val">27</div>
-          </div>
-          <div class="db-metric">
-            <div class="db-metric-header"><div class="db-metric-icon cyan">📱</div><div class="db-metric-lbl">WhatsApp Chats</div></div>
-            <div class="db-metric-val">7</div>
-            <div class="db-metric-note">via WhatsApp Business</div>
-          </div>
-          <div class="db-metric">
-            <div class="db-metric-header"><div class="db-metric-icon gold">⭐</div><div class="db-metric-lbl">Avg Rating</div></div>
-            <div class="db-metric-val">—</div>
-            <div class="db-metric-note">0 total ratings</div>
+          <div style="display:flex;justify-content:space-between;margin-top:1rem;font-size:.75rem;color:var(--text-dim)">
+            <span>Jun 1</span><span>Jun 5</span><span>Jun 10</span><span>Jun 15</span><span>Jun 20</span><span>Jun 25</span><span>Jun 30</span>
           </div>
         </div>
-        <div class="db-metrics-mid">
-          <div class="db-metric-mid">
-            <div class="db-metric-icon gold" style="width:36px;height:36px;font-size:15px">⚠️</div>
-            <div><div class="db-metric-mid-lbl">Open Tickets</div><div class="db-metric-mid-val">0</div></div>
+        <div class="dashboard-side">
+          <div class="dashboard-metric">
+            <div class="dashboard-metric-num">11</div>
+            <div class="dashboard-metric-label">Open Tickets</div>
           </div>
-          <div class="db-metric-mid">
-            <div class="db-metric-icon blue" style="width:36px;height:36px;font-size:15px">🕐</div>
-            <div><div class="db-metric-mid-lbl">In Progress</div><div class="db-metric-mid-val">0</div></div>
+          <div class="dashboard-metric">
+            <div class="dashboard-metric-num">27</div>
+            <div class="dashboard-metric-label">In Progress</div>
           </div>
-          <div class="db-metric-mid">
-            <div class="db-metric-icon green" style="width:36px;height:36px;font-size:15px">✅</div>
-            <div><div class="db-metric-mid-lbl">Resolved</div><div class="db-metric-mid-val">0</div></div>
+          <div class="dashboard-metric">
+            <div class="dashboard-metric-num">142</div>
+            <div class="dashboard-metric-label">Resolved Today</div>
           </div>
-        </div>
-        <div class="db-tabs">
-          <div class="db-tab active">Overview</div>
-          <div class="db-tab">By Source</div>
-          <div class="db-tab">By User</div>
-          <div class="db-tab">Top Questions</div>
-        </div>
-        <div class="db-charts">
-          <div class="db-chart-card">
-            <div class="db-chart-title">Messages — Last 30 Days</div>
-            <svg viewBox="0 0 360 140" class="chart-area" xmlns="http://www.w3.org/2000/svg">
-              <defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1648d8" stop-opacity=".14"/><stop offset="100%" stop-color="#1648d8" stop-opacity="0"/></linearGradient></defs>
-              <line x1="30" y1="20" x2="350" y2="20" stroke="#e2e8f0" stroke-width="1"/>
-              <line x1="30" y1="50" x2="350" y2="50" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4"/>
-              <line x1="30" y1="80" x2="350" y2="80" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4"/>
-              <line x1="30" y1="110" x2="350" y2="110" stroke="#e2e8f0" stroke-width="1"/>
-              <text x="22" y="23" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">28</text>
-              <text x="22" y="53" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">21</text>
-              <text x="22" y="83" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">14</text>
-              <text x="22" y="113" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">7</text>
-              <path d="M30,82 C60,82 90,78 120,76 C150,74 165,88 195,42 C225,12 255,32 285,58 C315,80 335,76 350,80 L350,118 L30,118 Z" fill="url(#ag)"/>
-              <path d="M30,82 C60,82 90,78 120,76 C150,74 165,88 195,42 C225,12 255,32 285,58 C315,80 335,76 350,80" fill="none" stroke="#1648d8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="195" cy="42" r="4" fill="#1648d8"/>
-              <text x="30" y="134" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif">Mar 29</text>
-              <text x="130" y="134" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif">Mar 30</text>
-              <text x="230" y="134" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif">Mar 31</text>
-              <text x="330" y="134" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif">Apr 1</text>
-            </svg>
-          </div>
-          <div class="db-chart-card">
-            <div class="db-chart-title">Rating Trend</div>
-            <svg viewBox="0 0 170 140" class="chart-area" xmlns="http://www.w3.org/2000/svg">
-              <line x1="28" y1="20" x2="165" y2="20" stroke="#e2e8f0" stroke-width="1"/>
-              <line x1="28" y1="50" x2="165" y2="50" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
-              <line x1="28" y1="80" x2="165" y2="80" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
-              <line x1="28" y1="110" x2="165" y2="110" stroke="#e2e8f0" stroke-width="1"/>
-              <text x="20" y="23" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">5</text>
-              <text x="20" y="53" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">3</text>
-              <text x="20" y="83" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">2</text>
-              <text x="20" y="113" font-size="9" fill="#94a3b8" text-anchor="end" font-family="'Plus Jakarta Sans',sans-serif">0</text>
-              <rect x="38" y="97" width="22" height="13" rx="4" fill="#f0a500" opacity=".75"/>
-              <rect x="76" y="24" width="22" height="86" rx="4" fill="#f0a500"/>
-              <rect x="114" y="47" width="22" height="63" rx="4" fill="#f0a500" opacity=".88"/>
-              <text x="49" y="128" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif">Mar 29</text>
-              <text x="87" y="128" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif">Mar 31</text>
-              <text x="125" y="128" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif">Apr 1</text>
-            </svg>
+          <div class="dashboard-metric">
+            <div class="dashboard-metric-num">4.8★</div>
+            <div class="dashboard-metric-label">Avg Rating</div>
           </div>
         </div>
       </div>
@@ -662,44 +625,77 @@ footer{background:var(--navy);padding:58px 0 26px;position:relative;z-index:1}
   </div>
 </section>
 
-<!-- PLATFORM -->
-<section id="platform">
-  <div class="container">
-    <div class="plat-inner">
-      <div class="reveal">
-        <div class="section-label">Unified Platform</div>
-        <h2 class="section-title">One Inbox.<br/>Every Conversation.</h2>
-        <p class="section-sub">Stop juggling apps. Manage all customer conversations — web chat, email, and messaging platforms — from one AI-powered workspace with full team collaboration.</p>
-        <div class="plat-features">
-          <div class="plat-feat"><div class="plat-feat-icon">💬</div><div><div class="plat-feat-title">All Channels, One View</div><div class="plat-feat-desc">Every channel unified — your team sees all messages in one place, never misses a conversation.</div></div></div>
-          <div class="plat-feat"><div class="plat-feat-icon">🤖</div><div><div class="plat-feat-title">AI-Assisted Replies</div><div class="plat-feat-desc">AI suggests context-aware responses in Arabic or English, cutting response time by 80%.</div></div></div>
-          <div class="plat-feat"><div class="plat-feat-icon">📊</div><div><div class="plat-feat-title">Live Analytics</div><div class="plat-feat-desc">Track response times, resolution rates, and satisfaction live — in your language.</div></div></div>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Unified Platform</div>
+      <h2 class="section-title">One Inbox. Every Conversation.</h2>
+      <p class="section-subtitle">Stop juggling apps. Manage all customer conversations — web chat, email, and messaging platforms — from one AI-powered workspace with full team collaboration.</p>
+    </div>
+    <div class="inbox-demo reveal">
+      <div class="inbox-sidebar">
+        <h4>Channels</h4>
+        <div class="inbox-channel active">
+          <span class="inbox-channel-icon">💬</span>
+          <div class="inbox-channel-info">
+            <h5>WhatsApp Business</h5>
+            <span>11 active chats</span>
+          </div>
+        </div>
+        <div class="inbox-channel">
+          <span class="inbox-channel-icon">📧</span>
+          <div class="inbox-channel-info">
+            <h5>Email</h5>
+            <span>3 unread</span>
+          </div>
+        </div>
+        <div class="inbox-channel">
+          <span class="inbox-channel-icon">🌐</span>
+          <div class="inbox-channel-info">
+            <h5>Web Chat</h5>
+            <span>7 visitors</span>
+          </div>
+        </div>
+        <div class="inbox-channel">
+          <span class="inbox-channel-icon">📸</span>
+          <div class="inbox-channel-info">
+            <h5>Instagram</h5>
+            <span>2 DMs</span>
+          </div>
         </div>
       </div>
-      <div class="reveal" style="transition-delay:.15s">
-        <div class="plat-mockup">
-          <div class="pm-bar">
-            <div class="pm-dot" style="background:#ff5f57"></div>
-            <div class="pm-dot" style="background:#ffbd2e"></div>
-            <div class="pm-dot" style="background:#28ca42"></div>
-            <span class="pm-title">Agile AI — Unified Inbox</span>
-          </div>
-          <div class="pm-body">
-            <div class="pm-sidebar">
-              <div class="pm-sidebar-lbl">Channels</div>
-              <div class="pm-ch active"><div class="pm-ch-dot" style="background:#25d366"></div><span class="pm-ch-name">WhatsApp</span><span class="pm-ch-badge">12</span></div>
-              <div class="pm-ch"><div class="pm-ch-dot" style="background:#e1306c"></div><span class="pm-ch-name">Instagram</span><span class="pm-ch-badge">5</span></div>
-              <div class="pm-ch"><div class="pm-ch-dot" style="background:var(--blue)"></div><span class="pm-ch-name">Web Chat</span><span class="pm-ch-badge">3</span></div>
-              <div class="pm-ch"><div class="pm-ch-dot" style="background:#4285f4"></div><span class="pm-ch-name">Email</span></div>
-              <div class="pm-sidebar-lbl" style="margin-top:6px">Team</div>
-              <div class="pm-ch"><div class="pm-ch-dot" style="background:#28ca42"></div><span class="pm-ch-name">Ahmed K.</span></div>
-              <div class="pm-ch"><div class="pm-ch-dot" style="background:#28ca42"></div><span class="pm-ch-name">Sara M.</span></div>
+      <div class="inbox-main">
+        <div class="inbox-messages">
+          <div class="inbox-msg customer">
+            <div class="inbox-msg-avatar">C</div>
+            <div class="inbox-msg-content">
+              <h5>Customer</h5>
+              <p>كم سعر الاشتراك الشهري؟</p>
+              <span class="msg-lang">Detected: Arabic (Gulf)</span>
             </div>
-            <div class="pm-chat">
-              <div class="pm-msg"><div class="pm-av u">C</div><div class="pm-bubble">كم سعر الاشتراك الشهري؟</div></div>
-              <div class="pm-msg r"><div class="pm-av ai">AI</div><div class="pm-bubble">الاشتراك يبدأ من 49 دينار. هل تريد تفاصيل؟</div></div>
-              <div class="pm-msg"><div class="pm-av u">C</div><div class="pm-bubble">Tell me about the Pro plan</div></div>
-              <div class="pm-msg r"><div class="pm-av ai">AI</div><div class="pm-bubble">Pro: unlimited chats + full analytics. Book a demo? 🚀</div></div>
+          </div>
+          <div class="inbox-msg ai">
+            <div class="inbox-msg-avatar">🤖</div>
+            <div class="inbox-msg-content">
+              <h5>Agile AI</h5>
+              <p>الاشتراك يبدأ من 49 دينار. هل تريد تفاصيل أكثر عن الخطة الاحترافية؟</p>
+              <span class="msg-lang">Replied in: Arabic (Gulf)</span>
+            </div>
+          </div>
+          <div class="inbox-msg customer">
+            <div class="inbox-msg-avatar">C</div>
+            <div class="inbox-msg-content">
+              <h5>Customer</h5>
+              <p>Tell me about the Pro plan</p>
+              <span class="msg-lang">Detected: English</span>
+            </div>
+          </div>
+          <div class="inbox-msg ai">
+            <div class="inbox-msg-avatar">🤖</div>
+            <div class="inbox-msg-content">
+              <h5>Agile AI</h5>
+              <p>Pro plan: unlimited chats + full analytics + priority support + custom integrations. Book a demo? 🚀</p>
+              <span class="msg-lang">Replied in: English</span>
             </div>
           </div>
         </div>
@@ -708,398 +704,371 @@ footer{background:var(--navy);padding:58px 0 26px;position:relative;z-index:1}
   </div>
 </section>
 
-<!-- AI DOCUMENT ARCHIVING -->
-<section id="archiving" style="padding:110px 0;background:var(--bg);border-top:1px solid var(--border)">
-  <div class="container">
-
-    <div style="text-align:center;margin-bottom:56px" class="reveal">
-      <div class="section-label">AI Document Intelligence</div>
-      <h2 class="section-title">Smart Document Archiving<br/>by Agile AI Systems</h2>
-      <p class="section-sub" style="margin:0 auto">Upload any document and let AI read, classify, tag, and archive it automatically — with intelligent search, workflow routing, and e-signature built in.</p>
+<section class="section" id="docs" style="background:var(--surface-elevated)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">AI Document Intelligence</div>
+      <h2 class="section-title">Smart Document Archiving</h2>
+      <p class="section-subtitle">Upload any document and let AI read, classify, tag, and archive it automatically — with intelligent search, workflow routing, and e-signature built in.</p>
     </div>
-
-    <!-- Top feature highlights -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px">
-
-      <div class="svc-card reveal" style="transition-delay:.05s;padding:26px 24px">
-        <div class="svc-icon blue-bg" style="margin-bottom:16px">🧠</div>
-        <h3 class="svc-title">AI Auto-Classification</h3>
-        <p class="svc-desc">AI reads every uploaded document and automatically identifies its type — Invoice, Report, Certificate, Financial Statement, Manual — with 90%+ confidence.</p>
-        <div class="svc-tags"><span class="svc-tag">Invoice</span><span class="svc-tag">Report</span><span class="svc-tag">Certificate</span><span class="svc-tag">Financial</span></div>
-      </div>
-
-      <div class="svc-card reveal" style="transition-delay:.1s;padding:26px 24px">
-        <div class="svc-icon cyan-bg" style="margin-bottom:16px">🔍</div>
-        <h3 class="svc-title">Search by Content</h3>
-        <p class="svc-desc">Find any document instantly by searching its actual content — not just the filename. Full-text search across all archived documents in Arabic and English.</p>
-        <div class="svc-tags"><span class="svc-tag">Full-Text Search</span><span class="svc-tag">Arabic/English</span><span class="svc-tag">Tag Search</span></div>
-      </div>
-
-      <div class="svc-card reveal" style="transition-delay:.15s;padding:26px 24px">
-        <div class="svc-icon blue-bg" style="margin-bottom:16px">⚡</div>
-        <h3 class="svc-title">Workflow Pipeline</h3>
-        <p class="svc-desc">Every document flows through a structured pipeline: Draft → Submitted → Reviewed → Approved → Archived, with role-based access and live status tracking.</p>
-        <div class="svc-tags"><span class="svc-tag">Draft</span><span class="svc-tag">Review</span><span class="svc-tag">Approval</span><span class="svc-tag">Archive</span></div>
-      </div>
-
-    </div>
-
-    <!-- Dashboard mockup of the actual system -->
-    <div class="dashboard-mockup reveal" style="transition-delay:.1s">
-      <div class="db-topbar">
-        <div class="db-dot r"></div><div class="db-dot y"></div><div class="db-dot g"></div>
-        <span class="db-bar-title">Agile AI — Document Intelligence System</span>
-        <div class="db-bar-right">
-          <div class="db-bar-btn active">Analytics</div>
-          <div class="db-bar-btn">Documents</div>
-          <div class="db-bar-btn">Archive</div>
+    <div class="doc-grid">
+      <div class="doc-card reveal">
+        <div class="doc-card-icon">🧠</div>
+        <h3>AI Auto-Classification</h3>
+        <p>AI reads every uploaded document and automatically identifies its type — Invoice, Report, Certificate, Financial Statement, Manual — with 90%+ confidence.</p>
+        <div class="doc-tags">
+          <span class="service-tag">Invoice</span>
+          <span class="service-tag">Report</span>
+          <span class="service-tag">Certificate</span>
+          <span class="service-tag">Financial</span>
         </div>
       </div>
-
-      <div style="padding:22px">
-        <div class="db-sec-title">Analytics</div>
-        <div class="db-sec-sub" style="font-size:13px;color:var(--muted);margin-bottom:18px">Document pipeline overview — all time</div>
-
-        <!-- 4 top metrics -->
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px">
-          <div class="db-metric" style="border-top:3px solid #10b981">
-            <div class="db-metric-header"><div class="db-metric-icon green">📄</div><div class="db-metric-lbl">Total Documents</div></div>
-            <div class="db-metric-val">129</div>
-            <div class="db-metric-note">All time in system</div>
-          </div>
-          <div class="db-metric" style="border-top:3px solid #10b981">
-            <div class="db-metric-header"><div class="db-metric-icon cyan">📥</div><div class="db-metric-lbl">Incoming</div></div>
-            <div class="db-metric-val">76</div>
-            <div class="db-metric-note">↓ 59% of total</div>
-          </div>
-          <div class="db-metric" style="border-top:3px solid var(--gold)">
-            <div class="db-metric-header"><div class="db-metric-icon gold">📤</div><div class="db-metric-lbl">Outgoing</div></div>
-            <div class="db-metric-val">53</div>
-            <div class="db-metric-note">↑ 41% of total</div>
-          </div>
-          <div class="db-metric" style="border-top:3px solid var(--blue)">
-            <div class="db-metric-header"><div class="db-metric-icon blue">✍️</div><div class="db-metric-lbl">Signed</div></div>
-            <div class="db-metric-val">0</div>
-            <div class="db-metric-note">0 pending</div>
-          </div>
-        </div>
-
-        <!-- Workflow pipeline -->
-        <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:16px">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
-            <div style="font-weight:700;font-size:14px;color:var(--navy);display:flex;align-items:center;gap:8px">⚙️ Workflow Pipeline</div>
-            <span style="background:rgba(0,160,60,.08);color:#00943c;font-size:11px;font-weight:700;padding:3px 11px;border-radius:20px;border:1px solid rgba(0,160,60,.15)">Live status</span>
-          </div>
-          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;text-align:center">
-            <div style="padding:14px 8px">
-              <div style="width:44px;height:44px;border-radius:50%;background:rgba(100,116,139,.1);border:2px solid #cbd5e1;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:17px">✏️</div>
-              <div style="font-size:20px;font-weight:800;color:var(--navy)">127</div>
-              <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;margin-top:3px">Draft</div>
-            </div>
-            <div style="padding:14px 8px">
-              <div style="width:44px;height:44px;border-radius:50%;background:rgba(0,150,183,.1);border:2px solid rgba(0,150,183,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:17px">📨</div>
-              <div style="font-size:20px;font-weight:800;color:var(--navy)">0</div>
-              <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;margin-top:3px">Submitted</div>
-            </div>
-            <div style="padding:14px 8px">
-              <div style="width:44px;height:44px;border-radius:50%;background:rgba(240,165,0,.1);border:2px solid rgba(240,165,0,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:17px">🔍</div>
-              <div style="font-size:20px;font-weight:800;color:var(--navy)">0</div>
-              <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;margin-top:3px">Reviewed</div>
-            </div>
-            <div style="padding:14px 8px">
-              <div style="width:44px;height:44px;border-radius:50%;background:rgba(0,160,60,.1);border:2px solid rgba(0,160,60,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:17px">✅</div>
-              <div style="font-size:20px;font-weight:800;color:var(--navy)">1</div>
-              <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;margin-top:3px">Approved</div>
-            </div>
-            <div style="padding:14px 8px">
-              <div style="width:44px;height:44px;border-radius:50%;background:rgba(147,51,234,.08);border:2px solid rgba(147,51,234,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:17px">🗂️</div>
-              <div style="font-size:20px;font-weight:800;color:var(--navy)">1</div>
-              <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;margin-top:3px">Archived</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom row: AI Confidence + AI Doc Types + E-Signature -->
-        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px">
-
-          <!-- AI Confidence -->
-          <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:16px 18px">
-            <div style="font-weight:700;font-size:13px;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between">🎯 AI Confidence <span style="font-size:11px;font-weight:600;color:var(--muted)">Per type avg</span></div>
-            <div style="display:flex;flex-direction:column;gap:9px">
-              <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11px;color:var(--muted);width:78px">OTHER</span><div style="flex:1;height:6px;background:var(--border);border-radius:3px"><div style="width:39%;height:100%;background:#ef4444;border-radius:3px"></div></div><span style="font-size:11px;font-weight:700;color:var(--text2);margin-left:6px">39%</span></div>
-              <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11px;color:var(--muted);width:78px">REPORT</span><div style="flex:1;height:6px;background:var(--border);border-radius:3px"><div style="width:91%;height:100%;background:#10b981;border-radius:3px"></div></div><span style="font-size:11px;font-weight:700;color:var(--text2);margin-left:6px">91%</span></div>
-              <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11px;color:var(--muted);width:78px">CERTIFICATE</span><div style="flex:1;height:6px;background:var(--border);border-radius:3px"><div style="width:90%;height:100%;background:#10b981;border-radius:3px"></div></div><span style="font-size:11px;font-weight:700;color:var(--text2);margin-left:6px">90%</span></div>
-              <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11px;color:var(--muted);width:78px">INVOICE</span><div style="flex:1;height:6px;background:var(--border);border-radius:3px"><div style="width:90%;height:100%;background:#10b981;border-radius:3px"></div></div><span style="font-size:11px;font-weight:700;color:var(--text2);margin-left:6px">90%</span></div>
-              <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11px;color:var(--muted);width:78px">FINANCIAL</span><div style="flex:1;height:6px;background:var(--border);border-radius:3px"><div style="width:91%;height:100%;background:#10b981;border-radius:3px"></div></div><span style="font-size:11px;font-weight:700;color:var(--text2);margin-left:6px">91%</span></div>
-              <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11px;color:var(--muted);width:78px">MANUAL</span><div style="flex:1;height:6px;background:var(--border);border-radius:3px"><div style="width:90%;height:100%;background:#10b981;border-radius:3px"></div></div><span style="font-size:11px;font-weight:700;color:var(--text2);margin-left:6px">90%</span></div>
-            </div>
-          </div>
-
-          <!-- AI Doc Types -->
-          <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:16px 18px">
-            <div style="font-weight:700;font-size:13px;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between">🤖 AI Doc Types <span style="background:rgba(22,72,216,.1);color:var(--blue);font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px">Top 6</span></div>
-            <div style="display:flex;flex-direction:column;gap:8px">
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span style="color:var(--muted)">OTHER</span><span style="font-weight:700;color:var(--navy)">86</span></div>
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span style="color:var(--muted)">INVOICE</span><span style="font-weight:700;color:var(--navy)">14</span></div>
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span style="color:var(--muted)">FINANCIAL ST</span><span style="font-weight:700;color:var(--navy)">11</span></div>
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span style="color:var(--muted)">REPORT</span><span style="font-weight:700;color:var(--navy)">7</span></div>
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span style="color:var(--muted)">CERTIFICATE</span><span style="font-weight:700;color:var(--navy)">2</span></div>
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span style="color:var(--muted)">MANUAL</span><span style="font-weight:700;color:var(--navy)">1</span></div>
-            </div>
-          </div>
-
-          <!-- E-Signature -->
-          <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:16px 18px">
-            <div style="font-weight:700;font-size:13px;color:var(--navy);margin-bottom:14px">✍️ E-Signature</div>
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px">
-              <div style="text-align:center;background:#fff;border:1px solid var(--border);border-radius:9px;padding:10px 6px">
-                <div style="font-size:20px;font-weight:800;color:#10b981">0</div>
-                <div style="font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-top:2px">Signed</div>
-              </div>
-              <div style="text-align:center;background:#fff;border:1px solid var(--border);border-radius:9px;padding:10px 6px">
-                <div style="font-size:20px;font-weight:800;color:var(--gold)">0</div>
-                <div style="font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-top:2px">Pending</div>
-              </div>
-              <div style="text-align:center;background:#fff;border:1px solid var(--border);border-radius:9px;padding:10px 6px">
-                <div style="font-size:20px;font-weight:800;color:var(--muted)">129</div>
-                <div style="font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-top:2px">Unsent</div>
-              </div>
-            </div>
-            <div style="font-size:12px;color:var(--muted);margin-bottom:5px;display:flex;justify-content:space-between">Completion rate <span style="color:var(--blue);font-weight:700">0%</span></div>
-            <div style="height:5px;background:var(--border);border-radius:3px;margin-bottom:12px"><div style="width:0%;height:100%;background:var(--blue);border-radius:3px"></div></div>
-            <div style="font-size:12px;color:var(--muted);margin-bottom:5px">Direction split</div>
-            <div style="height:8px;border-radius:4px;overflow:hidden;display:flex">
-              <div style="width:59%;background:#10b981"></div>
-              <div style="width:41%;background:var(--blue)"></div>
-            </div>
-            <div style="display:flex;justify-content:space-between;font-size:10px;margin-top:4px"><span style="color:#10b981;font-weight:700">↓ IN 59%</span><span style="color:var(--blue);font-weight:700">↑ OUT 41%</span></div>
-          </div>
-
-        </div>
-
-        <!-- AI Document Intelligence actions -->
-        <div style="background:linear-gradient(135deg,rgba(99,60,180,.06),rgba(22,72,216,.06));border:1px solid rgba(99,60,180,.15);border-radius:12px;padding:18px 20px;margin-top:14px">
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
-            <div style="width:38px;height:38px;background:linear-gradient(135deg,#6334b4,#4f46e5);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🤖</div>
-            <div>
-              <div style="font-weight:700;font-size:14px;color:var(--navy)">AI Document Intelligence</div>
-              <div style="font-size:12px;color:var(--muted)">Agile AI Systems · reads, understands and acts on document content</div>
-            </div>
-          </div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px">
-            <div style="background:#fff;border:1px solid rgba(99,60,180,.2);border-radius:9px;padding:9px 16px;font-size:12.5px;font-weight:600;color:#4f46e5;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px">☰ Summarize Document</div>
-            <div style="background:#fff;border:1px solid rgba(99,60,180,.2);border-radius:9px;padding:9px 16px;font-size:12.5px;font-weight:600;color:#4f46e5;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px">🏷️ Suggest Better Name</div>
-            <div style="background:#fff;border:1px solid rgba(99,60,180,.2);border-radius:9px;padding:9px 16px;font-size:12.5px;font-weight:600;color:#4f46e5;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px">📝 Auto-Generate Notes</div>
-            <div style="background:#fff;border:1px solid rgba(99,60,180,.2);border-radius:9px;padding:9px 16px;font-size:12.5px;font-weight:600;color:#4f46e5;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px">✨ Re-Classify Type</div>
-            <div style="background:#fff;border:1px solid rgba(99,60,180,.2);border-radius:9px;padding:9px 16px;font-size:12.5px;font-weight:600;color:#4f46e5;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px"># Suggest Tags</div>
-            <div style="background:#fff;border:1px solid rgba(99,60,180,.2);border-radius:9px;padding:9px 16px;font-size:12.5px;font-weight:600;color:#4f46e5;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px">⊞ Extract Table Data</div>
-          </div>
-          <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(99,60,180,.1);display:flex;gap:8px;flex-wrap:wrap">
-            <span style="font-size:12px;color:var(--muted);margin-right:4px;font-weight:600">Convert &amp; Export:</span>
-            <span style="background:rgba(239,68,68,.08);color:#dc2626;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:6px;border:1px solid rgba(239,68,68,.15)">📄 PDF</span>
-            <span style="background:rgba(37,99,235,.08);color:#1d4ed8;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:6px;border:1px solid rgba(37,99,235,.15)">📘 Word (DOCX)</span>
-            <span style="background:rgba(22,163,74,.08);color:#15803d;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:6px;border:1px solid rgba(22,163,74,.15)">📗 Excel (XLSX)</span>
-            <span style="background:rgba(100,116,139,.08);color:#475569;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:6px;border:1px solid rgba(100,116,139,.15)">📃 Plain Text</span>
-            <span style="background:rgba(22,163,74,.08);color:#15803d;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:6px;border:1px solid rgba(22,163,74,.15)">⊞ CSV (table data)</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- BIG DATA -->
-<section id="bigdata">
-  <div class="container">
-    <div class="bigdata-inner">
-      <div class="bigdata-text reveal">
-        <div class="section-label">Big Data &amp; Deep Analysis</div>
-        <h2 class="section-title">Turn Data Into<br/>Competitive Advantage.</h2>
-        <p class="section-sub">Our AI doesn't just automate — it learns. Every interaction, transaction, and workflow feeds a deep analytics engine that surfaces insights you'd never find manually.</p>
-        <div class="bigdata-list">
-          <div class="bigdata-list-item"><span>✦</span>Predictive demand forecasting for Gulf markets</div>
-          <div class="bigdata-list-item"><span>✦</span>Customer behavior pattern analysis in Arabic/English</div>
-          <div class="bigdata-list-item"><span>✦</span>Anomaly detection for financial transactions</div>
-          <div class="bigdata-list-item"><span>✦</span>Cross-channel sentiment tracking at scale</div>
-          <div class="bigdata-list-item"><span>✦</span>Real-time KPI dashboards with drill-down reports</div>
+      <div class="doc-card reveal">
+        <div class="doc-card-icon">🔍</div>
+        <h3>Search by Content</h3>
+        <p>Find any document instantly by searching its actual content — not just the filename. Full-text search across all archived documents in Arabic and English.</p>
+        <div class="doc-tags">
+          <span class="service-tag">Full-Text</span>
+          <span class="service-tag">Arabic/English</span>
+          <span class="service-tag">Tag Search</span>
         </div>
       </div>
-      <div class="bigdata-cards reveal" style="transition-delay:.15s">
-        <div class="bd-card"><div class="bd-icon">🧠</div><div class="bd-title">Deep Learning Models</div><div class="bd-desc">Custom neural networks trained on your industry data for precision predictions.</div></div>
-        <div class="bd-card"><div class="bd-icon">📡</div><div class="bd-title">Real-Time Streams</div><div class="bd-desc">Process millions of events per second — decisions made in milliseconds.</div></div>
-        <div class="bd-card"><div class="bd-icon">🔮</div><div class="bd-title">Predictive Analytics</div><div class="bd-desc">Forecast sales, churn, and demand before they happen — act proactively.</div></div>
-        <div class="bd-card"><div class="bd-icon">📊</div><div class="bd-title">Executive Reports</div><div class="bd-desc">Boardroom-ready reports in Arabic &amp; English with one click, always current.</div></div>
+      <div class="doc-card reveal">
+        <div class="doc-card-icon">⚡</div>
+        <h3>Workflow Pipeline</h3>
+        <p>Every document flows through a structured pipeline: Draft → Submitted → Reviewed → Approved → Archived, with role-based access and live status tracking.</p>
+        <div class="doc-tags">
+          <span class="service-tag">Draft</span>
+          <span class="service-tag">Review</span>
+          <span class="service-tag">Approval</span>
+          <span class="service-tag">Archive</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GULF -->
-<section id="gulf">
-  <div class="container">
-    <div class="gulf-inner">
-      <div class="reveal">
-        <div class="section-label">Gulf-First Approach</div>
-        <h2 class="section-title">Built for Kuwait.<br/>Scaled for the Gulf.</h2>
-        <p class="section-sub">We don't localize generic tools — we build from scratch for Gulf business realities: local compliance, Arabic dialects, regional payments, and cultural nuance.</p>
-        <div style="margin-top:30px;display:flex;flex-direction:column;gap:11px">
-          <div style="display:flex;gap:10px;align-items:center"><span style="color:var(--gold);font-weight:700;font-size:16px">✦</span><span style="font-size:14px;color:var(--muted)">Kuwait, Saudi Arabia, UAE, Qatar, Bahrain &amp; Oman</span></div>
-          <div style="display:flex;gap:10px;align-items:center"><span style="color:var(--gold);font-weight:700;font-size:16px">✦</span><span style="font-size:14px;color:var(--muted)">Full bilingual Arabic/English — Gulf dialects supported</span></div>
-          <div style="display:flex;gap:10px;align-items:center"><span style="color:var(--gold);font-weight:700;font-size:16px">✦</span><span style="font-size:14px;color:var(--muted)">KNET, Benefit, STCPay &amp; regional payment integrations</span></div>
-          <div style="display:flex;gap:10px;align-items:center"><span style="color:var(--gold);font-weight:700;font-size:16px">✦</span><span style="font-size:14px;color:var(--muted)">VAT, Zakat, and WPS compliance fully embedded</span></div>
-        </div>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Big Data & Deep Analysis</div>
+      <h2 class="section-title">Turn Data Into Competitive Advantage</h2>
+      <p class="section-subtitle">Our AI doesn't just automate — it learns. Every interaction, transaction, and workflow feeds a deep analytics engine that surfaces insights you'd never find manually.</p>
+    </div>
+    <div class="gulf-features reveal" style="max-width:700px;margin:0 auto 3rem">
+      <div class="gulf-feature">Predictive demand forecasting for Gulf markets</div>
+      <div class="gulf-feature">Customer behavior pattern analysis in Arabic/English</div>
+      <div class="gulf-feature">Anomaly detection for financial transactions</div>
+      <div class="gulf-feature">Cross-channel sentiment tracking at scale</div>
+      <div class="gulf-feature">Real-time KPI dashboards with drill-down reports</div>
+    </div>
+    <div class="data-grid">
+      <div class="data-card reveal">
+        <span class="data-icon">🧠</span>
+        <h3>Deep Learning Models</h3>
+        <p>Custom neural networks trained on your industry data for precision predictions.</p>
       </div>
-      <div class="gulf-flags reveal" style="transition-delay:.15s">
-        <div class="gf-card"><div class="gf-flag">🇰🇼</div><div class="gf-name">Kuwait</div><div class="gf-desc">Our home base. Deep understanding of Kuwaiti market dynamics and business culture.</div></div>
-        <div class="gf-card"><div class="gf-flag">🇸🇦</div><div class="gf-name">Saudi Arabia</div><div class="gf-desc">Vision 2030 aligned. ZATCA-compliant e-invoicing ready.</div></div>
-        <div class="gf-card"><div class="gf-flag">🇦🇪</div><div class="gf-name">UAE</div><div class="gf-desc">UAE VAT compliant. Enterprise AI for Dubai, Abu Dhabi, and beyond.</div></div>
-        <div class="gf-card"><div class="gf-flag">🇶🇦</div><div class="gf-name">Qatar &amp; GCC</div><div class="gf-desc">Full GCC coverage. Scalable solutions that grow with your expansion.</div></div>
+      <div class="data-card reveal">
+        <span class="data-icon">📡</span>
+        <h3>Real-Time Streams</h3>
+        <p>Process millions of events per second — decisions made in milliseconds.</p>
+      </div>
+      <div class="data-card reveal">
+        <span class="data-icon">🔮</span>
+        <h3>Predictive Analytics</h3>
+        <p>Forecast sales, churn, and demand before they happen — act proactively.</p>
+      </div>
+      <div class="data-card reveal">
+        <span class="data-icon">📊</span>
+        <h3>Executive Reports</h3>
+        <p>Boardroom-ready reports in Arabic & English with one click, always current.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW -->
-<section id="how">
-  <div class="container">
-    <div class="how-head reveal">
-      <div class="section-label">Process</div>
+<section class="section" style="background:var(--surface-elevated)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Gulf-First Approach</div>
+      <h2 class="section-title">Built for Kuwait. Scaled for the Gulf.</h2>
+      <p class="section-subtitle">We don't localize generic tools — we build from scratch for Gulf business realities: local compliance, Arabic dialects, regional payments, and cultural nuance.</p>
+    </div>
+    <div class="gulf-grid">
+      <div class="gulf-card reveal">
+        <div class="gulf-flag">🇰🇼</div>
+        <h4>Kuwait</h4>
+        <p>Our home base. Deep understanding of Kuwaiti market dynamics and business culture.</p>
+      </div>
+      <div class="gulf-card reveal">
+        <div class="gulf-flag">🇸🇦</div>
+        <h4>Saudi Arabia</h4>
+        <p>Vision 2030 aligned. ZATCA-compliant e-invoicing ready.</p>
+      </div>
+      <div class="gulf-card reveal">
+        <div class="gulf-flag">🇦🇪</div>
+        <h4>UAE</h4>
+        <p>UAE VAT compliant. Enterprise AI for Dubai, Abu Dhabi, and beyond.</p>
+      </div>
+      <div class="gulf-card reveal">
+        <div class="gulf-flag">🇶🇦</div>
+        <h4>Qatar</h4>
+        <p>Full coverage for Doha-based enterprises and government.</p>
+      </div>
+      <div class="gulf-card reveal">
+        <div class="gulf-flag">🌐</div>
+        <h4>GCC Wide</h4>
+        <p>Bahrain & Oman included. Scalable solutions that grow with your expansion.</p>
+      </div>
+    </div>
+    <div class="gulf-features reveal" style="max-width:700px;margin:3rem auto 0">
+      <div class="gulf-feature">Full bilingual Arabic/English — Gulf dialects supported</div>
+      <div class="gulf-feature">KNET, Benefit, STCPay & regional payment integrations</div>
+      <div class="gulf-feature">VAT, Zakat, and WPS compliance fully embedded</div>
+      <div class="gulf-feature">Local hosting options for data sovereignty</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Pricing</div>
+      <h2 class="section-title">Simple, Transparent Pricing</h2>
+      <p class="section-subtitle">Start small. Scale fast. No hidden fees. Cancel anytime. All plans include Gulf Arabic support and local compliance features.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-desc">Ideal for small teams</div>
+        <div class="pricing-price">49 <span>KWD/mo</span></div>
+        <div class="pricing-period">Billed monthly</div>
+        <ul class="pricing-features">
+          <li>1 AI Chatbot</li>
+          <li>WhatsApp + Web Chat</li>
+          <li>1,000 conversations/mo</li>
+          <li>Basic Analytics</li>
+          <li>Email Support</li>
+        </ul>
+        <a href="#contact" class="pricing-btn secondary">Get Started</a>
+      </div>
+      <div class="pricing-card popular reveal">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-name">Business</div>
+        <div class="pricing-desc">For growing companies</div>
+        <div class="pricing-price">149 <span>KWD/mo</span></div>
+        <div class="pricing-period">Billed monthly</div>
+        <ul class="pricing-features">
+          <li>5 AI Chatbots</li>
+          <li>All Channels (WA, IG, FB, Web)</li>
+          <li>10,000 conversations/mo</li>
+          <li>AI Accounting Module</li>
+          <li>RPA Workflows (5 active)</li>
+          <li>Priority Support</li>
+        </ul>
+        <a href="#contact" class="pricing-btn primary">Start Free Trial</a>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="pricing-name">Enterprise</div>
+        <div class="pricing-desc">For large organizations</div>
+        <div class="pricing-price">499 <span>KWD/mo</span></div>
+        <div class="pricing-period">Billed monthly</div>
+        <ul class="pricing-features">
+          <li>Unlimited AI Chatbots</li>
+          <li>Unlimited Channels</li>
+          <li>Unlimited Conversations</li>
+          <li>Full RPA Suite</li>
+          <li>Document Intelligence</li>
+          <li>Big Data Analytics</li>
+          <li>Dedicated Account Manager</li>
+          <li>SLA Guarantee</li>
+        </ul>
+        <a href="#contact" class="pricing-btn secondary">Contact Sales</a>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="pricing-name">Custom</div>
+        <div class="pricing-desc">Tailored solutions</div>
+        <div class="pricing-price">—</div>
+        <div class="pricing-period">Let's talk</div>
+        <ul class="pricing-features">
+          <li>On-Premises Hosting</li>
+          <li>Custom AI Training</li>
+          <li>White-Label Options</li>
+          <li>API Access</li>
+          <li>Multi-Location Deploy</li>
+          <li>24/7 Phone Support</li>
+        </ul>
+        <a href="#contact" class="pricing-btn secondary">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--surface-elevated)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Our Process</div>
       <h2 class="section-title">Up and Running in Days</h2>
-      <p class="section-sub">A lean, proven onboarding process designed to get your AI systems live fast — no enterprise complexity, no long delays.</p>
+      <p class="section-subtitle">A lean, proven onboarding process designed to get your AI systems live fast — no enterprise complexity, no long delays.</p>
     </div>
-    <div class="how-grid">
-      <div class="how-card reveal" style="transition-delay:.05s"><div class="how-num">01</div><h3 class="how-title">Discovery Call</h3><p class="how-desc">We map your business needs and identify where AI and RPA create the fastest, highest impact.</p></div>
-      <div class="how-card reveal" style="transition-delay:.1s"><div class="how-num">02</div><h3 class="how-title">Custom Build</h3><p class="how-desc">Our team designs and trains AI models on your data, brand voice, and Gulf market requirements.</p></div>
-      <div class="how-card reveal" style="transition-delay:.15s"><div class="how-num">03</div><h3 class="how-title">Integration</h3><p class="how-desc">We connect your website, ERP, accounting, document systems, and all other tools seamlessly.</p></div>
-      <div class="how-card reveal" style="transition-delay:.2s"><div class="how-num">04</div><h3 class="how-title">Launch &amp; Grow</h3><p class="how-desc">Go live with full monitoring. We continuously improve your AI's performance over time.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section id="cta">
-  <div class="container">
-    <div class="cta-box reveal">
-      <h2 class="cta-title">Ready to Transform Your<br/><span>Business with AI?</span></h2>
-      <p class="cta-sub">Join Gulf businesses already using Agile AI Systems to automate workflows, engage customers, and make smarter decisions with data.</p>
-      <div class="cta-buttons">
-        <a href="#contact" class="btn-white">Book a Free Demo →</a>
-        <a href="#contact" class="btn-gold">Get In Touch →</a>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-num">01</div>
+        <h3>Discovery Call</h3>
+        <p>We map your business needs and identify where AI and RPA create the fastest, highest impact.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="contact-inner">
-      <div class="reveal">
-        <div class="section-label">Get In Touch</div>
-        <h2 class="section-title">Let's Build Something<br/>Intelligent Together.</h2>
-        <p class="section-sub" style="margin-bottom:38px">Whether you're ready to start or just exploring — our team is here to show you what AI can do for your business.</p>
-        <div class="contact-item"><div class="ci-icon">📍</div><div><div class="ci-label">Location</div><div class="ci-val">Kuwait City, Kuwait · Serving the GCC</div></div></div>
-        <div class="contact-item"><div class="ci-icon">✉️</div><div><div class="ci-label">Email</div><div class="ci-val"><a href="mailto:info@agileaisystems.com">info@agileaisystems.com</a></div></div></div>
-        <div class="contact-item"><div class="ci-icon">📞</div><div><div class="ci-label">Phone</div><div class="ci-val">+965 51757072</div></div></div>
-        <div class="contact-item"><div class="ci-icon">🌐</div><div><div class="ci-label">Website</div><div class="ci-val"><a href="https://www.agileaisystems.com">www.agileaisystems.com</a></div></div></div>
+      <div class="process-step reveal">
+        <div class="process-num">02</div>
+        <h3>Custom Build</h3>
+        <p>Our team designs and trains AI models on your data, brand voice, and Gulf market requirements.</p>
       </div>
-      <div class="contact-form reveal" style="transition-delay:.15s">
-        <div class="cf-title">Send Us a Message ✉️</div>
-        <div class="form-row">
-          <div class="form-group"><label>First Name</label><input type="text" placeholder="Ahmed"/></div>
-          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Al-Rashidi"/></div>
-        </div>
-        <div class="form-group"><label>Email Address</label><input type="email" placeholder="ahmed@company.com"/></div>
-        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+965 XXXX XXXX"/></div>
-        <div class="form-group"><label>Service Interested In</label>
-          <select>
-            <option value="">Select a service...</option>
-            <option>Web Design &amp; Development</option>
-            <option>AI Chatbots</option>
-            <option>Unified Chat Platform</option>
-            <option>AI Accounting</option>
-            <option>Automated Customer Service</option>
-            <option>RPA &amp; Workflow Automation</option>
-            <option>Big Data &amp; Analytics</option>
-            <option>Full AI Transformation Package</option>
-          </select>
-        </div>
-        <div class="form-group"><label>Tell Us About Your Business</label><textarea placeholder="Brief description of your business and what you're looking to achieve..."></textarea></div>
-        <button class="form-submit" onclick="handleFormSubmit(this)"><span>Send Message</span><span>→</span></button>
+      <div class="process-step reveal">
+        <div class="process-num">03</div>
+        <h3>Integration</h3>
+        <p>We connect your website, ERP, accounting, document systems, and all other tools seamlessly.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">04</div>
+        <h3>Launch & Grow</h3>
+        <p>Go live with full monitoring. We continuously improve your AI's performance over time.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div>
-        <a href="#" class="logo footer-logo"><div class="logo-icon"><img src="logo.png" alt="Agile AI Systems" style="width:38px;height:38px;border-radius:10px;object-fit:cover;display:block;"></div><div class="logo-text">Agile<span>AI</span> Systems</div></a>
-        <p class="footer-desc">Kuwait's leading AI systems company — transforming Gulf businesses with intelligent automation, chatbots, RPA, and deep analytics.</p>
-        <div class="footer-socials">
-          <a href="mailto:info@agileaisystems.com" class="social-btn" title="Email">✉</a>
-          <a href="https://linkedin.com" class="social-btn" title="LinkedIn">in</a>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-title">Questions We Hear All the Time</h2>
+      <p class="section-subtitle">Can't find what you're looking for? Our team is happy to help.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <h4>Do I need coding skills to use Agile AI Systems?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Not at all. Agile AI is a fully no-code platform. You describe what you want your agent to do, upload your documents, configure your channels, and deploy — all from a visual interface. No engineering team needed.</p>
         </div>
       </div>
-      <div>
-        <div class="footer-col-title">Services</div>
-        <ul class="footer-links">
-          <li><a href="#services">Web Design</a></li>
-          <li><a href="#services">AI Chatbots</a></li>
-          <li><a href="#dashboard">Unified Platform</a></li>
-          <li><a href="#services">AI Accounting</a></li>
-          <li><a href="#rpa">RPA Automation</a></li>
-          <li><a href="#archiving">Doc Archiving</a></li>
-          <li><a href="#bigdata">Big Data Analytics</a></li>
-        </ul>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <h4>Does your AI understand Gulf Arabic dialects?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Yes — this is our core differentiator. Our NLP models are trained specifically on Gulf Arabic, including Kuwaiti, Saudi, and Emirati dialects. The AI detects the dialect automatically and responds in the same style.</p>
+        </div>
       </div>
-      <div>
-        <div class="footer-col-title">Company</div>
-        <ul class="footer-links">
-          <li><a href="#gulf">About Us</a></li>
-          <li><a href="#how">How It Works</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <h4>Is my data stored locally in the Gulf?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Yes. We offer local hosting options in Kuwait and Saudi Arabia for data sovereignty compliance. All data is encrypted at rest and in transit, with full PDPL and GDPR alignment.</p>
+        </div>
       </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <ul class="footer-links">
-          <li><a href="mailto:info@agileaisystems.com">info@agileaisystems.com</a></li>
-          <li>+965 51757072</li>
-          <li>Kuwait City, Kuwait</li>
-          <li>Serving All GCC</li>
-        </ul>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <h4>How long does integration take?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Most businesses go live within 3-5 days. Simple chatbot deployments can be done in hours. Complex ERP integrations with RPA typically take 1-2 weeks. We handle all the technical work.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <h4>Can you integrate with our existing ERP and accounting software?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely. We integrate with all major ERP systems (SAP, Oracle, Odoo), accounting software (QuickBooks, Xero, local Gulf systems), CRMs (Salesforce, HubSpot), and banking APIs including KNET and Benefit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section" id="contact">
+  <div class="cta-inner">
+    <h2>Ready to Transform Your<br>Business with AI?</h2>
+    <p>Join Gulf businesses already using Agile AI Systems to automate workflows, engage customers, and make smarter decisions with data.</p>
+    <a href="#" class="btn-primary" style="font-size:1.1rem;padding:1.2rem 3rem">Book a Free Demo</a>
+    <div class="cta-badges">
+      <div class="cta-badge">No credit card required</div>
+      <div class="cta-badge">Live in 3-5 days</div>
+      <div class="cta-badge">Gulf-grade security</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon"><img src="logo.png" alt="Agile AI Systems" style="width:36px;height:36px;border-radius:10px;object-fit:cover;display:block;"></div>
+          AgileAI Systems
+        </div>
+        <p>Intelligent automation and AI solutions built from the ground up for Kuwait and Gulf businesses. Arabic-first, compliance-ready, and always secure.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#">AI Chatbots</a>
+        <a href="#">RPA Automation</a>
+        <a href="#">Unified Platform</a>
+        <a href="#">AI Accounting</a>
+        <a href="#">Document Intelligence</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+        <a href="#">Partners</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Security</a>
+        <a href="#">Compliance</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2025 <span>Agile AI Systems</span>. All rights reserved. · Kuwait 🇰🇼</div>
-      <div class="footer-tag">Agile AI Systems · Built for Gulf</div>
+      <span>© 2026 Agile AI Systems. All rights reserved.</span>
+      <span>Kuwait · Saudi Arabia · UAE · Qatar · Bahrain · Oman</span>
     </div>
   </div>
 </footer>
 
-
-
 <script>
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',scrollY>50)});
-function openMobileMenu(){document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden'}
-function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow=''}
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id==='#')return;const t=document.querySelector(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
-function handleFormSubmit(btn){btn.innerHTML='<span>Sending...</span>';btn.disabled=true;btn.style.opacity='.7';setTimeout(()=>{btn.innerHTML='<span>✅ Message Sent! We\'ll contact you soon.</span>';btn.style.background='#16a34a';btn.style.boxShadow='0 6px 20px rgba(22,163,74,.3)';btn.style.opacity='1';btn.disabled=false},1800)}
-document.querySelectorAll('.db-tab').forEach(t=>{t.addEventListener('click',()=>{document.querySelectorAll('.db-tab').forEach(x=>x.classList.remove('active'));t.classList.add('active')})});
-document.querySelectorAll('.db-bar-btn').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.db-bar-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active')})});
-// Your existing chatbot embed goes below this line:
+// Navbar scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+// Scroll reveal animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
-  
+
 <!-- Smart Support AI Widget -->
 <script src="https://support-smartsolns.com/widget/chatbot-widget.js" data-customer="knergy" defer></script>
-
+  
 </body>
 </html>
