@@ -31,7 +31,7 @@ input,select{width:100%;padding:.8rem 1rem;font-size:.95rem;background:var(--sur
 input:focus,select:focus{border-color:var(--accent)}
 .btn{width:100%;padding:.95rem;font-size:.95rem;font-weight:700;border:none;border-radius:11px;cursor:pointer;font-family:inherit;background:linear-gradient(135deg,var(--accent),var(--indigo));color:#fff;transition:transform .2s,box-shadow .2s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(5,150,105,0.3)}
-.btn:disabled{opacity:.6;cursor:wait;transform:none}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
 .btn-ghost{background:transparent;border:1px solid var(--border-strong);color:var(--text-muted);margin-top:.6rem}
 .pkg{display:flex;justify-content:space-between;align-items:center;padding:1rem;background:var(--surface);border:1px solid var(--border-strong);border-radius:12px;margin-bottom:1rem;cursor:pointer;transition:border .2s}
 .pkg:hover,.pkg.sel{border-color:var(--accent)}
@@ -46,6 +46,12 @@ input:focus,select:focus{border-color:var(--accent)}
 .msg.ok{display:block;background:rgba(5,150,105,0.12);color:#6ee7b7;border:1px solid rgba(5,150,105,0.25)}
 .back{display:inline-block;margin-top:1rem;color:var(--text-dim);font-size:.82rem;text-decoration:none}
 .back:hover{color:var(--text-muted)}
+.help{margin-top:1.2rem;color:var(--text-muted);font-size:.85rem;line-height:1.6;text-align:center}
+.help a{color:var(--accent-light)}
+.pkg{width:100%;color:var(--text);font:inherit;text-align:left}
+.otp-ch{background:transparent;font-family:inherit}
+button.back{background:none;border:0;font-family:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent-light);outline-offset:3px}
 .spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:s .6s linear infinite;vertical-align:middle;margin-right:6px}
 @keyframes s{to{transform:rotate(360deg)}}
 </style>
@@ -59,20 +65,20 @@ input:focus,select:focus{border-color:var(--accent)}
       <div class="step-dot" id="d2"></div>
       <div class="step-dot" id="d3"></div>
     </div>
-    <div class="msg" id="msg"></div>
+    <div class="msg" id="msg" role="status" aria-live="polite"></div>
 
     <!-- STEP 1: package + details -->
     <div id="step1">
-      <h1>Start your free setup</h1>
-      <p class="sub">Choose a plan and tell us about your business.</p>
-      <div id="pkgList"></div>
-      <label>Business name</label>
-      <input id="business" placeholder="e.g. Knergy Clinic" autocomplete="organization">
-      <label>Work email</label>
-      <input id="email" type="email" placeholder="you@company.com" autocomplete="email">
-      <label>Phone (for WhatsApp option)</label>
-      <input id="phone" placeholder="+965…" autocomplete="tel">
-      <button class="btn" id="toOtp">Continue →</button>
+      <h1>Create your account</h1>
+      <p class="sub">Choose a paid plan, verify your contact details, then continue to checkout.</p>
+      <div id="pkgList" aria-live="polite"><p class="sub">Loading plans…</p></div>
+      <label for="business">Business name</label>
+      <input id="business" placeholder="e.g. Your company" autocomplete="organization" required>
+      <label for="email">Work email</label>
+      <input id="email" type="email" placeholder="you@company.com" autocomplete="email" required>
+      <label for="phone">Phone (for WhatsApp option)</label>
+      <input id="phone" type="tel" placeholder="+965…" autocomplete="tel">
+      <button class="btn" id="toOtp" disabled>Continue →</button>
     </div>
 
     <!-- STEP 2: OTP -->
@@ -80,16 +86,16 @@ input:focus,select:focus{border-color:var(--accent)}
       <h1>Verify it's you</h1>
       <p class="sub">Where should we send your 6-digit code?</p>
       <div class="otp-channels">
-        <div class="otp-ch sel" data-ch="email" id="chEmail">📧 Email</div>
-        <div class="otp-ch" data-ch="whatsapp" id="chWa">💬 WhatsApp</div>
+        <button type="button" class="otp-ch sel" data-ch="email" id="chEmail" aria-pressed="true">📧 Email</button>
+        <button type="button" class="otp-ch" data-ch="whatsapp" id="chWa" aria-pressed="false">💬 WhatsApp</button>
       </div>
       <button class="btn" id="sendOtp">Send code</button>
       <div id="otpEntry" style="display:none;margin-top:1.2rem">
-        <label>Enter the 6-digit code</label>
-        <input id="otp" class="otp-input" maxlength="6" inputmode="numeric" placeholder="••••••">
+        <label for="otp">Enter the 6-digit code</label>
+        <input id="otp" class="otp-input" maxlength="6" inputmode="numeric" autocomplete="one-time-code" placeholder="••••••">
         <button class="btn" id="verifyOtp">Verify & continue →</button>
       </div>
-      <a class="back" id="back1">← Back</a>
+      <button type="button" class="back" id="back1">← Back</button>
     </div>
 
     <!-- STEP 3: payment -->
@@ -97,40 +103,77 @@ input:focus,select:focus{border-color:var(--accent)}
       <h1>Almost there</h1>
       <p class="sub">You'll be taken to secure checkout to start your <b id="planName"></b> plan.</p>
       <button class="btn" id="toPay">Continue to payment →</button>
-      <a class="back" id="back2">← Back</a>
+      <button type="button" class="back" id="back2">← Back</button>
     </div>
   </div>
+  <p class="help">Just exploring? <a href="index.html#contact">Request a free demo</a> without registering or paying.</p>
+  <p class="help">Need help signing up? <a href="https://wa.me/96551757072?text=Hello%20Agile%20AI%20Systems%2C%20I%20need%20help%20with%20registration." target="_blank" rel="noopener noreferrer">Contact us on WhatsApp</a> or <a href="tel:+96551757072">call +965 5175 7072</a>.</p>
+  <noscript><p class="help">Online registration requires JavaScript. You can still use the contact links above.</p></noscript>
   <a class="back" href="index.html" style="display:block;text-align:center">← Back to website</a>
 </div>
 
 <script>
-// Point this at your backend. Same-origin once the site is on Hetzner.
-// For now (site on GitHub Pages), set to the app domain:
-const API = (location.hostname.includes('agileaisystems.com') && location.protocol==='https:')
-  ? 'https://support-smartsolns.com/api/signup'
-  : '/api/signup';
+// Existing signup service; GitHub Pages has no /api backend of its own.
+const API = 'https://support-smartsolns.com/api/signup';
 
 let state = { package:'business', otp_channel:'email', signup_id:null };
+let packagesReady = false;
 const $ = id => document.getElementById(id);
 const showMsg = (t,k) => { const m=$('msg'); m.textContent=t; m.className='msg '+(k||'err'); };
 const clearMsg = () => { $('msg').className='msg'; };
+const unavailable = 'Online registration is temporarily unavailable. Please use the contact links below for help.';
+
+async function request(path, body) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10000);
+  try {
+    const r = await fetch(API + path, {
+      signal: controller.signal,
+      ...(body ? {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)} : {})
+    });
+    if (!r.ok) throw new Error(unavailable);
+    const d = await r.json();
+    if (!d || typeof d !== 'object') throw new Error(unavailable);
+    if (d.error) throw new Error(d.error);
+    return d;
+  } catch (error) {
+    if (error instanceof TypeError || error.name === 'AbortError' || error instanceof SyntaxError) throw new Error(unavailable);
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
 
 // load packages
-fetch(API+'/packages').then(r=>r.json()).then(d=>{
+request('/packages').then(d=>{
+  if (!Array.isArray(d.packages) || !d.packages.length || d.packages.some(p => !p || !p.key || !p.name || !Number.isFinite(Number(p.price_kwd)))) throw new Error(unavailable);
   const params = new URLSearchParams(location.search);
   const pre = params.get('plan');
-  if (pre) state.package = pre;
+  state.package = d.packages.some(p=>p.key===pre) ? pre : (d.packages.some(p=>p.key==='business') ? 'business' : d.packages[0].key);
   const list = $('pkgList');
-  (d.packages||[]).forEach(p=>{
-    const el = document.createElement('div');
+  list.textContent = '';
+  d.packages.forEach(p=>{
+    const el = document.createElement('button');
+    el.type = 'button';
     el.className='pkg'+(p.key===state.package?' sel':'');
     el.dataset.key=p.key;
-    el.innerHTML='<div><div class="pkg-name">'+p.name+'</div><div class="pkg-desc">'+(p.desc||'')+'</div></div>'+
-      '<div class="pkg-price">'+p.price_kwd+' <span>KWD/mo</span></div>';
-    el.onclick=()=>{ state.package=p.key; document.querySelectorAll('.pkg').forEach(x=>x.classList.remove('sel')); el.classList.add('sel'); };
+    el.setAttribute('aria-pressed', String(p.key===state.package));
+    el.innerHTML='<span><span class="pkg-name"></span><br><span class="pkg-desc"></span></span><span class="pkg-price"></span>';
+    el.querySelector('.pkg-name').textContent=p.name;
+    el.querySelector('.pkg-desc').textContent=p.desc||'';
+    el.querySelector('.pkg-price').append(document.createTextNode(p.price_kwd+' '));
+    const unit=document.createElement('span');
+    unit.textContent='KWD/mo';
+    el.querySelector('.pkg-price').append(unit);
+    el.onclick=()=>{
+      state.package=p.key;
+      document.querySelectorAll('.pkg').forEach(x=>{ x.classList.toggle('sel', x===el); x.setAttribute('aria-pressed', String(x===el)); });
+    };
     list.appendChild(el);
   });
-}).catch(()=>{ $('pkgList').innerHTML='<p class="sub">Could not load packages. Check back shortly.</p>'; });
+  packagesReady = true;
+  $('toOtp').disabled = false;
+}).catch(()=>{ $('pkgList').textContent = ''; showMsg(unavailable); });
 
 function goStep(n){
   [1,2,3].forEach(i=>{ $('step'+i).style.display = i===n?'block':'none'; $('d'+i).classList.toggle('active', i<=n); });
@@ -138,15 +181,28 @@ function goStep(n){
 }
 
 // channel toggle
-$('chEmail').onclick=()=>{ state.otp_channel='email'; $('chEmail').classList.add('sel'); $('chWa').classList.remove('sel'); };
-$('chWa').onclick=()=>{ state.otp_channel='whatsapp'; $('chWa').classList.add('sel'); $('chEmail').classList.remove('sel'); };
+function selectChannel(channel) {
+  state.otp_channel=channel;
+  ['chEmail','chWa'].forEach(id=>{
+    const selected=$(id).dataset.ch===channel;
+    $(id).classList.toggle('sel', selected);
+    $(id).setAttribute('aria-pressed', String(selected));
+  });
+}
+$('chEmail').onclick=()=>selectChannel('email');
+$('chWa').onclick=()=>selectChannel('whatsapp');
 
 // step 1 → 2
 $('toOtp').onclick=()=>{
+  if (!packagesReady) return showMsg(unavailable);
   const business=$('business').value.trim(), email=$('email').value.trim();
   if(!business) return showMsg('Please enter your business name');
-  if(!email || !email.includes('@')) return showMsg('Please enter a valid email');
+  if(!email || !$('email').checkValidity()) return showMsg('Please enter a valid email');
   state.business=business; state.email=email; state.phone=$('phone').value.trim();
+  state.signup_id=null;
+  $('otpEntry').style.display='none';
+  $('otp').value='';
+  $('sendOtp').textContent='Send code';
   goStep(2);
 };
 $('back1').onclick=()=>goStep(1);
@@ -157,13 +213,11 @@ $('sendOtp').onclick=async()=>{
   if(state.otp_channel==='whatsapp' && !state.phone) return showMsg('Enter your phone number for WhatsApp');
   const btn=$('sendOtp'); btn.disabled=true; btn.innerHTML='<span class="spin"></span>Sending…';
   try{
-    const r=await fetch(API+'/start',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({business_name:state.business,email:state.email,phone:state.phone,package:state.package,otp_channel:state.otp_channel})});
-    const d=await r.json();
-    if(d.error) throw new Error(d.error);
+    const d=await request('/start', {business_name:state.business,email:state.email,phone:state.phone,package:state.package,otp_channel:state.otp_channel});
+    if(!d.signup_id) throw new Error(unavailable);
     state.signup_id=d.signup_id;
     $('otpEntry').style.display='block';
-    showMsg('Code sent via '+d.channel+'. '+(d.dev_hint?('(dev code: '+d.dev_hint+')'):''),'ok');
+    showMsg('Code sent via '+state.otp_channel+'. Check your messages.','ok');
   }catch(e){ showMsg(e.message); }
   btn.disabled=false; btn.textContent='Resend code';
 };
@@ -171,13 +225,11 @@ $('sendOtp').onclick=async()=>{
 // verify OTP
 $('verifyOtp').onclick=async()=>{
   const code=$('otp').value.trim();
-  if(code.length!==6) return showMsg('Enter the 6-digit code');
+  if(!/^\d{6}$/.test(code)) return showMsg('Enter the 6-digit code');
+  if(!state.signup_id) return showMsg('Please request a new code first.');
   const btn=$('verifyOtp'); btn.disabled=true; btn.innerHTML='<span class="spin"></span>Verifying…';
   try{
-    const r=await fetch(API+'/verify-otp',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({signup_id:state.signup_id,code})});
-    const d=await r.json();
-    if(d.error) throw new Error(d.error);
+    await request('/verify-otp', {signup_id:state.signup_id,code});
     $('planName').textContent=state.package;
     goStep(3);
   }catch(e){ showMsg(e.message); }
@@ -188,12 +240,12 @@ $('verifyOtp').onclick=async()=>{
 $('toPay').onclick=async()=>{
   const btn=$('toPay'); btn.disabled=true; btn.innerHTML='<span class="spin"></span>Redirecting…';
   try{
-    const r=await fetch(API+'/checkout',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({signup_id:state.signup_id})});
-    const d=await r.json();
-    if(d.error) throw new Error(d.error);
-    if(d.stub){ showMsg('Payment is in test/stub mode (Stripe keys not added yet). Flow verified ✓','ok'); btn.disabled=false; btn.textContent='Continue to payment →'; return; }
-    window.location.href=d.url;
+    const d=await request('/checkout', {signup_id:state.signup_id});
+    if(d.stub) throw new Error('Online payment is not available yet. Please contact us using the links below.');
+    let checkout;
+    try { checkout=new URL(d.url); } catch { throw new Error(unavailable); }
+    if(checkout.protocol!=='https:') throw new Error(unavailable);
+    window.location.href=checkout.href;
   }catch(e){ showMsg(e.message); btn.disabled=false; btn.textContent='Continue to payment →'; }
 };
 </script>
